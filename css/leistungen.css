@@ -1227,7 +1227,8 @@ img[loading="lazy"] {
     .showcase-visual {
         order: 2;
         max-width: 100%;
-        overflow: hidden;
+        overflow: visible;
+        padding: 1rem 0;
     }
 
     .showcase-content h2 {
@@ -1293,11 +1294,15 @@ img[loading="lazy"] {
         max-width: 100%;
         overflow: visible;
         position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
     }
 
     .showcase-card-mockup {
         padding: 1rem;
         border-radius: 12px;
+        order: 1;
     }
 
     .mockup-header {
@@ -1351,46 +1356,46 @@ img[loading="lazy"] {
         flex-shrink: 0;
     }
 
-    /* Floating Elements - Mobile optimiert */
+    /* Floating Elements - Mobile: Als Badges unter dem Mockup */
     .floating-element {
         display: flex;
-        position: absolute;
-        padding: 0.5rem 0.75rem;
+        position: static;
+        padding: 0.6rem 0.75rem;
         border-radius: 10px;
         gap: 0.5rem;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        background: var(--white);
+        border: 1px solid var(--border);
+        order: 2;
     }
 
     .floating-element-1 {
-        top: -12px;
-        right: 10px;
-        left: auto;
+        order: 2;
     }
 
     .floating-element-2 {
-        bottom: 20px;
-        left: 10px;
-        right: auto;
+        order: 3;
     }
 
     .floating-icon {
-        width: 28px;
-        height: 28px;
-        border-radius: 6px;
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        flex-shrink: 0;
     }
 
     .floating-icon svg {
-        width: 14px;
-        height: 14px;
+        width: 16px;
+        height: 16px;
     }
 
     .floating-text {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         font-weight: 600;
     }
 
     .floating-subtext {
-        font-size: 0.55rem;
+        font-size: 0.65rem;
     }
 
     /* Feature Map Section - "Inklusive" - Complete Mobile Overhaul */
@@ -1550,27 +1555,18 @@ img[loading="lazy"] {
         font-weight: 600;
     }
 
-    /* Mobile MacBook Mockups - skaliert und optimiert */
+    /* Mobile: MacBook Mockups verstecken, UI-Elemente zeigen */
     .feature-detail-mockup {
+        display: none !important;
+    }
+
+    .feature-detail-card {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        order: 2;
-        margin-top: 1rem;
-        overflow: visible;
-        max-width: 100%;
-        min-height: 180px;
+        flex-direction: column;
     }
 
-    .feature-detail-mockup .device-macbook-pro {
-        transform: scale(0.55) !important;
-        transform-origin: center center;
-        margin: -60px 0;
-    }
-
-    /* Mini-App im MacBook besser lesbar */
-    .feature-detail-mockup .mini-app {
-        font-size: 0.9em;
+    .feature-detail-content {
+        order: 1;
     }
 
     /* Mini-App Optimierungen für Mobile */
@@ -1951,39 +1947,29 @@ img[loading="lazy"] {
         font-size: 0.8rem;
     }
 
-    /* Floating Elements für 768px */
+    /* Floating Elements für 768px - als Badges */
     .floating-element {
-        padding: 0.4rem 0.6rem;
+        padding: 0.5rem 0.6rem;
         border-radius: 8px;
         gap: 0.4rem;
     }
 
-    .floating-element-1 {
-        top: -10px;
-        right: 8px;
-    }
-
-    .floating-element-2 {
-        bottom: 15px;
-        left: 8px;
-    }
-
     .floating-icon {
-        width: 24px;
-        height: 24px;
+        width: 28px;
+        height: 28px;
     }
 
     .floating-icon svg {
-        width: 12px;
-        height: 12px;
+        width: 14px;
+        height: 14px;
     }
 
     .floating-text {
-        font-size: 0.6rem;
+        font-size: 0.75rem;
     }
 
     .floating-subtext {
-        font-size: 0.5rem;
+        font-size: 0.6rem;
     }
 
     /* Feature Map - "Inklusive" */
@@ -2031,19 +2017,9 @@ img[loading="lazy"] {
         padding: 0.3rem 0.6rem;
     }
 
-    /* MacBook Mockup für Phones - optimierte Skalierung */
+    /* MacBook Mockup für Phones - versteckt */
     .feature-detail-mockup {
-        margin-top: 0.75rem;
-        min-height: 160px;
-    }
-
-    .feature-detail-mockup .device-macbook-pro {
-        transform: scale(0.5) !important;
-        margin: -70px 0;
-    }
-
-    .feature-detail-mockup .mini-app {
-        font-size: 0.85em;
+        display: none !important;
     }
 
     .showcase-feature h4 {
@@ -2357,40 +2333,34 @@ img[loading="lazy"] {
         font-size: 0.75rem;
     }
 
-    /* Floating Elements für 480px - noch kompakter */
+    /* Floating Elements für 480px - als kompakte Badges */
+    .showcase-card {
+        gap: 0.5rem;
+    }
+
     .floating-element {
-        padding: 0.35rem 0.5rem;
+        padding: 0.4rem 0.5rem;
         border-radius: 6px;
         gap: 0.35rem;
     }
 
-    .floating-element-1 {
-        top: -8px;
-        right: 5px;
-    }
-
-    .floating-element-2 {
-        bottom: 12px;
-        left: 5px;
-    }
-
     .floating-icon {
-        width: 20px;
-        height: 20px;
-        border-radius: 4px;
+        width: 24px;
+        height: 24px;
+        border-radius: 5px;
     }
 
     .floating-icon svg {
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 12px;
     }
 
     .floating-text {
-        font-size: 0.55rem;
+        font-size: 0.7rem;
     }
 
     .floating-subtext {
-        font-size: 0.45rem;
+        font-size: 0.55rem;
     }
 
     /* Feature Map - "Inklusive" auf kleinen Phones */
@@ -2456,19 +2426,9 @@ img[loading="lazy"] {
         padding: 0.25rem 0.5rem;
     }
 
-    /* MacBook Mockup für kleine Phones - kompakt aber lesbar */
+    /* MacBook Mockup für kleine Phones - versteckt */
     .feature-detail-mockup {
-        margin-top: 0.5rem;
-        min-height: 140px;
-    }
-
-    .feature-detail-mockup .device-macbook-pro {
-        transform: scale(0.45) !important;
-        margin: -80px 0;
-    }
-
-    .feature-detail-mockup .mini-app {
-        font-size: 0.8em;
+        display: none !important;
     }
 
     .section-header {
