@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsere Story | ORDABLE - Die Geschichte hinter der Vision</title>
+
+    <!-- Preconnect für schnellere Verbindungen -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Scripts mit defer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FDB913;--primary-dark:#E5A811;--dark:#1a1a1a;--text:#333;--white:#fff;--border:#e5e5e5;--bg-main:#fff}
+        body{font-family:'Inter',-apple-system,sans-serif;line-height:1.6;color:var(--text);background:var(--bg-main);overflow-x:hidden}
+        header{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;transition:all .4s ease}
+        header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:100px;width:auto;margin-left:-2.5rem;margin-top:-20px;margin-bottom:-20px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem}
+        .nav-menu li a{text-decoration:none;color:var(--text);font-weight:600}
+        .nav-cta{background:var(--primary);color:var(--dark);padding:.75rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:700}
+        @media(max-width:968px){.nav-menu{display:none}}
+    </style>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/story.css">
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated Particles Background -->
+    <div class="story-particles" id="storyParticles"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/ordablewhite.png" alt="Ordable">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="vorteile.html">Vorteile</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="story.html" class="active">Unsere Story</a></li>
+            </ul>
+            <a href="anmeldung.html" class="nav-cta">Jetzt starten</a>
+        </nav>
+    </header>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <!-- Intro - Cinematic Opening -->
+        <div class="story-intro">
+            <div class="story-intro-content">
+                <div class="story-year">2020</div>
+                <h2 class="story-headline">
+                    Als die Welt stillstand,<br>
+                    <span class="highlight-text">mussten wir handeln.</span>
+                </h2>
+                <p class="story-subheadline">
+                    Die Corona-Krise traf die Gastronomie mit voller Wucht.
+                    Restaurants schlossen, Existenzen zerbrachen.
+                    Auch eines aus unserem Team. Das war der Moment,
+                    in dem ORDABLE geboren wurde.
+                </p>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-mouse"></div>
+                <span>Scroll, um unsere Geschichte zu erfahren</span>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="story-timeline">
+            <div class="timeline-line"></div>
+
+            <!-- Chapter 1: Die Krise -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Kapitel 1</div>
+                    <h3 class="chapter-title">
+                        Die Krise, die <span class="accent">alles veränderte</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Während der Corona-Krise schlossen in Deutschland über 48.000
+                        Gastronomiebetriebe für immer ihre Türen. Einer davon gehörte
+                        zur Familie unseres Mitgründers. Ein Restaurant, das über
+                        20 Jahre bestand hatte. Zerstört in wenigen Monaten.
+                    </p>
+                    <p class="chapter-quote">
+                        „Wir haben gesehen, wie hart arbeitende Menschen alles verloren haben
+                        – nicht weil ihr Essen schlecht war, sondern weil sie den
+                        digitalen Wandel nicht rechtzeitig schaffen konnten."
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card crisis">
+                        <div class="visual-icon"><i data-lucide="heart-crack"></i></div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value danger">48.000+</span>
+                            <span class="visual-stat-label">Gastronomiebetriebe geschlossen (2020-2023)</span>
+                        </div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value danger">-47%</span>
+                            <span class="visual-stat-label">Umsatzeinbruch im Gastgewerbe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 2: Das Problem erkannt -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Kapitel 2</div>
+                    <h3 class="chapter-title">
+                        Wir verstehen <span class="accent">euren Alltag</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Wir kennen den Stress hinter der Theke. Die 14-Stunden-Tage.
+                        Die kaputten Füße. Die Rechnungen, die sich stapeln.
+                        Wann soll man da noch Zeit für „Digitalisierung" finden?
+                    </p>
+                    <p class="chapter-text">
+                        Und dann kommen die großen Plattformen und nehmen bis zu
+                        30% von jeder Bestellung. Am Ende des Monats bleibt kaum
+                        etwas übrig – und die Kunden? Die gehören nicht mal euch.
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card problem">
+                        <div class="visual-icon"><i data-lucide="alert-triangle"></i></div>
+                        <ul class="visual-list">
+                            <li><span class="icon"><i data-lucide="clock"></i></span> Keine Zeit für Technik</li>
+                            <li><span class="icon"><i data-lucide="trending-down"></i></span> Bis zu 30% Provision an Plattformen</li>
+                            <li><span class="icon"><i data-lucide="tag"></i></span> Fremdes Branding statt eigene Marke</li>
+                            <li><span class="icon"><i data-lucide="bar-chart-2"></i></span> Kundendaten gehören anderen</li>
+                            <li><span class="icon"><i data-lucide="lock"></i></span> Abhängig von Algorithmen</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 3: Das Dilemma -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Kapitel 3</div>
+                    <h3 class="chapter-title">
+                        Gute Lösungen, <span class="accent">aber zu welchem Preis?</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Ja, es gibt sie – die großen Plattformen. Lieferando, Wolt,
+                        Uber Eats. Sie haben die Digitalisierung vorangetrieben und
+                        bieten funktionierende Systeme. Das erkennen wir an.
+                    </p>
+                    <p class="chapter-text">
+                        Aber der Preis? <strong>13% bis 30% von jeder einzelnen Bestellung.</strong>
+                        Bei 10.000€ Monatsumsatz sind das bis zu 3.000€ – jeden Monat.
+                        Geld, das eigentlich euch gehört.
+                    </p>
+                    <p class="chapter-quote">
+                        „Viele Gastronomen sagen uns: Wir wissen, dass die Provisionen
+                        zu hoch sind. Aber was sollen wir tun? Wir sehen keine Alternative."
+                        – Genau das wollen wir ändern.
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card dilemma">
+                        <div class="visual-icon"><i data-lucide="scale"></i></div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value warning">13-30%</span>
+                            <span class="visual-stat-label">Provision pro Bestellung</span>
+                        </div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value warning">3.000€</span>
+                            <span class="visual-stat-label">Verlust bei 10.000€ Umsatz/Monat</span>
+                        </div>
+                        <ul class="visual-list" style="margin-top: 1rem;">
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Gute Technologie vorhanden</li>
+                            <li><span class="icon x"><i data-lucide="x"></i></span> Provisionen viel zu hoch</li>
+                            <li><span class="icon x"><i data-lucide="x"></i></span> Keine echte Alternative – bis jetzt</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 4: Die Vision -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Kapitel 4</div>
+                    <h3 class="chapter-title">
+                        Eine Vision <span class="accent">wurde geboren</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Wir fragten uns: Was wäre, wenn jedes Restaurant seine
+                        eigene App haben könnte? Seine eigene Website?
+                        Ein eigenes Bestellterminal? Alles unter einer Marke –
+                        der eigenen.
+                    </p>
+                    <p class="chapter-text">
+                        Nicht als Luxus für große Ketten, sondern als bezahlbare
+                        Lösung für jeden Döner-Laden, jede Pizzeria, jedes
+                        Familienrestaurant. So entstand ORDABLE.
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card vision">
+                        <div class="visual-icon"><i data-lucide="lightbulb"></i></div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value primary">100%</span>
+                            <span class="visual-stat-label">Deine Marke, dein Branding</span>
+                        </div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value primary">0%</span>
+                            <span class="visual-stat-label">Provision – für immer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 5: Das Versprechen -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Kapitel 5</div>
+                    <h3 class="chapter-title">
+                        Unser Versprechen <span class="accent">an euch</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Wir möchten, dass es egal ist, ob wir 10 oder 10.000
+                        Partner haben – der Preis bleibt fair und fest.
+                        Keine versteckten Gebühren. Keine Provisionen, die
+                        mit eurem Erfolg wachsen.
+                    </p>
+                    <p class="chapter-quote">
+                        „Euer Erfolg sollte nicht bedeuten, dass ihr mehr an
+                        Plattformen zahlt. Euer Erfolg sollte euer Erfolg bleiben."
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card future">
+                        <div class="visual-icon"><i data-lucide="handshake"></i></div>
+                        <ul class="visual-list">
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Fester Preis, egal wie viel Umsatz</li>
+                            <li><span class="icon check"><i data-lucide="check"></i></span> 10 oder 10.000 Partner – gleicher Preis</li>
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Keine versteckten Gebühren</li>
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Deine Kunden gehören dir</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission Statement -->
+        <div class="story-mission">
+            <div class="mission-container">
+                <div class="mission-label">Unsere Mission</div>
+                <h2 class="mission-title">
+                    Wir wollen die Gastronomie<br>
+                    <span class="gradient">demokratisieren.</span>
+                </h2>
+                <p class="mission-text">
+                    Jedes Restaurant verdient die Chance, digital erfolgreich zu sein –
+                    unabhängig von Größe, Budget oder technischem Know-how.
+                    Mit eigener Marke, eigenen Kunden und fairem Preis.
+                </p>
+
+                <!-- Promise Cards -->
+                <div class="promise-grid">
+                    <div class="promise-card">
+                        <div class="promise-icon"><i data-lucide="target"></i></div>
+                        <h4 class="promise-title">Deine Marke</h4>
+                        <p class="promise-text">
+                            App und Website unter deinem Namen.
+                            Kein Lieferando, kein Wolt – nur du.
+                        </p>
+                    </div>
+                    <div class="promise-card">
+                        <div class="promise-icon"><i data-lucide="piggy-bank"></i></div>
+                        <h4 class="promise-title">Faire Preise</h4>
+                        <p class="promise-text">
+                            Ein fester Monatspreis. Keine Provision.
+                            Je mehr du verdienst, desto mehr bleibt.
+                        </p>
+                    </div>
+                    <div class="promise-card">
+                        <div class="promise-icon"><i data-lucide="rocket"></i></div>
+                        <h4 class="promise-title">Einfach starten</h4>
+                        <p class="promise-text">
+                            Wir kümmern uns um die Technik.
+                            Du konzentrierst dich auf das, was du liebst.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="story-cta">
+                    <a href="index.html#kontakt" class="story-btn-primary">
+                        Werde Teil der Bewegung
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <a href="pricing.html" class="story-btn-secondary">
+                        Preise ansehen
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ORDABLE – Dein digitales Restaurant-System · <a href="index.html">Zurück zur Startseite</a></p>
+    </footer>
+
+    <script src="js/story.js" defer></script>
+</body>
+</html>

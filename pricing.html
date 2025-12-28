@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | ORDABLE - Transparente Preise ohne Überraschungen</title>
+
+    <!-- Preconnect für schnellere Verbindungen -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Scripts mit defer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FDB913;--primary-dark:#E5A811;--dark:#1a1a1a;--text:#333;--white:#fff;--border:#e5e5e5;--bg-main:#fff}
+        body{font-family:'Inter',-apple-system,sans-serif;line-height:1.6;color:var(--text);background:var(--bg-main);overflow-x:hidden}
+        header{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;transition:all .4s ease}
+        header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:100px;width:auto;margin-left:-2.5rem;margin-top:-20px;margin-bottom:-20px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem}
+        .nav-menu li a{text-decoration:none;color:var(--text);font-weight:600}
+        .nav-cta{background:var(--primary);color:var(--dark);padding:.75rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:700}
+        @media(max-width:968px){.nav-menu{display:none}}
+    </style>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/pricing.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/header.png" alt="Ordable">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="vorteile.html">Vorteile</a></li>
+                <li><a href="pricing.html" class="active">Pricing</a></li>
+                <li><a href="story.html">Unsere Story</a></li>
+            </ul>
+            <a href="anmeldung.html" class="nav-cta">Jetzt starten</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                0% Provision – Faire Festpreise
+            </div>
+            <h1>
+                Transparente Preise,<br>
+                <span class="gradient-text">keine Überraschungen</span>
+            </h1>
+            <p>
+                Ein fester Preis, keine Provisionen. Punkt.
+                Du weißt immer genau, was du zahlst.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- ORDABLE Paket -->
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <div class="pricing-name">ORDABLE</div>
+                        <div class="pricing-desc">Website & App für dein Restaurant</div>
+                    </div>
+                    <div class="pricing-price">
+                        <div class="price-row">
+                            <span class="price-new">149€</span>
+                            <span class="price-period">/Monat</span>
+                        </div>
+                        <div class="price-setup">
+                            Einmalig: 199€
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="icon">✓</span> Eigene Website mit Bestellsystem</li>
+                        <li><span class="icon">✓</span> Eigene App (iOS & Android)</li>
+                        <li><span class="icon">✓</span> Dashboard für Menü & Preise</li>
+                        <li><span class="icon">✓</span> KI-generierte Produktbilder</li>
+                        <li><span class="icon">✓</span> Tischreservierungen</li>
+                        <li><span class="icon">✓</span> Reporting & Statistiken</li>
+                        <li><span class="icon">✓</span> E-Mail Support</li>
+                        <li><span class="icon">✓</span> <strong>0% Provision</strong> auf Bestellungen</li>
+                    </ul>
+                    <a href="index.html#kontakt" class="pricing-cta secondary">Jetzt anfragen</a>
+                </div>
+
+                <!-- ORDABLE PLUS Paket -->
+                <div class="pricing-card featured">
+                    <div class="pricing-badge">Empfohlen</div>
+                    <div class="pricing-header">
+                        <div class="pricing-name">ORDABLE PLUS</div>
+                        <div class="pricing-desc">Komplettlösung mit Bestellterminal</div>
+                    </div>
+                    <div class="pricing-price">
+                        <div class="price-row">
+                            <span class="price-new">199€</span>
+                            <span class="price-period">/Monat</span>
+                        </div>
+                        <div class="price-setup">
+                            Einmalig: 499€
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="icon">✓</span> <strong>Alles aus ORDABLE</strong></li>
+                        <li><span class="icon">✓</span> POS-Terminal mit Bondrucker</li>
+                        <li><span class="icon">✓</span> TSE-konform & finanzamtsicher</li>
+                        <li><span class="icon">✓</span> Alle Bestellungen auf einem Gerät</li>
+                        <li><span class="icon">✓</span> Sofort-Benachrichtigung</li>
+                        <li><span class="icon">✓</span> Vor-Ort Installation & Schulung</li>
+                        <li><span class="icon">✓</span> Prioritäts-Support</li>
+                        <li><span class="icon">✓</span> <strong>0% Provision</strong> auf Bestellungen</li>
+                    </ul>
+                    <a href="index.html#kontakt" class="pricing-cta primary">Jetzt anfragen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">FAQ</div>
+                <h2>Häufige Fragen zu <span class="highlight">Preisen</span></h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        Warum ist ORDABLE günstiger als andere Anbieter?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Wir verzichten auf Provisionen und setzen auf faire Festpreise. So behältst du 100% deines Umsatzes und kannst langfristig planen.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        Fallen wirklich keine Provisionen an?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Richtig. 0% Provision auf jede Bestellung – für immer. Du zahlst nur den festen monatlichen Preis, egal ob du 100 oder 10.000 Bestellungen hast. Das unterscheidet uns von allen Lieferplattformen.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        Was ist in den Einmalkosten enthalten?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Die Einmalkosten decken Setup, individuelle Anpassung deiner Website und App, Upload in die App Stores, Einrichtung des Dashboards und bei ORDABLE PLUS zusätzlich die Hardware und Vor-Ort-Installation.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        Kann ich später upgraden?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Ja, du kannst jederzeit von ORDABLE auf ORDABLE PLUS upgraden. Du zahlst dann nur die Differenz der Einmalkosten und den neuen monatlichen Preis.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        Welche Zahlungsmethoden werden unterstützt?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Deine Kunden können mit allen gängigen Methoden zahlen: Kreditkarte, PayPal, Apple Pay, Google Pay, Barzahlung bei Lieferung/Abholung. Die Zahlungsabwicklung läuft über zertifizierte Partner.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        Wie lange dauert die Einrichtung?
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Website und App sind in der Regel nach 1-2 Wochen live. Das Bestellterminal wird dir zugeschickt und ist sofort einsatzbereit.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content reveal">
+            <h2>Bereit für dein eigenes Bestellsystem?</h2>
+            <p>Keine Provisionen, faire Festpreise. Starte jetzt mit ORDABLE und behalte 100% deines Umsatzes.</p>
+            <a href="index.html#kontakt" class="btn-dark">Jetzt anfragen</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ORDABLE – Dein digitales Restaurant-System · <a href="index.html">Zurück zur Startseite</a></p>
+    </footer>
+
+    <script src="js/pricing.js" defer></script>
+</body>
+</html>

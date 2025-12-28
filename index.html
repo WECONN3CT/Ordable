@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDABLE | Dein digitales Restaurant-System - Website, App & Bestellterminal</title>
+
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ORDABLE - Das All-in-One System für Restaurants. Website, Bestell-App und Kassensystem. 0% Provision, Made in Germany.">
+    <meta name="keywords" content="Restaurant System, Bestellsystem, Restaurant App, Restaurant Website, Kassensystem, Lieferservice">
+    <meta name="author" content="ORDABLE">
+    <link rel="canonical" href="https://ordable.io">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="ORDABLE - Dein digitales Restaurant-System">
+    <meta property="og:description" content="Website, App und Kassensystem für dein Restaurant. 0% Provision.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ordable.io">
+
+    <!-- Preconnect for faster external connections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://unpkg.com">
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="images/heroordable.webp" as="image" type="image/webp">
+    <link rel="preload" href="css/styles.css" as="style">
+
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FDB913;--primary-dark:#E5A811;--primary-light:#FFF8E7;--dark:#1a1a1a;--text:#333;--text-light:#666;--white:#fff;--border:#e5e5e5;--bg-main:#fff;--gradient-2:#F97316}
+        html.lenis,html.lenis body{height:auto}
+        body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.6;color:var(--text);background:var(--bg-main);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+        header{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;transition:all .4s cubic-bezier(.4,0,.2,1)}
+        header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);padding:.75rem 0;border-bottom:1px solid var(--border);box-shadow:0 2px 20px rgba(0,0,0,.08)}
+        nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:100px;width:auto;margin-left:-2.5rem;margin-top:-20px;margin-bottom:-20px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem}
+        .nav-menu li a{text-decoration:none;color:var(--text);font-weight:600;font-size:.95rem}
+        .nav-cta{background:var(--primary);color:var(--dark);padding:.75rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:700;font-size:.9rem}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:120px 2rem 80px;position:relative}
+        .hero-container{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;align-items:center}
+        .hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:900;line-height:1.1;color:var(--dark);margin-bottom:1.5rem}
+        .gradient-text{background:linear-gradient(135deg,var(--primary) 0%,var(--gradient-2) 50%,var(--primary) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--primary) 0%,var(--gradient-2) 100%);z-index:10001;transform-origin:left;transform:scaleX(0)}
+        @media(max-width:968px){.hero-container{grid-template-columns:1fr}.nav-menu{display:none}}
+    </style>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Fonts with display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons - defer -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <!-- GSAP - defer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+
+    <!-- Atropos.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/atropos@2/atropos.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/atropos@2/atropos.min.js" defer></script>
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated Background -->
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/header.png" alt="Ordable" width="100" height="100">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leistungen.html">Features</a></li>
+                <li><a href="vorteile.html">Vorteile</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="story.html">Unsere Story</a></li>
+            </ul>
+            <a href="anmeldung.html" class="nav-cta">Jetzt starten</a>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="pulse"></span>
+                    0% Provision - Jetzt starten
+                </div>
+                <h1>
+                    Dein Restaurant.<br>
+                    <span class="gradient-text">Deine Plattform.</span><br>
+                    Dein Gewinn.
+                </h1>
+                <p class="hero-subtitle">
+                    Website, Bestell-App und Kassensystem perfekt vereint.<br>
+                    Steigere deinen Umsatz, spare Zeit und begeistere deine Gaste<br>
+                    alles mit Ordable.
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#pakete" class="btn-gradient">
+                        <span class="btn-shimmer"></span>
+                        Pakete ansehen
+                        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+                    </a>
+                    <a href="#kontakt" class="btn-gradient-outline">
+                        Beratung anfragen
+                    </a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <picture>
+                    <source srcset="images/heroordable.webp" type="image/webp">
+                    <img src="images/heroordable.png" alt="ORDABLE App und Dashboard" class="hero-image" loading="eager" decoding="async" width="800" height="600">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Badges Marquee -->
+    <div class="payment-marquee">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    DSGVO-konform
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    SSL-verschlusselt
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    24/7 Support
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    0% Provision
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    Made in Germany
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Deutscher Support
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Sicher & Zuverlassig
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Keine versteckten Kosten
+                </div>
+            </div>
+            <div class="marquee-content">
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    DSGVO-konform
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    SSL-verschlusselt
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    24/7 Support
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    0% Provision
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                    Made in Germany
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    Deutscher Support
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Sicher & Zuverlassig
+                </div>
+                <div class="payment-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    Keine versteckten Kosten
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enterprise Hero Section -->
+    <section class="enterprise-hero">
+        <div class="enterprise-container">
+            <div class="enterprise-content">
+                <h2 class="enterprise-title">
+                    Die <span class="ent-highlight">All-in-One</span> Losung fur deine Gastronomie
+                </h2>
+                <p class="enterprise-subtitle">
+                    Website, Bestell-App und Kassensystem perfekt vereint. Steigere deinen Umsatz, spare Zeit und begeistere deine Gaste - alles mit ordable.
+                </p>
+                <div class="enterprise-stats">
+                    <div class="enterprise-stat">
+                        <div class="enterprise-stat-value">500+</div>
+                        <div class="enterprise-stat-label">Zufriedene Kunden</div>
+                    </div>
+                    <div class="enterprise-stat">
+                        <div class="enterprise-stat-value">0%</div>
+                        <div class="enterprise-stat-label">Provision</div>
+                    </div>
+                    <div class="enterprise-stat">
+                        <div class="enterprise-stat-value">24/7</div>
+                        <div class="enterprise-stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+            <div class="enterprise-visual">
+                <div class="enterprise-mockup">
+                    <div class="enterprise-device">
+                        <div class="enterprise-device-header">
+                            <span class="enterprise-device-dot"></span>
+                            <span class="enterprise-device-dot"></span>
+                            <span class="enterprise-device-dot"></span>
+                        </div>
+                        <div class="enterprise-device-content">
+                            <div class="enterprise-dashboard">
+                                <div class="ent-dashboard-card">
+                                    <div class="ent-dashboard-card-header">
+                                        <span class="ent-dashboard-card-title">Bestellungen</span>
+                                        <div class="ent-dashboard-card-icon orange">
+                                            <i data-lucide="shopping-bag" style="width: 18px; height: 18px;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ent-dashboard-card-value">2.847</div>
+                                    <div class="ent-dashboard-card-change">
+                                        <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+                                        +23% diese Woche
+                                    </div>
+                                </div>
+                                <div class="ent-dashboard-card">
+                                    <div class="ent-dashboard-card-header">
+                                        <span class="ent-dashboard-card-title">Umsatz</span>
+                                        <div class="ent-dashboard-card-icon green">
+                                            <i data-lucide="euro" style="width: 18px; height: 18px;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ent-dashboard-card-value">48.3K</div>
+                                    <div class="ent-dashboard-card-change">
+                                        <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+                                        +18% zum Vormonat
+                                    </div>
+                                </div>
+                                <div class="ent-dashboard-card">
+                                    <div class="ent-dashboard-card-header">
+                                        <span class="ent-dashboard-card-title">Neukunden</span>
+                                        <div class="ent-dashboard-card-icon yellow">
+                                            <i data-lucide="users" style="width: 18px; height: 18px;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ent-dashboard-card-value">384</div>
+                                    <div class="ent-dashboard-card-change">
+                                        <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+                                        +31% diesen Monat
+                                    </div>
+                                </div>
+                                <div class="ent-dashboard-card">
+                                    <div class="ent-dashboard-card-header">
+                                        <span class="ent-dashboard-card-title">Bewertung</span>
+                                        <div class="ent-dashboard-card-icon blue">
+                                            <i data-lucide="star" style="width: 18px; height: 18px;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="ent-dashboard-card-value">4.9</div>
+                                    <div class="ent-dashboard-card-change">
+                                        <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+                                        Aus 1.2K Reviews
+                                    </div>
+                                </div>
+                                <div class="ent-dashboard-chart">
+                                    <span class="ent-dashboard-card-title">Bestellungen heute</span>
+                                    <div class="ent-chart-bars">
+                                        <div class="ent-chart-bar" style="height: 40%;"></div>
+                                        <div class="ent-chart-bar" style="height: 65%;"></div>
+                                        <div class="ent-chart-bar" style="height: 45%;"></div>
+                                        <div class="ent-chart-bar" style="height: 80%;"></div>
+                                        <div class="ent-chart-bar" style="height: 55%;"></div>
+                                        <div class="ent-chart-bar" style="height: 90%;"></div>
+                                        <div class="ent-chart-bar" style="height: 70%;"></div>
+                                        <div class="ent-chart-bar" style="height: 95%;"></div>
+                                        <div class="ent-chart-bar" style="height: 85%;"></div>
+                                        <div class="ent-chart-bar" style="height: 60%;"></div>
+                                        <div class="ent-chart-bar" style="height: 75%;"></div>
+                                        <div class="ent-chart-bar" style="height: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ent-floating-card ent-floating-card-1">
+                        <div class="ent-floating-card-icon success">
+                            <i data-lucide="check" style="width: 20px; height: 20px;"></i>
+                        </div>
+                        <div class="ent-floating-card-text">
+                            <div class="ent-floating-card-title">Zahlung erhalten</div>
+                            <div class="ent-floating-card-subtitle">34,50 via PayPal</div>
+                        </div>
+                    </div>
+                    <div class="ent-floating-card ent-floating-card-2">
+                        <div class="ent-floating-card-icon order">
+                            <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                        </div>
+                        <div class="ent-floating-card-text">
+                            <div class="ent-floating-card-title">Neue Bestellung!</div>
+                            <div class="ent-floating-card-subtitle">2x Pizza Margherita</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase Section -->
+    <section class="showcase-section" id="produkte">
+        <div class="showcase-container">
+
+            <!-- Showcase 1: Eigene Webseite -->
+            <div class="showcase-grid">
+                <div class="showcase-content">
+                    <span class="showcase-number">01</span>
+                    <h2 class="showcase-title">Deine eigene <span class="highlight">Webseite</span> - Professionell & SEO-optimiert</h2>
+                    <p class="showcase-text">
+                        Eine moderne, blitzschnelle Website, die bei Google ganz oben erscheint. Mit integriertem Bestellsystem, das deine Kunden direkt auf deine Seite bringt - nicht zu teuren Portalen.
+                    </p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">SEO-optimiert fur lokale Suche</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Responsive Design fur alle Gerate</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Integriertes Online-Bestellsystem</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Eigene Domain & SSL-Zertifikat</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-visual reveal-right">
+                    <div class="atropos showcase-atropos" data-atropos>
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <div class="showcase-image">
+                                        <div class="browser-mockup" data-atropos-offset="5">
+                                            <div class="browser-header">
+                                                <div class="browser-dots">
+                                                    <span style="background: #FF5F57;"></span>
+                                                    <span style="background: #FEBC2E;"></span>
+                                                    <span style="background: #28C840;"></span>
+                                                </div>
+                                                <div class="browser-url">
+                                                    <i data-lucide="lock" style="width: 12px; height: 12px; color: #28C840;"></i>
+                                                    <span>dein-restaurant.de</span>
+                                                </div>
+                                            </div>
+                                            <div class="browser-content">
+                                                <div class="website-hero">
+                                                    <div class="website-nav">
+                                                        <div class="website-logo-small">Pizzeria Bella</div>
+                                                        <div class="website-nav-items">
+                                                            <span>Speisekarte</span>
+                                                            <span>Uber uns</span>
+                                                            <span class="website-order-btn">Bestellen</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="website-hero-content">
+                                                        <div class="website-hero-text">Authentische italienische Kuche</div>
+                                                        <div class="website-hero-sub">Frisch - Lecker - Direkt zu dir</div>
+                                                    </div>
+                                                </div>
+                                                <div class="website-menu-preview">
+                                                    <div class="website-menu-item">
+                                                        <div class="menu-item-img">&#127829;</div>
+                                                        <div class="menu-item-name">Pizza Margherita</div>
+                                                        <div class="menu-item-price">9,90</div>
+                                                    </div>
+                                                    <div class="website-menu-item">
+                                                        <div class="menu-item-img">&#127837;</div>
+                                                        <div class="menu-item-name">Pasta Carbonara</div>
+                                                        <div class="menu-item-price">12,50</div>
+                                                    </div>
+                                                    <div class="website-menu-item">
+                                                        <div class="menu-item-img">&#129367;</div>
+                                                        <div class="menu-item-name">Caesar Salad</div>
+                                                        <div class="menu-item-price">8,90</div>
+                                                    </div>
+                                                    <div class="website-menu-item">
+                                                        <div class="menu-item-img">&#127828;</div>
+                                                        <div class="menu-item-name">Classic Burger</div>
+                                                        <div class="menu-item-price">11,90</div>
+                                                    </div>
+                                                    <div class="website-menu-item">
+                                                        <div class="menu-item-img">&#127856;</div>
+                                                        <div class="menu-item-name">Tiramisu</div>
+                                                        <div class="menu-item-price">6,50</div>
+                                                    </div>
+                                                    <div class="website-menu-item">
+                                                        <div class="menu-item-img">&#129380;</div>
+                                                        <div class="menu-item-name">Getranke</div>
+                                                        <div class="menu-item-price">ab 2,50</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Showcase 2: Eigene App -->
+            <div class="showcase-grid reverse" style="margin-top: 8rem;">
+                <div class="showcase-content">
+                    <span class="showcase-number">02</span>
+                    <h2 class="showcase-title">Deine eigene <span class="highlight">App</span> - Immer auf dem Handy deiner Kunden</h2>
+                    <p class="showcase-text">
+                        Mit deiner gebrandeten App bist du immer prasent. Push-Benachrichtigungen erinnern deine Kunden an Angebote und neue Gerichte. 0% Provision, 100% deine Kunden.
+                    </p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Verfugbar fur iOS und Android</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Push-Benachrichtigungen fur Marketing</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Komplett in deinem Branding</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Treueprogramm & Rabattcodes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-visual reveal-left">
+                    <div class="atropos showcase-atropos" data-atropos>
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <div class="showcase-image">
+                                        <div class="phone-mockup" data-atropos-offset="8" style="transform: rotate(-5deg) translateY(10px);">
+                                            <div class="phone-screen">
+                                                <div class="phone-header-bar">
+                                                    <div class="phone-logo">ordable</div>
+                                                    <div class="phone-cart">
+                                                        <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
+                                                        <span class="cart-badge">2</span>
+                                                    </div>
+                                                </div>
+                                                <div class="phone-content-new">
+                                                    <div class="phone-category">Beliebt</div>
+                                                    <div class="phone-dish">
+                                                        <div class="phone-dish-img">&#127829;</div>
+                                                        <div class="phone-dish-info">
+                                                            <div class="phone-dish-name">Pizza Margherita</div>
+                                                            <div class="phone-dish-desc">Tomaten, Mozzarella, Basilikum</div>
+                                                            <div class="phone-dish-price">9,90</div>
+                                                        </div>
+                                                        <div class="phone-dish-add">+</div>
+                                                    </div>
+                                                    <div class="phone-dish">
+                                                        <div class="phone-dish-img">&#127837;</div>
+                                                        <div class="phone-dish-info">
+                                                            <div class="phone-dish-name">Pasta Carbonara</div>
+                                                            <div class="phone-dish-desc">Speck, Ei, Parmesan</div>
+                                                            <div class="phone-dish-price">12,50</div>
+                                                        </div>
+                                                        <div class="phone-dish-add">+</div>
+                                                    </div>
+                                                    <div class="phone-dish">
+                                                        <div class="phone-dish-img">&#129367;</div>
+                                                        <div class="phone-dish-info">
+                                                            <div class="phone-dish-name">Caesar Salad</div>
+                                                            <div class="phone-dish-desc">Romersalat, Croutons</div>
+                                                            <div class="phone-dish-price">8,90</div>
+                                                        </div>
+                                                        <div class="phone-dish-add">+</div>
+                                                    </div>
+                                                </div>
+                                                <div class="phone-footer">
+                                                    <div class="phone-order-btn">
+                                                        <span>Bestellen</span>
+                                                        <span class="order-total">31,30</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="phone-mockup" data-atropos-offset="4" style="transform: rotate(5deg) translateY(-10px);">
+                                            <div class="phone-screen" style="background: #f8f9fa;">
+                                                <div class="phone-header-bar" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                                    <div class="phone-logo" style="color: #fff;">
+                                                        <i data-lucide="check-circle" style="width: 14px; height: 14px; margin-right: 4px;"></i>
+                                                        Bestatigt
+                                                    </div>
+                                                    <div style="font-size: 0.55rem; color: rgba(255,255,255,0.8);">#4721</div>
+                                                </div>
+                                                <div class="phone-content-new" style="padding: 0.6rem;">
+                                                    <div style="background: white; border-radius: 8px; padding: 0.5rem; margin-bottom: 0.5rem;">
+                                                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                                                            <span style="font-size: 0.55rem; font-weight: 600; color: #1a1a1a;">Lieferstatus</span>
+                                                            <span style="font-size: 0.5rem; color: #10b981; font-weight: 600;">In Zubereitung</span>
+                                                        </div>
+                                                        <div style="display: flex; gap: 3px; margin-bottom: 0.3rem;">
+                                                            <div style="flex: 1; height: 3px; background: #10b981; border-radius: 2px;"></div>
+                                                            <div style="flex: 1; height: 3px; background: #10b981; border-radius: 2px;"></div>
+                                                            <div style="flex: 1; height: 3px; background: #e5e5e5; border-radius: 2px;"></div>
+                                                            <div style="flex: 1; height: 3px; background: #e5e5e5; border-radius: 2px;"></div>
+                                                        </div>
+                                                        <div style="font-size: 0.5rem; color: #666;">Ankunft ca. 18:45 Uhr</div>
+                                                    </div>
+                                                    <div style="background: white; border-radius: 8px; padding: 0.5rem; margin-bottom: 0.5rem;">
+                                                        <div style="font-size: 0.55rem; font-weight: 600; color: #1a1a1a; margin-bottom: 0.4rem;">Deine Bestellung</div>
+                                                        <div style="display: flex; justify-content: space-between; padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0;">
+                                                            <span style="font-size: 0.5rem; color: #666;">1x Pizza Margherita</span>
+                                                            <span style="font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">9,90</span>
+                                                        </div>
+                                                        <div style="display: flex; justify-content: space-between; padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0;">
+                                                            <span style="font-size: 0.5rem; color: #666;">1x Pasta Carbonara</span>
+                                                            <span style="font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">12,50</span>
+                                                        </div>
+                                                        <div style="display: flex; justify-content: space-between; padding: 0.25rem 0;">
+                                                            <span style="font-size: 0.5rem; color: #666;">1x Caesar Salad</span>
+                                                            <span style="font-size: 0.5rem; font-weight: 600; color: #1a1a1a;">8,90</span>
+                                                        </div>
+                                                        <div style="display: flex; justify-content: space-between; padding-top: 0.35rem; margin-top: 0.25rem; border-top: 1px solid #e5e5e5;">
+                                                            <span style="font-size: 0.55rem; font-weight: 700; color: #1a1a1a;">Gesamt</span>
+                                                            <span style="font-size: 0.55rem; font-weight: 700; color: #10b981;">31,30</span>
+                                                        </div>
+                                                    </div>
+                                                    <div style="background: white; border-radius: 8px; padding: 0.5rem;">
+                                                        <div style="display: flex; align-items: center; gap: 0.3rem;">
+                                                            <i data-lucide="map-pin" style="width: 12px; height: 12px; color: #f97316;"></i>
+                                                            <span style="font-size: 0.5rem; color: #666;">Musterstrasse 12, 10115 Berlin</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Showcase 3: Bestellterminal -->
+            <div class="showcase-grid" style="margin-top: 8rem;">
+                <div class="showcase-content">
+                    <span class="showcase-number">03</span>
+                    <h2 class="showcase-title"><span class="highlight">Bestellterminal</span> - Schnell, einfach, fehlerfrei</h2>
+                    <p class="showcase-text">
+                        Unser intuitives Bestellterminal macht die Annahme von Bestellungen zum Kinderspiel. Automatischer Bondruck, Echtzeit-Synchronisation und minimale Einarbeitungszeit.
+                    </p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Automatischer Bondruck</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Echtzeit-Synchronisation mit App & Web</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Intuitiv ohne Schulung nutzbar</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="check"></i></div>
+                            <span class="showcase-feature-text">Akustische Benachrichtigung bei Bestellung</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-visual reveal-right">
+                    <div class="atropos showcase-atropos" data-atropos>
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <div class="showcase-image">
+                                        <div class="terminal-mockup" data-atropos-offset="5">
+                                            <div class="terminal-frame">
+                                                <div class="terminal-screen">
+                                                    <div class="terminal-header">
+                                                        <div class="terminal-title">
+                                                            <span class="terminal-logo">ordable</span>
+                                                            <span class="terminal-status">Online</span>
+                                                        </div>
+                                                        <div class="terminal-time">14:32</div>
+                                                    </div>
+                                                    <div class="terminal-orders">
+                                                        <div class="terminal-order new">
+                                                            <div class="terminal-order-badge">NEU</div>
+                                                            <div class="terminal-order-info">
+                                                                <div class="terminal-order-id">#4722</div>
+                                                                <div class="terminal-order-items">2x Pizza, 1x Cola</div>
+                                                            </div>
+                                                            <div class="terminal-order-price">24,80</div>
+                                                        </div>
+                                                        <div class="terminal-order preparing">
+                                                            <div class="terminal-order-badge prep">IN ARBEIT</div>
+                                                            <div class="terminal-order-info">
+                                                                <div class="terminal-order-id">#4721</div>
+                                                                <div class="terminal-order-items">1x Pasta, 1x Salat</div>
+                                                            </div>
+                                                            <div class="terminal-order-price">18,40</div>
+                                                        </div>
+                                                        <div class="terminal-order done">
+                                                            <div class="terminal-order-badge finished">FERTIG</div>
+                                                            <div class="terminal-order-info">
+                                                                <div class="terminal-order-id">#4720</div>
+                                                                <div class="terminal-order-items">3x Burger, 2x Pommes</div>
+                                                            </div>
+                                                            <div class="terminal-order-price">35,70</div>
+                                                        </div>
+                                                        <div class="terminal-order done">
+                                                            <div class="terminal-order-badge finished">FERTIG</div>
+                                                            <div class="terminal-order-info">
+                                                                <div class="terminal-order-id">#4719</div>
+                                                                <div class="terminal-order-items">1x Doner, 2x Ayran</div>
+                                                            </div>
+                                                            <div class="terminal-order-price">14,50</div>
+                                                        </div>
+                                                        <div class="terminal-order done">
+                                                            <div class="terminal-order-badge finished">FERTIG</div>
+                                                            <div class="terminal-order-info">
+                                                                <div class="terminal-order-id">#4718</div>
+                                                                <div class="terminal-order-items">2x Sushi Set, 1x Miso</div>
+                                                            </div>
+                                                            <div class="terminal-order-price">42,90</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="terminal-stand"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section" id="vorteile">
+        <div class="problem-container">
+            <div class="section-header">
+                <div class="section-label reveal">Das Problem</div>
+                <h2 class="reveal">Kennst du <span class="highlight">das?</span></h2>
+                <p class="reveal">Lieferplattformen versprechen Reichweite - aber zu welchem Preis?</p>
+            </div>
+            <div class="bento-grid">
+                <div class="bento-card bento-hero reveal">
+                    <div class="bento-hero-number">30%</div>
+                    <div>
+                        <div class="bento-hero-label">Von jeder Bestellung weg.</div>
+                        <div class="bento-hero-desc">Bei 10.000 Umsatz verlierst du bis zu 3.000 monatlich an Lieferplattformen. Das sind 36.000 pro Jahr.</div>
+                    </div>
+                    <div class="bento-hero-visual"></div>
+                </div>
+
+                <div class="bento-card bento-stat reveal">
+                    <div class="bento-stat-icon"><i data-lucide="eye-off"></i></div>
+                    <h3>Deine Marke? Unsichtbar.</h3>
+                    <p>Zwischen hunderten Restaurants geht dein Name unter. Die Plattform ist die Marke - nicht du.</p>
+                </div>
+
+                <div class="bento-card bento-stat reveal">
+                    <div class="bento-stat-icon"><i data-lucide="user-x"></i></div>
+                    <h3>Keine Kundendaten</h3>
+                    <p>Du weisst nicht wer bestellt. Kein Direktkontakt, keine Stammkunden, keine Bindung.</p>
+                </div>
+
+                <div class="bento-card bento-quote reveal">
+                    <div class="bento-quote-text">"Wir arbeiten fur die Plattform, nicht fur uns."</div>
+                </div>
+
+                <div class="bento-card bento-visual reveal">
+                    <div class="bento-comparison">
+                        <div class="bento-comparison-item">
+                            <div class="bento-comparison-value highlight">10.000</div>
+                            <div class="bento-comparison-label">Dein Umsatz</div>
+                        </div>
+                        <div class="bento-comparison-arrow">-></div>
+                        <div class="bento-comparison-item">
+                            <div class="bento-comparison-value negative">-3.000</div>
+                            <div class="bento-comparison-label">Provision</div>
+                        </div>
+                        <div class="bento-comparison-arrow">-></div>
+                        <div class="bento-comparison-item">
+                            <div class="bento-comparison-value positive">7.000</div>
+                            <div class="bento-comparison-label">Bleibt dir</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution-section" id="leistungen">
+        <div class="solution-container">
+            <div class="section-header">
+                <div class="section-label reveal">Die Losung</div>
+                <h2 class="reveal">Alles was du brauchst, <span class="highlight">in einem System</span></h2>
+                <p class="reveal">Website, App und Bestellterminal - vollstandig unter deiner Marke, ohne Provisionen.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i data-lucide="globe"></i></div>
+                    <h3>Eigene Website</h3>
+                    <p>Professionelle Restaurant-Website mit integriertem Bestellsystem fur Lieferung und Abholung.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i data-lucide="smartphone"></i></div>
+                    <h3>Eigene App</h3>
+                    <p>Deine Restaurant-App im App Store und Google Play. Mit deinem Logo, deinem Namen.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i data-lucide="layout-dashboard"></i></div>
+                    <h3>Dashboard</h3>
+                    <p>Menu, Preise und Bilder in Sekunden andern. Alles zentral verwalten.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i data-lucide="sparkles"></i></div>
+                    <h3>KI-Produktbilder</h3>
+                    <p>Professionelle Produktfotos automatisch generiert. Spare Zeit und Geld.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i data-lucide="bar-chart-3"></i></div>
+                    <h3>Reporting</h3>
+                    <p>Umsatze, Bestellungen und Trends auf einen Blick. Datenbasierte Entscheidungen.</p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon"><i data-lucide="utensils-crossed"></i></div>
+                    <h3>Tischreservierung</h3>
+                    <p>Online Reservierungen entgegennehmen. Ubersichtliche Tischplanung inklusive.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="ablauf">
+        <div class="timeline-container">
+            <div class="section-header">
+                <div class="section-label reveal">So funktioniert's</div>
+                <h2 class="reveal">Dein Weg zu <span class="highlight">ORDABLE</span></h2>
+                <p class="reveal">In 4 einfachen Schritten zur kompletten Online-Prasenz</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-node"><i data-lucide="pen-line"></i></div>
+                    <div class="time-badge instant"><i data-lucide="zap" style="width:14px;height:14px;"></i> Jetzt</div>
+                    <div class="timeline-content">
+                        <h3>Formular ausfullen</h3>
+                        <p>Fulle unser kurzes Anmeldeformular aus und starte direkt mit ORDABLE - schnell, einfach und unverbindlich.</p>
+                        <div class="features-row">
+                            <span class="feature-tag highlight"><i data-lucide="file-text" style="width:14px;height:14px;"></i> Kurzes Formular</span>
+                            <span class="feature-tag"><i data-lucide="zap" style="width:14px;height:14px;"></i> Sofort starten</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-node"><i data-lucide="globe"></i></div>
+                    <div class="time-badge instant"><i data-lucide="zap" style="width:14px;height:14px;"></i> Sofort</div>
+                    <div class="timeline-content">
+                        <h3>Zugang & Webseite - sofort startklar</h3>
+                        <p>Du erhaltst direkt deine Zugangsdaten und deine eigene Webseite wird automatisch erstellt.</p>
+                        <div class="get-boxes">
+                            <div class="get-box">
+                                <div class="get-box-icon"><i data-lucide="key-round"></i></div>
+                                <h4>Adminzugang</h4>
+                                <p>Dein eigenes Dashboard</p>
+                            </div>
+                            <div class="get-box">
+                                <div class="get-box-icon"><i data-lucide="globe"></i></div>
+                                <h4>Webseite</h4>
+                                <p>Sofort online</p>
+                            </div>
+                            <div class="get-box">
+                                <div class="get-box-icon"><i data-lucide="palette"></i></div>
+                                <h4>Branding</h4>
+                                <p>Dein Look & Feel</p>
+                            </div>
+                            <div class="get-box">
+                                <div class="get-box-icon"><i data-lucide="utensils"></i></div>
+                                <h4>Menukarte</h4>
+                                <p>Einfach einbinden</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-node"><i data-lucide="smartphone"></i></div>
+                    <div class="time-badge weeks"><i data-lucide="calendar" style="width:14px;height:14px;"></i> ca. 2 Wochen</div>
+                    <div class="timeline-content">
+                        <h3>Deine Apps in den Stores</h3>
+                        <p>Deine eigene App erscheint im App Store und Play Store - komplett mit deinem Branding.</p>
+                        <div class="features-row">
+                            <span class="feature-tag"><i data-lucide="apple" style="width:14px;height:14px;"></i> App Store</span>
+                            <span class="feature-tag"><i data-lucide="play" style="width:14px;height:14px;"></i> Play Store</span>
+                            <span class="feature-tag highlight"><i data-lucide="sparkles" style="width:14px;height:14px;"></i> Dein Branding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item reveal">
+                    <div class="timeline-node"><i data-lucide="printer"></i></div>
+                    <div class="time-badge weeks"><i data-lucide="calendar" style="width:14px;height:14px;"></i> ca. 2 Wochen</div>
+                    <div class="timeline-content">
+                        <h3>POS Terminal kommt zu dir</h3>
+                        <p>Wir liefern dein Druck-Terminal direkt zu dir. Auspacken, einschalten - fertig.</p>
+                        <div class="features-row">
+                            <span class="feature-tag"><i data-lucide="package" style="width:14px;height:14px;"></i> Geliefert</span>
+                            <span class="feature-tag"><i data-lucide="check-circle" style="width:14px;height:14px;"></i> Annehmen & Ablehnen</span>
+                            <span class="feature-tag"><i data-lucide="receipt" style="width:14px;height:14px;"></i> Rechnungen drucken</span>
+                        </div>
+                        <div class="ready-badge">
+                            <span class="checkmark">&#10003;</span>
+                            Direkt einsatzbereit - sofort loslegen!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="pakete">
+        <div class="pricing-container">
+            <div class="section-header">
+                <div class="section-label reveal">Preise</div>
+                <h2 class="reveal">Transparente Preise, <span class="highlight">keine Uberraschungen</span></h2>
+                <p class="reveal">Wahle das Paket, das zu deinem Restaurant passt.</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card reveal-left">
+                    <div class="pricing-name">ORDABLE</div>
+                    <p class="pricing-desc">Website & App fur dein Restaurant</p>
+                    <div class="pricing-price">
+                        <div class="pricing-monthly">
+                            <span class="old">299</span>
+                            <span class="new">149</span>
+                            <span class="period">/Monat</span>
+                        </div>
+                        <div class="pricing-setup">
+                            Einmalig: <span class="old">399</span> <span class="new">199</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">&#10003;</span> Eigene Website mit Bestellsystem</li>
+                        <li><span class="check">&#10003;</span> Eigene App (iOS & Android)</li>
+                        <li><span class="check">&#10003;</span> Dashboard fur Menu & Preise</li>
+                        <li><span class="check">&#10003;</span> KI-generierte Produktbilder</li>
+                        <li><span class="check">&#10003;</span> Tischreservierungen</li>
+                        <li><span class="check">&#10003;</span> Reporting & Statistiken</li>
+                        <li><span class="check">&#10003;</span> 0% Provision auf Bestellungen</li>
+                    </ul>
+                    <a href="#kontakt" class="pricing-cta secondary">Jetzt anfragen</a>
+                </div>
+
+                <div class="pricing-card featured reveal-right">
+                    <div class="pricing-name">ORDABLE PLUS</div>
+                    <p class="pricing-desc">Komplettlosung mit Bestellterminal</p>
+                    <div class="pricing-price">
+                        <div class="pricing-monthly">
+                            <span class="old">399</span>
+                            <span class="new">199</span>
+                            <span class="period">/Monat</span>
+                        </div>
+                        <div class="pricing-setup">
+                            Einmalig: <span class="old">999</span> <span class="new">499</span>
+                        </div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">&#10003;</span> Alles aus ORDABLE</li>
+                        <li><span class="check">&#10003;</span> POS-Terminal mit Bondrucker</li>
+                        <li><span class="check">&#10003;</span> TSE-konform & finanzamtsicher</li>
+                        <li><span class="check">&#10003;</span> Alle Bestellungen auf einem Gerat</li>
+                        <li><span class="check">&#10003;</span> Sofort-Benachrichtigung</li>
+                        <li><span class="check">&#10003;</span> Bestellungen per Knopfdruck</li>
+                        <li><span class="check">&#10003;</span> 0% Provision auf Bestellungen</li>
+                    </ul>
+                    <a href="#kontakt" class="pricing-cta primary">Jetzt anfragen</a>
+                </div>
+            </div>
+            <div class="pricing-note reveal">
+                <p><strong>Faire Preise, keine versteckten Kosten.</strong> Starte jetzt mit ORDABLE.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="testimonial-section">
+        <div class="testimonial-container">
+            <div class="testimonial-card reveal-scale">
+                <p class="testimonial-quote">
+                    "Ich wollte nie mit den grossen Lieferdiensten arbeiten - die Provisionen fressen einem den Gewinn weg. Mit ORDABLE habe ich jetzt meine eigene Website und eine App im PlayStore und AppStore. Das Beste: Ich bin technisch uberhaupt nicht fit, aber ich kann trotzdem alles selbst verwalten. Menu andern, Preise anpassen - alles kinderleicht. Hatte ich nie gedacht!"
+                </p>
+                <div class="testimonial-author">
+                    <img src="images/berlindöner.png" alt="Berlin Doner" class="testimonial-avatar-img" loading="lazy" width="110" height="110">
+                    <div class="testimonial-info">
+                        <div class="testimonial-name">Abdulla A.</div>
+                        <div class="testimonial-role">Berlin Doner, Bad Munder</div>
+                    </div>
+                </div>
+                <div class="testimonial-savings">
+                    &#128176; Eigene App + Website ohne Provision
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section" id="kontakt">
+        <div class="form-container">
+            <div class="section-header">
+                <div class="section-label reveal">Kontakt</div>
+                <h2 class="reveal">Jetzt <span class="highlight">starten</span></h2>
+                <p class="reveal">Fulle das Formular aus und wir melden uns innerhalb von 24 Stunden.</p>
+            </div>
+            <form class="contact-form reveal" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vorname">Vorname</label>
+                        <input type="text" id="vorname" name="vorname" required placeholder="Max" autocomplete="given-name">
+                    </div>
+                    <div class="form-group">
+                        <label for="nachname">Nachname</label>
+                        <input type="text" id="nachname" name="nachname" required placeholder="Mustermann" autocomplete="family-name">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">E-Mail</label>
+                        <input type="email" id="email" name="email" required placeholder="max@restaurant.de" autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefon">Telefon</label>
+                        <input type="tel" id="telefon" name="telefon" required placeholder="+49 123 456789" autocomplete="tel">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="restaurant">Restaurant Name</label>
+                    <input type="text" id="restaurant" name="restaurant" required placeholder="Mein Restaurant" autocomplete="organization">
+                </div>
+                <div class="form-group">
+                    <label for="paket">Interessiert an</label>
+                    <select id="paket" name="paket" required>
+                        <option value="">Bitte auswahlen...</option>
+                        <option value="ordable">ORDABLE (Website & App)</option>
+                        <option value="ordable-plus">ORDABLE PLUS (mit Bestellterminal)</option>
+                        <option value="beratung">Beratung gewunscht</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="nachricht">Nachricht (optional)</label>
+                    <textarea id="nachricht" name="nachricht" placeholder="Gibt es etwas, das wir wissen sollten?"></textarea>
+                </div>
+                <button type="submit" class="form-submit">Anfrage absenden</button>
+                <p class="form-privacy">Mit dem Absenden stimmst du unserer Datenschutzerklarung zu.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="section-header">
+                <div class="section-label reveal">FAQ</div>
+                <h2 class="reveal">Haufige <span class="highlight">Fragen</span></h2>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    Warum ist ORDABLE gunstiger als andere Anbieter?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Wir verzichten auf Provisionen und setzen auf faire Festpreise. So behaltst du 100% deines Umsatzes und kannst langfristig planen.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    Fallen wirklich keine Provisionen an?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Richtig. 0% Provision auf jede Bestellung. Du zahlst nur den festen monatlichen Preis - egal ob du 100 oder 10.000 Bestellungen hast.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    Wie lange dauert die Einrichtung?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Website und App sind in der Regel nach 1-2 Wochen live. Das Bestellterminal wird dir zugeschickt und ist sofort einsatzbereit.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    Wie funktioniert das Bestellterminal?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Das handliche Bestellterminal empfangt alle eingehenden Bestellungen in Echtzeit. Du siehst die Bestellung auf dem Display und kannst sie mit einem Klick ausdrucken - perfekt fur die Kuche.
+                    </div>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <div class="faq-question">
+                    Wer steckt hinter Ordable?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <div class="faq-answer-content">
+                        Ordable ist ein Produkt der WECONN3CT GmbH - einem innovativen Tech-Unternehmen mit Fokus auf digitale Losungen.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ORDABLE - Dein digitales Restaurant-System</p>
+        <p class="footer-contact">
+            info@ordable.io - +49 (0) 162 4521879 - <a href="https://ordable.io">ordable.io</a>
+        </p>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/4916245218790?text=Hallo%20ORDABLE%20Team%2C%20ich%20interessiere%20mich%20f%C3%BCr%20das%20Early%20Bird%20Angebot!"
+       class="whatsapp-btn"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="WhatsApp Kontakt">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-4.713 1.262 1.262-4.669-0.292-0.508c-1.207-2.100-1.847-4.507-1.847-6.978 0-7.51 6.11-13.62 13.62-13.62s13.62 6.11 13.62 13.62-6.11 13.62-13.62 13.62zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.117-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.227-0.402 0.254-0.748 0.080s-1.458-0.537-2.775-1.711c-1.025-0.913-1.719-2.040-1.920-2.387s-0.022-0.534 0.152-0.707c0.156-0.155 0.346-0.402 0.518-0.603s0.231-0.347 0.346-0.574c0.116-0.231 0.058-0.431-0.028-0.607s-0.776-1.87-1.063-2.565c-0.280-0.672-0.56-0.58-0.776-0.592-0.201-0.010-0.431-0.012-0.661-0.012s-0.603 0.085-0.92 0.431c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.227 2.413 3.681 5.845 5.165 0.817 0.354 1.454 0.565 1.951 0.722 0.819 0.262 1.564 0.225 2.153 0.137 0.657-0.098 2.049-0.833 2.336-1.647 0.288-0.813 0.288-1.511 0.201-1.647-0.085-0.142-0.316-0.227-0.662-0.401z"/>
+        </svg>
+    </a>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content">
+            <div class="modal-icon">&#10003;</div>
+            <h3>Anfrage gesendet!</h3>
+            <p>Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei dir.</p>
+            <button class="modal-close" onclick="closeModal()">Verstanden</button>
+        </div>
+    </div>
+
+    <!-- Main JavaScript (deferred) -->
+    <script src="js/main.js" defer></script>
+</body>
+</html>

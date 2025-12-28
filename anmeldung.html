@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anmeldung | ORDABLE</title>
+
+    <!-- Preconnect für schnellere Verbindungen -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FDB913;--primary-dark:#E5A811;--dark:#1a1a1a;--text:#333;--white:#fff;--border:#e5e5e5;--bg-main:#fff}
+        body{font-family:'Inter',-apple-system,sans-serif;line-height:1.6;color:var(--text);background:var(--bg-main);overflow-x:hidden}
+        header{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;transition:all .4s ease}
+        header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:100px;width:auto;margin-left:-2.5rem;margin-top:-20px;margin-bottom:-20px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem}
+        .nav-menu li a{text-decoration:none;color:var(--text);font-weight:600}
+        .nav-cta{background:var(--primary);color:var(--dark);padding:.75rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:700}
+        @media(max-width:968px){.nav-menu{display:none}}
+    </style>
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/anmeldung.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/header.png" alt="Ordable">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="vorteile.html">Vorteile</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="story.html">Unsere Story</a></li>
+            </ul>
+            <a href="anmeldung.html" class="nav-cta active">Jetzt starten</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <div class="form-badge">Jetzt starten</div>
+                <h1>Kostenlose <span class="highlight">Anfrage</span></h1>
+                <p>Starte jetzt mit deinem eigenen Bestellsystem – ohne Provisionen.</p>
+            </div>
+
+            <div class="info-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p>Fülle das Formular aus und wir melden uns <strong>innerhalb von 24 Stunden</strong> bei dir für eine kostenlose Beratung.</p>
+            </div>
+
+            <form class="signup-form" id="contactForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vorname">Vorname <span class="required">*</span></label>
+                        <input type="text" id="vorname" name="vorname" required placeholder="Max">
+                    </div>
+                    <div class="form-group">
+                        <label for="nachname">Nachname <span class="required">*</span></label>
+                        <input type="text" id="nachname" name="nachname" required placeholder="Mustermann">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="restaurant">Restaurant Name <span class="required">*</span></label>
+                    <input type="text" id="restaurant" name="restaurant" required placeholder="Mein Restaurant">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="strasse">Straße & Hausnummer <span class="required">*</span></label>
+                        <input type="text" id="strasse" name="strasse" required placeholder="Musterstraße 123">
+                    </div>
+                    <div class="form-group">
+                        <label for="plz">PLZ <span class="required">*</span></label>
+                        <input type="text" id="plz" name="plz" required placeholder="12345">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="stadt">Stadt <span class="required">*</span></label>
+                        <input type="text" id="stadt" name="stadt" required placeholder="Berlin">
+                    </div>
+                    <div class="form-group">
+                        <label for="land">Land</label>
+                        <select id="land" name="land">
+                            <option value="deutschland" selected>Deutschland</option>
+                            <option value="oesterreich">Österreich</option>
+                            <option value="schweiz">Schweiz</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">E-Mail <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="max@restaurant.de">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefon">Telefon <span class="required">*</span></label>
+                        <input type="tel" id="telefon" name="telefon" required placeholder="+49 123 456789">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="paket">Interessiert an <span class="required">*</span></label>
+                    <select id="paket" name="paket" required>
+                        <option value="">Bitte auswählen...</option>
+                        <option value="ordable">ORDABLE (Website & App) - 149€/Monat</option>
+                        <option value="ordable-plus">ORDABLE PLUS (mit Bestellterminal) - 199€/Monat</option>
+                        <option value="beratung">Beratung gewünscht</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nachricht">Nachricht (optional)</label>
+                    <textarea id="nachricht" name="nachricht" placeholder="Gibt es etwas, das wir wissen sollten? Z.B. aktuelle Lieferplattformen, besondere Anforderungen..."></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Anfrage senden</button>
+                <p class="form-privacy">Mit dem Absenden stimmst du unserer <a href="#">Datenschutzerklärung</a> zu.</p>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ORDABLE – <a href="https://ordable.io">ordable.io</a></p>
+    </footer>
+
+    <script src="js/anmeldung.js" defer></script>
+</body>
+</html>
