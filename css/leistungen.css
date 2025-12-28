@@ -1291,7 +1291,8 @@ img[loading="lazy"] {
         padding: 1rem;
         border-radius: 16px;
         max-width: 100%;
-        overflow: hidden;
+        overflow: visible;
+        position: relative;
     }
 
     .showcase-card-mockup {
@@ -1350,8 +1351,46 @@ img[loading="lazy"] {
         flex-shrink: 0;
     }
 
+    /* Floating Elements - Mobile optimiert */
     .floating-element {
-        display: none;
+        display: flex;
+        position: absolute;
+        padding: 0.5rem 0.75rem;
+        border-radius: 10px;
+        gap: 0.5rem;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    }
+
+    .floating-element-1 {
+        top: -12px;
+        right: 10px;
+        left: auto;
+    }
+
+    .floating-element-2 {
+        bottom: 20px;
+        left: 10px;
+        right: auto;
+    }
+
+    .floating-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 6px;
+    }
+
+    .floating-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    .floating-text {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .floating-subtext {
+        font-size: 0.55rem;
     }
 
     /* Feature Map Section - "Inklusive" - Complete Mobile Overhaul */
@@ -1517,15 +1556,21 @@ img[loading="lazy"] {
         justify-content: center;
         align-items: center;
         order: 2;
-        margin-top: 1.5rem;
-        overflow: hidden;
+        margin-top: 1rem;
+        overflow: visible;
         max-width: 100%;
+        min-height: 180px;
     }
 
     .feature-detail-mockup .device-macbook-pro {
-        transform: scale(0.45) !important;
+        transform: scale(0.55) !important;
         transform-origin: center center;
-        margin: -80px 0;
+        margin: -60px 0;
+    }
+
+    /* Mini-App im MacBook besser lesbar */
+    .feature-detail-mockup .mini-app {
+        font-size: 0.9em;
     }
 
     /* Mini-App Optimierungen für Mobile */
@@ -1885,6 +1930,7 @@ img[loading="lazy"] {
 
     .showcase-card {
         padding: 0.875rem;
+        position: relative;
     }
 
     .mockup-avatar {
@@ -1903,6 +1949,41 @@ img[loading="lazy"] {
 
     .mockup-item-price {
         font-size: 0.8rem;
+    }
+
+    /* Floating Elements für 768px */
+    .floating-element {
+        padding: 0.4rem 0.6rem;
+        border-radius: 8px;
+        gap: 0.4rem;
+    }
+
+    .floating-element-1 {
+        top: -10px;
+        right: 8px;
+    }
+
+    .floating-element-2 {
+        bottom: 15px;
+        left: 8px;
+    }
+
+    .floating-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .floating-icon svg {
+        width: 12px;
+        height: 12px;
+    }
+
+    .floating-text {
+        font-size: 0.6rem;
+    }
+
+    .floating-subtext {
+        font-size: 0.5rem;
     }
 
     /* Feature Map - "Inklusive" */
@@ -1950,14 +2031,19 @@ img[loading="lazy"] {
         padding: 0.3rem 0.6rem;
     }
 
-    /* MacBook Mockup für Phones - kleiner skaliert */
+    /* MacBook Mockup für Phones - optimierte Skalierung */
     .feature-detail-mockup {
-        margin-top: 1rem;
+        margin-top: 0.75rem;
+        min-height: 160px;
     }
 
     .feature-detail-mockup .device-macbook-pro {
-        transform: scale(0.4) !important;
-        margin: -90px 0;
+        transform: scale(0.5) !important;
+        margin: -70px 0;
+    }
+
+    .feature-detail-mockup .mini-app {
+        font-size: 0.85em;
     }
 
     .showcase-feature h4 {
@@ -2271,6 +2357,42 @@ img[loading="lazy"] {
         font-size: 0.75rem;
     }
 
+    /* Floating Elements für 480px - noch kompakter */
+    .floating-element {
+        padding: 0.35rem 0.5rem;
+        border-radius: 6px;
+        gap: 0.35rem;
+    }
+
+    .floating-element-1 {
+        top: -8px;
+        right: 5px;
+    }
+
+    .floating-element-2 {
+        bottom: 12px;
+        left: 5px;
+    }
+
+    .floating-icon {
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+    }
+
+    .floating-icon svg {
+        width: 10px;
+        height: 10px;
+    }
+
+    .floating-text {
+        font-size: 0.55rem;
+    }
+
+    .floating-subtext {
+        font-size: 0.45rem;
+    }
+
     /* Feature Map - "Inklusive" auf kleinen Phones */
     .feature-map-section {
         padding: 35px 0.5rem 45px;
@@ -2334,14 +2456,19 @@ img[loading="lazy"] {
         padding: 0.25rem 0.5rem;
     }
 
-    /* MacBook Mockup für kleine Phones - noch kleiner */
+    /* MacBook Mockup für kleine Phones - kompakt aber lesbar */
     .feature-detail-mockup {
-        margin-top: 0.75rem;
+        margin-top: 0.5rem;
+        min-height: 140px;
     }
 
     .feature-detail-mockup .device-macbook-pro {
-        transform: scale(0.35) !important;
-        margin: -100px 0;
+        transform: scale(0.45) !important;
+        margin: -80px 0;
+    }
+
+    .feature-detail-mockup .mini-app {
+        font-size: 0.8em;
     }
 
     .section-header {
