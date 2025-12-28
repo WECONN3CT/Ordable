@@ -1201,71 +1201,165 @@ img[loading="lazy"] {
         padding: 20px 0;
     }
 
-    /* Feature Showcase */
+    /* Feature Showcase - "Bestellungen verwalten wie ein Profi" */
     .feature-showcase {
-        padding: 60px 1rem;
+        padding: 50px 1rem;
+        overflow: hidden !important;
+    }
+
+    .feature-showcase .container {
+        max-width: 100%;
+        overflow: hidden;
     }
 
     .showcase-grid {
-        grid-template-columns: 1fr;
-        gap: 2.5rem;
+        display: flex !important;
+        flex-direction: column;
+        gap: 2rem;
+        max-width: 100%;
     }
 
     .showcase-content {
         order: 1;
+        max-width: 100%;
     }
 
     .showcase-visual {
         order: 2;
+        max-width: 100%;
+        overflow: hidden;
     }
 
     .showcase-content h2 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         text-align: center;
+        line-height: 1.3;
+        margin-bottom: 1rem;
     }
 
-    .showcase-content p {
-        font-size: 1rem;
+    .showcase-content > p {
+        font-size: 0.95rem;
         text-align: center;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+        color: var(--text-light);
     }
 
+    /* Feature Grid - 2x2 auf Tablets */
     .showcase-features {
-        grid-template-columns: 1fr;
-        gap: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
     }
 
     .showcase-feature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         background: var(--bg-section);
-        padding: 1rem;
+        padding: 1rem 0.75rem;
         border-radius: 12px;
+        border: 1px solid var(--border);
     }
 
     .showcase-feature-icon {
         width: 40px;
         height: 40px;
+        margin-bottom: 0.5rem;
+    }
+
+    .showcase-feature-icon i,
+    .showcase-feature-icon svg {
+        width: 20px;
+        height: 20px;
     }
 
     .showcase-feature h4 {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
     }
 
     .showcase-feature p {
-        font-size: 0.85rem;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin: 0;
     }
 
+    /* Showcase Card / Mockup */
     .showcase-card {
-        padding: 1.5rem;
+        padding: 1rem;
+        border-radius: 16px;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .showcase-card-mockup {
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .mockup-header {
+        margin-bottom: 0.75rem;
+    }
+
+    .mockup-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .mockup-content {
+        gap: 0.5rem;
+    }
+
+    .mockup-item {
+        padding: 0.75rem;
+        border-radius: 8px;
+        flex-wrap: wrap;
+    }
+
+    .mockup-item-left {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .mockup-avatar {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .mockup-item-title {
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .mockup-item-sub {
+        font-size: 0.7rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .mockup-item-price {
+        font-size: 0.85rem;
+        font-weight: 700;
+        flex-shrink: 0;
     }
 
     .floating-element {
         display: none;
     }
 
-    /* Feature Map Section - Complete Mobile Overhaul */
+    /* Feature Map Section - "Inklusive" - Complete Mobile Overhaul */
     .feature-map-section {
-        padding: 60px 1rem 80px;
+        padding: 50px 1rem 60px;
         overflow: hidden !important;
         max-width: 100vw;
+        background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
     }
 
     .feature-map-container {
@@ -1274,16 +1368,37 @@ img[loading="lazy"] {
         max-width: 100%;
     }
 
+    .feature-map-section .section-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .feature-map-section .section-label {
+        font-size: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-map-section .section-header h2 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-map-section .section-header p {
+        font-size: 0.9rem;
+        color: var(--text-light);
+    }
+
     .feature-map-glow {
         display: none;
     }
 
-    /* Feature Timeline - Vertical Grid Layout */
+    /* Feature Timeline - Grid Layout für Inklusive Icons */
     .feature-timeline {
         display: grid !important;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-        padding: 1.5rem 0.5rem;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.5rem;
+        padding: 1rem 0;
         margin-top: 1rem;
         overflow: hidden !important;
     }
@@ -1297,47 +1412,59 @@ img[loading="lazy"] {
         flex-direction: column;
         align-items: center;
         min-width: 0;
-        padding: 0.5rem;
+        padding: 0.5rem 0.25rem;
         cursor: pointer;
+        transition: all 0.3s ease;
     }
 
     .feature-point-dot {
-        width: 50px;
-        height: 50px;
+        width: 48px;
+        height: 48px;
         margin-bottom: 0.5rem;
         transition: all 0.3s ease;
         flex-shrink: 0;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--gradient-2) 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .feature-point-dot svg {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
+        stroke: white;
     }
 
     .feature-point.active .feature-point-dot {
-        transform: scale(1.1);
-        box-shadow: 0 8px 25px rgba(253, 185, 19, 0.4);
+        transform: scale(1.15);
+        box-shadow: 0 8px 25px rgba(253, 185, 19, 0.5);
     }
 
     .feature-point-label {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
+        font-weight: 600;
         text-align: center;
-        white-space: normal;
-        word-wrap: break-word;
+        white-space: nowrap;
         line-height: 1.2;
         max-width: 100%;
+        color: var(--text);
     }
 
+    /* Feature Detail Container */
     .feature-detail-container {
-        margin-top: 2rem;
+        margin-top: 1.5rem;
     }
 
     .feature-detail-card {
         display: none;
         flex-direction: column;
-        padding: 1.5rem;
-        gap: 1.5rem;
+        padding: 1.25rem;
+        gap: 1.25rem;
         border-radius: 16px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
 
     .feature-detail-card.active {
@@ -1349,33 +1476,39 @@ img[loading="lazy"] {
     }
 
     .feature-detail-content h3 {
-        font-size: 1.4rem;
+        font-size: 1.25rem;
         text-align: center;
         margin-bottom: 0.75rem;
+        color: var(--dark);
     }
 
     .feature-detail-content h3 span {
         display: inline;
+        color: var(--primary-dark);
     }
 
-    .feature-detail-content p {
-        font-size: 0.95rem;
+    .feature-detail-content > p {
+        font-size: 0.9rem;
         text-align: center;
         line-height: 1.6;
+        color: var(--text-light);
     }
 
     .feature-detail-list {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap: 0.5rem;
+        gap: 0.4rem;
         margin-top: 1rem;
     }
 
     .feature-detail-tag {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 0.7rem;
+        padding: 0.35rem 0.7rem;
         border-radius: 20px;
+        background: var(--primary-light);
+        color: var(--primary-dark);
+        font-weight: 600;
     }
 
     /* Hide MacBook Mockups on Tablet - Show UI Elements instead */
@@ -1678,30 +1811,107 @@ img[loading="lazy"] {
         padding: 0.2rem 0.5rem;
     }
 
-    /* Feature Showcase */
+    /* Feature Showcase - "Bestellungen verwalten" */
     .feature-showcase {
-        padding: 50px 1rem;
+        padding: 40px 0.75rem;
     }
 
     .showcase-content h2 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
 
     .showcase-content > p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        margin-bottom: 1.25rem;
     }
 
     .showcase-features {
-        gap: 0.75rem;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.6rem;
     }
 
     .showcase-feature {
-        padding: 0.875rem;
+        padding: 0.75rem 0.5rem;
     }
 
     .showcase-feature-icon {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .showcase-feature h4 {
+        font-size: 0.8rem;
+    }
+
+    .showcase-feature p {
+        font-size: 0.7rem;
+    }
+
+    .showcase-card {
+        padding: 0.875rem;
+    }
+
+    .mockup-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+
+    .mockup-item-title {
+        font-size: 0.75rem;
+    }
+
+    .mockup-item-sub {
+        font-size: 0.65rem;
+    }
+
+    .mockup-item-price {
+        font-size: 0.8rem;
+    }
+
+    /* Feature Map - "Inklusive" */
+    .feature-map-section {
+        padding: 40px 0.75rem 50px;
+    }
+
+    .feature-map-section .section-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .feature-timeline {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.4rem;
+    }
+
+    .feature-point-dot {
+        width: 42px;
+        height: 42px;
+    }
+
+    .feature-point-dot svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .feature-point-label {
+        font-size: 0.55rem;
+    }
+
+    .feature-detail-card {
+        padding: 1rem;
+    }
+
+    .feature-detail-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .feature-detail-content > p {
+        font-size: 0.85rem;
+    }
+
+    .feature-detail-tag {
+        font-size: 0.65rem;
+        padding: 0.3rem 0.6rem;
     }
 
     .showcase-feature h4 {
@@ -1945,19 +2155,137 @@ img[loading="lazy"] {
         overflow: hidden;
     }
 
-    /* Feature Timeline - 2 columns on small phones */
-    .feature-timeline {
-        grid-template-columns: repeat(2, 1fr) !important;
+    /* Feature Showcase - "Bestellungen verwalten" auf kleinen Phones */
+    .feature-showcase {
+        padding: 35px 0.5rem;
+    }
+
+    .showcase-content h2 {
+        font-size: 1.15rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .showcase-content > p {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    /* 1 Spalte auf kleinen Phones */
+    .showcase-features {
+        grid-template-columns: 1fr !important;
+        gap: 0.5rem;
+    }
+
+    .showcase-feature {
+        flex-direction: row;
+        text-align: left;
+        padding: 0.75rem;
         gap: 0.75rem;
     }
 
+    .showcase-feature-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .showcase-feature h4 {
+        font-size: 0.8rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .showcase-feature p {
+        font-size: 0.7rem;
+    }
+
+    .showcase-card {
+        padding: 0.75rem;
+    }
+
+    .mockup-item {
+        padding: 0.6rem;
+    }
+
+    .mockup-avatar {
+        width: 26px;
+        height: 26px;
+        font-size: 0.85rem;
+    }
+
+    .mockup-item-title {
+        font-size: 0.7rem;
+    }
+
+    .mockup-item-sub {
+        font-size: 0.6rem;
+    }
+
+    .mockup-item-price {
+        font-size: 0.75rem;
+    }
+
+    /* Feature Map - "Inklusive" auf kleinen Phones */
+    .feature-map-section {
+        padding: 35px 0.5rem 45px;
+    }
+
+    .feature-map-section .section-header h2 {
+        font-size: 1.1rem;
+    }
+
+    .feature-map-section .section-header p {
+        font-size: 0.8rem;
+    }
+
+    /* 3 columns auf kleinen Phones (für 5 Icons) */
+    .feature-timeline {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 0.5rem;
+        padding: 0.75rem 0;
+    }
+
+    .feature-point {
+        padding: 0.35rem;
+    }
+
     .feature-point-dot {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .feature-point-dot svg {
+        width: 16px;
+        height: 16px;
     }
 
     .feature-point-label {
+        font-size: 0.5rem;
+        margin-top: 0.3rem;
+    }
+
+    .feature-detail-card {
+        padding: 0.875rem;
+        gap: 1rem;
+    }
+
+    .feature-detail-content h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-detail-content > p {
+        font-size: 0.8rem;
+        line-height: 1.5;
+    }
+
+    .feature-detail-list {
+        gap: 0.3rem;
+    }
+
+    .feature-detail-tag {
         font-size: 0.6rem;
+        padding: 0.25rem 0.5rem;
     }
 
     .section-header {
