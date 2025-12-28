@@ -864,12 +864,32 @@ footer a {
 
 /* Responsive */
 @media (max-width: 968px) {
-    .mobile-menu-toggle { display: flex; }
-    .mobile-nav, .mobile-menu-overlay { display: block; }
+    header {
+        padding: 0.5rem 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+    }
+
+    nav {
+        padding: 0 1rem;
+        height: 60px;
+    }
+
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 50px; margin: 0; margin-left: -0.5rem; }
+
     .nav-menu { display: none !important; }
-    .nav-cta { display: none; }
-    nav { padding: 0 1rem; }
-    .logo img { height: 70px; margin-left: -1rem; }
+    .nav-cta { display: none !important; }
+
+    .mobile-menu-toggle {
+        display: flex;
+        width: 48px;
+        height: 48px;
+        background: rgba(253, 185, 19, 0.1);
+        border-radius: 12px;
+    }
+
+    .mobile-nav, .mobile-menu-overlay { display: block; }
 
     .pricing-grid {
         grid-template-columns: 1fr;
@@ -911,8 +931,12 @@ footer a {
 }
 
 @media (max-width: 768px) {
+    nav { height: 56px; padding: 0 0.75rem; }
+    .logo img { height: 45px; margin-left: 0; }
+    .mobile-menu-toggle { width: 44px; height: 44px; border-radius: 10px; }
+
     .hero {
-        padding: 90px 1rem 50px;
+        padding: 80px 1rem 50px;
     }
 
     .pricing-card {
@@ -934,10 +958,17 @@ footer a {
 }
 
 @media (max-width: 480px) {
+    nav { height: 52px; padding: 0 0.5rem; }
+    .logo img { height: 40px; }
+    .mobile-menu-toggle { width: 40px; height: 40px; border-radius: 8px; }
+
     .mobile-nav {
         width: 100%;
         max-width: 100%;
-        padding: 90px 1.5rem 1.5rem;
+    }
+
+    .hero {
+        padding: 75px 1rem 40px;
     }
 
     .pricing-card {
