@@ -4,6 +4,58 @@ document.documentElement.classList.add('js-loaded');
 // ===== LUCIDE ICONS =====
 if (typeof lucide !== 'undefined') lucide.createIcons();
 
+// ===== MOBILE MENU =====
+const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+const mobileNav = document.getElementById('mobileNav');
+const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
+
+function openMobileMenu() {
+    mobileMenuToggle.classList.add('active');
+    mobileNav.classList.add('active');
+    mobileMenuOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeMobileMenu() {
+    mobileMenuToggle.classList.remove('active');
+    mobileNav.classList.remove('active');
+    mobileMenuOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+if (mobileMenuToggle) {
+    mobileMenuToggle.addEventListener('click', () => {
+        if (mobileNav.classList.contains('active')) {
+            closeMobileMenu();
+        } else {
+            openMobileMenu();
+        }
+    });
+}
+
+if (mobileMenuOverlay) {
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+}
+
+// Close mobile menu on link click
+document.querySelectorAll('.mobile-nav-menu a, .mobile-nav-cta').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+// Close mobile menu on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
+
+// Close mobile menu on resize to desktop
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 968 && mobileNav && mobileNav.classList.contains('active')) {
+        closeMobileMenu();
+    }
+});
+
 // Register GSAP plugins first
 gsap.registerPlugin(ScrollTrigger);
 
