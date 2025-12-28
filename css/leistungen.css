@@ -870,13 +870,27 @@ img[loading="lazy"] {
         font-size: 0.95rem;
     }
 
+    /* CRITICAL: Carousel Section Wrapper - Remove fixed height for mobile */
+    .carousel-section-wrapper {
+        height: auto !important;
+        min-height: auto;
+    }
+
+    .carousel-sticky {
+        position: relative;
+        top: auto;
+    }
+
     /* Carousel */
     .carousel-container {
-        padding: 0;
+        padding: 0 1rem;
     }
 
     .carousel-slide {
         padding: 1.5rem;
+        opacity: 1 !important;
+        transform: scale(1) !important;
+        filter: none !important;
     }
 
     .carousel-slide-grid {
@@ -889,10 +903,12 @@ img[loading="lazy"] {
     }
 
     .carousel-thumbs {
+        display: flex;
         gap: 0.5rem;
         flex-wrap: wrap;
         justify-content: center;
         padding: 0 0.5rem;
+        margin-bottom: 1.5rem;
     }
 
     .carousel-thumb-text {
@@ -914,6 +930,11 @@ img[loading="lazy"] {
         height: 48px;
     }
 
+    .carousel-slide-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+
     .carousel-slide-title {
         font-size: 1.25rem;
     }
@@ -929,7 +950,50 @@ img[loading="lazy"] {
 
     .carousel-features li {
         font-size: 0.9rem;
-        padding: 0.5rem 0;
+        padding: 0.6rem 0.75rem;
+        background: var(--bg-section);
+        border-radius: 8px;
+    }
+
+    .carousel-visual {
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 12px;
+    }
+
+    .carousel-mockup-items {
+        gap: 0.5rem;
+    }
+
+    .carousel-mockup-item {
+        padding: 0.75rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .carousel-mockup-left {
+        width: 100%;
+    }
+
+    .carousel-mockup-badge {
+        align-self: flex-start;
+    }
+
+    /* Carousel Pagination */
+    .carousel-pagination {
+        margin-top: 1.5rem;
+        gap: 0.5rem;
+    }
+
+    .carousel-pagination .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+    }
+
+    /* Swiper Adjustments for Mobile */
+    .feature-carousel .swiper-wrapper {
+        padding: 20px 0;
     }
 
     /* Feature Showcase */
@@ -992,26 +1056,29 @@ img[loading="lazy"] {
         display: none;
     }
 
-    /* Feature Map Section */
+    /* Feature Map Section - Complete Mobile Overhaul */
     .feature-map-section {
-        padding: 60px 1rem;
+        padding: 60px 1rem 80px;
+        overflow: visible;
     }
 
     .feature-map-container {
         padding: 0;
+        overflow: visible;
+    }
+
+    .feature-map-glow {
+        display: none;
     }
 
     .feature-timeline {
+        display: flex;
         flex-direction: row;
-        overflow-x: auto;
-        gap: 0;
-        padding: 1rem 0;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-    }
-
-    .feature-timeline::-webkit-scrollbar {
-        display: none;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.5rem 0.5rem;
+        margin-top: 1rem;
     }
 
     .timeline-line-container {
@@ -1020,19 +1087,35 @@ img[loading="lazy"] {
 
     .feature-point {
         flex-direction: column;
-        min-width: 80px;
-        padding: 0 0.5rem;
+        align-items: center;
+        flex: 0 0 calc(33.333% - 1rem);
+        min-width: 0;
+        padding: 0.5rem;
+        cursor: pointer;
     }
 
     .feature-point-dot {
-        width: 44px;
-        height: 44px;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 0.5rem;
+        transition: all 0.3s ease;
+    }
+
+    .feature-point-dot svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .feature-point.active .feature-point-dot {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(253, 185, 19, 0.4);
     }
 
     .feature-point-label {
         font-size: 0.7rem;
         text-align: center;
         white-space: nowrap;
+        line-height: 1.2;
     }
 
     .feature-detail-container {
@@ -1040,9 +1123,15 @@ img[loading="lazy"] {
     }
 
     .feature-detail-card {
+        display: none;
         flex-direction: column;
         padding: 1.5rem;
         gap: 1.5rem;
+        border-radius: 16px;
+    }
+
+    .feature-detail-card.active {
+        display: flex;
     }
 
     .feature-detail-content {
@@ -1050,48 +1139,63 @@ img[loading="lazy"] {
     }
 
     .feature-detail-content h3 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         text-align: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .feature-detail-content h3 span {
+        display: inline;
     }
 
     .feature-detail-content p {
         font-size: 0.95rem;
         text-align: center;
+        line-height: 1.6;
     }
 
     .feature-detail-list {
+        display: flex;
         justify-content: center;
         flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
     }
 
     .feature-detail-tag {
         font-size: 0.75rem;
         padding: 0.4rem 0.8rem;
+        border-radius: 20px;
     }
 
+    /* Hide MacBook Mockups on Tablet - Show UI Elements instead */
     .feature-detail-mockup {
-        order: 2;
-        display: flex;
-        justify-content: center;
-    }
-
-    /* MacBook Mockups - Scale down */
-    .device-macbook-pro {
-        transform: scale(0.65);
-        transform-origin: center center;
+        display: none;
     }
 
     .feature-ui-element {
+        display: block;
         margin-top: 1.5rem;
+        order: 2;
     }
 
+    /* Mini Widgets Grid */
     .mini-widgets {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 0.75rem;
     }
 
     .mini-widget {
         padding: 0.75rem;
+        border-radius: 12px;
+    }
+
+    .widget-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
     }
 
     .widget-value {
@@ -1100,6 +1204,93 @@ img[loading="lazy"] {
 
     .widget-label {
         font-size: 0.7rem;
+    }
+
+    .widget-change {
+        font-size: 0.65rem;
+    }
+
+    /* Login Preview */
+    .login-preview {
+        padding: 1.25rem;
+        border-radius: 12px;
+    }
+
+    .input-field {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .login-btn {
+        padding: 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    /* Order Timeline */
+    .order-timeline {
+        padding-left: 1rem;
+    }
+
+    .timeline-item {
+        padding-left: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .timeline-dot {
+        width: 24px;
+        height: 24px;
+        font-size: 0.7rem;
+    }
+
+    .timeline-title {
+        font-size: 0.9rem;
+    }
+
+    .timeline-time {
+        font-size: 0.75rem;
+    }
+
+    /* Settings Menu */
+    .settings-menu {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .settings-item {
+        padding: 0.875rem;
+        border-radius: 10px;
+    }
+
+    .settings-item-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .settings-item-label {
+        font-size: 0.9rem;
+    }
+
+    /* Chart Elements */
+    .feature-mini-chart {
+        padding: 1rem !important;
+    }
+
+    .chart-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .chart-legend {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .chart-container {
+        height: 80px !important;
     }
 
     /* CTA Section */
@@ -1158,21 +1349,38 @@ img[loading="lazy"] {
 
     /* Hero */
     .hero {
-        padding: 85px 1rem 50px;
+        padding: 80px 1rem 45px;
     }
 
     .hero h1 {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
+        line-height: 1.25;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    /* Section Spacing */
+    .features-overview {
+        padding: 50px 0.75rem;
+    }
+
+    .section-header {
+        margin-bottom: 2rem;
+        padding: 0 0.5rem;
     }
 
     /* Carousel */
-    .carousel-slide {
-        padding: 1.25rem;
-        border-radius: 16px;
+    .carousel-container {
+        padding: 0 0.75rem;
+    }
+
+    .carousel-thumbs {
+        gap: 0.4rem;
+        padding: 0;
+        margin-bottom: 1.25rem;
     }
 
     .carousel-thumb {
@@ -1184,9 +1392,24 @@ img[loading="lazy"] {
         height: 32px;
     }
 
+    .carousel-thumb-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .carousel-slide {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
     .carousel-slide-icon {
         width: 40px;
         height: 40px;
+    }
+
+    .carousel-slide-icon svg {
+        width: 20px;
+        height: 20px;
     }
 
     .carousel-slide-title {
@@ -1197,17 +1420,72 @@ img[loading="lazy"] {
         font-size: 0.8rem;
     }
 
+    .carousel-slide-description {
+        font-size: 0.9rem;
+    }
+
+    .carousel-features li {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.6rem;
+    }
+
+    .carousel-visual {
+        padding: 0.875rem;
+    }
+
     .carousel-mockup-items {
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
 
     .carousel-mockup-item {
-        padding: 0.75rem;
+        padding: 0.6rem;
+    }
+
+    .carousel-mockup-title {
+        font-size: 0.8rem;
+    }
+
+    .carousel-mockup-sub {
+        font-size: 0.7rem;
+    }
+
+    .carousel-mockup-badge {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
     }
 
     /* Feature Showcase */
+    .feature-showcase {
+        padding: 50px 1rem;
+    }
+
     .showcase-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .showcase-content > p {
+        font-size: 0.9rem;
+    }
+
+    .showcase-features {
+        gap: 0.75rem;
+    }
+
+    .showcase-feature {
+        padding: 0.875rem;
+    }
+
+    .showcase-feature-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .showcase-feature h4 {
+        font-size: 0.9rem;
+    }
+
+    .showcase-feature p {
+        font-size: 0.8rem;
     }
 
     .showcase-card {
@@ -1224,10 +1502,39 @@ img[loading="lazy"] {
         padding: 0.75rem;
     }
 
+    .mockup-item-title {
+        font-size: 0.85rem;
+    }
+
+    .mockup-item-sub {
+        font-size: 0.7rem;
+    }
+
+    .mockup-item-price {
+        font-size: 0.9rem;
+    }
+
     /* Feature Map */
+    .feature-map-section {
+        padding: 50px 0.75rem 70px;
+    }
+
+    .feature-point {
+        flex: 0 0 calc(33.333% - 0.75rem);
+    }
+
     .feature-point-dot {
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
+    }
+
+    .feature-point-dot svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .feature-point-label {
+        font-size: 0.65rem;
     }
 
     .feature-detail-card {
@@ -1236,14 +1543,19 @@ img[loading="lazy"] {
     }
 
     .feature-detail-content h3 {
-        font-size: 1.35rem;
+        font-size: 1.25rem;
     }
 
-    /* MacBook Mockups */
-    .device-macbook-pro {
-        transform: scale(0.55);
+    .feature-detail-content p {
+        font-size: 0.9rem;
     }
 
+    .feature-detail-tag {
+        font-size: 0.7rem;
+        padding: 0.35rem 0.7rem;
+    }
+
+    /* UI Elements */
     .mini-widgets {
         grid-template-columns: 1fr 1fr;
         gap: 0.5rem;
@@ -1263,13 +1575,17 @@ img[loading="lazy"] {
         font-size: 1.1rem;
     }
 
+    .widget-label {
+        font-size: 0.65rem;
+    }
+
     /* Settings Menu */
     .settings-menu {
-        gap: 0.5rem;
+        gap: 0.4rem;
     }
 
     .settings-item {
-        padding: 0.75rem;
+        padding: 0.7rem;
     }
 
     .settings-item-icon {
@@ -1277,23 +1593,76 @@ img[loading="lazy"] {
         height: 32px;
     }
 
+    .settings-item-label {
+        font-size: 0.85rem;
+    }
+
     /* Order Timeline */
     .order-timeline {
-        padding-left: 1rem;
+        padding-left: 0.75rem;
     }
 
     .timeline-item {
-        padding-left: 1.5rem;
+        padding-left: 1.25rem;
+        padding-bottom: 0.875rem;
+    }
+
+    .timeline-dot {
+        width: 22px;
+        height: 22px;
+        font-size: 0.65rem;
+    }
+
+    .timeline-title {
+        font-size: 0.85rem;
+    }
+
+    .timeline-time {
+        font-size: 0.7rem;
+    }
+
+    /* Login Preview */
+    .login-preview {
+        padding: 1rem;
+    }
+
+    .input-field {
+        padding: 0.65rem;
+        font-size: 0.8rem;
+    }
+
+    .login-btn {
+        padding: 0.65rem;
+        font-size: 0.85rem;
     }
 
     /* CTA */
+    .cta-section {
+        padding: 50px 1rem;
+    }
+
     .cta-content h2 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
+    }
+
+    .cta-content p {
+        font-size: 0.9rem;
     }
 
     .btn-dark, .btn-outline {
         padding: 0.875rem 1.5rem;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        width: 100%;
+        max-width: 260px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.5rem 1rem;
+    }
+
+    footer p {
+        font-size: 0.8rem;
     }
 }
 
@@ -1303,163 +1672,443 @@ img[loading="lazy"] {
 @media (max-width: 480px) {
     /* Header */
     nav { height: 52px; padding: 0 0.5rem; }
-    .logo img { height: 40px; }
-    .mobile-menu-toggle { width: 40px; height: 40px; border-radius: 8px; }
+    .logo img { height: 38px; }
+    .mobile-menu-toggle { width: 38px; height: 38px; border-radius: 8px; }
+    .mobile-menu-toggle span { width: 20px; }
 
     /* Hero */
     .hero {
-        padding: 75px 1rem 40px;
+        padding: 70px 0.75rem 35px;
     }
 
     .hero h1 {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+        line-height: 1.3;
     }
 
     .hero p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin-bottom: 1.5rem;
     }
 
     .hero-badge {
-        font-size: 0.7rem;
-        padding: 0.4rem 0.75rem;
+        font-size: 0.65rem;
+        padding: 0.35rem 0.65rem;
+        margin-bottom: 1.25rem;
     }
 
     /* Section Headers */
+    .features-overview {
+        padding: 40px 0.5rem;
+    }
+
+    .section-header {
+        margin-bottom: 1.5rem;
+    }
+
     .section-header h2 {
-        font-size: 1.35rem;
+        font-size: 1.2rem;
+        line-height: 1.3;
+    }
+
+    .section-header p {
+        font-size: 0.85rem;
     }
 
     .section-label {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
     }
 
     /* Carousel */
+    .carousel-container {
+        padding: 0 0.5rem;
+    }
+
     .carousel-thumbs {
         gap: 0.25rem;
+        margin-bottom: 1rem;
     }
 
     .carousel-thumb {
-        padding: 0.4rem;
+        padding: 0.35rem;
     }
 
     .carousel-thumb-icon {
-        width: 28px;
-        height: 28px;
+        width: 26px;
+        height: 26px;
+    }
+
+    .carousel-thumb-icon svg {
+        width: 14px;
+        height: 14px;
     }
 
     .carousel-slide {
         padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .carousel-slide-header {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
     }
 
     .carousel-slide-icon {
-        width: 36px;
-        height: 36px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .carousel-slide-icon svg {
+        width: 18px;
+        height: 18px;
     }
 
     .carousel-slide-title {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .carousel-slide-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .carousel-slide-description {
+        font-size: 0.85rem;
+        margin-bottom: 1rem;
     }
 
     .carousel-features li {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        padding: 0.45rem 0.5rem;
     }
 
+    .carousel-features li svg {
+        width: 14px;
+        height: 14px;
+    }
+
+    /* Hide carousel visual on small screens */
     .carousel-visual {
         display: none;
     }
 
     /* Feature Showcase */
-    .showcase-content h2 {
-        font-size: 1.35rem;
+    .feature-showcase {
+        padding: 40px 0.75rem;
     }
 
-    .showcase-content p {
-        font-size: 0.9rem;
+    .showcase-grid {
+        gap: 2rem;
+    }
+
+    .showcase-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .showcase-content > p {
+        font-size: 0.85rem;
+    }
+
+    .showcase-features {
+        gap: 0.6rem;
     }
 
     .showcase-feature {
-        padding: 0.875rem;
+        padding: 0.75rem;
     }
 
     .showcase-feature-icon {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
+    }
+
+    .showcase-feature-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+
+    .showcase-feature h4 {
+        font-size: 0.85rem;
+    }
+
+    .showcase-feature p {
+        font-size: 0.75rem;
+    }
+
+    .showcase-card {
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    .showcase-card-mockup {
+        padding: 0.875rem;
+        border-radius: 10px;
+    }
+
+    .mockup-header {
+        margin-bottom: 1rem;
+    }
+
+    .mockup-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .mockup-item {
+        padding: 0.6rem;
+        border-radius: 6px;
+    }
+
+    .mockup-avatar {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+
+    .mockup-item-title {
+        font-size: 0.75rem;
+    }
+
+    .mockup-item-sub {
+        font-size: 0.65rem;
+    }
+
+    .mockup-item-price {
+        font-size: 0.8rem;
     }
 
     /* Feature Map */
+    .feature-map-section {
+        padding: 40px 0.5rem 60px;
+    }
+
+    .feature-timeline {
+        gap: 0.75rem;
+        padding: 1rem 0.25rem;
+    }
+
     .feature-point {
-        min-width: 65px;
-        padding: 0 0.25rem;
+        flex: 0 0 calc(33.333% - 0.5rem);
+        padding: 0.25rem;
     }
 
     .feature-point-dot {
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .feature-point-dot svg {
+        width: 18px;
+        height: 18px;
     }
 
     .feature-point-label {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
+        margin-top: 0.35rem;
+    }
+
+    .feature-detail-container {
+        margin-top: 1.5rem;
     }
 
     .feature-detail-card {
         padding: 1rem;
+        gap: 1rem;
+        border-radius: 14px;
     }
 
     .feature-detail-content h3 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
     }
 
     .feature-detail-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
 
     .feature-detail-list {
-        gap: 0.4rem;
+        gap: 0.35rem;
+        margin-top: 0.75rem;
     }
 
     .feature-detail-tag {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.6rem;
+        font-size: 0.65rem;
+        padding: 0.25rem 0.5rem;
     }
 
-    /* MacBook Mockups - Hide on very small screens */
-    .feature-detail-mockup {
-        display: none;
-    }
-
+    /* UI Elements */
     .feature-ui-element {
         margin-top: 1rem;
     }
 
     .mini-widgets {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem;
     }
 
+    .mini-widget {
+        padding: 0.5rem;
+    }
+
+    .widget-icon {
+        width: 24px;
+        height: 24px;
+        font-size: 0.8rem;
+        margin-bottom: 0.35rem;
+    }
+
+    .widget-value {
+        font-size: 0.95rem;
+    }
+
+    .widget-label {
+        font-size: 0.6rem;
+    }
+
+    .widget-change {
+        font-size: 0.55rem;
+    }
+
+    /* Login Preview */
     .login-preview {
-        padding: 1rem;
+        padding: 0.875rem;
+        border-radius: 10px;
     }
 
     .input-field {
-        padding: 0.6rem 0.75rem;
-        font-size: 0.85rem;
+        padding: 0.55rem 0.65rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.5rem;
+        border-radius: 6px;
+    }
+
+    .input-field svg, .input-field i {
+        width: 14px;
+        height: 14px;
     }
 
     .login-btn {
+        padding: 0.55rem;
+        font-size: 0.8rem;
+        border-radius: 6px;
+    }
+
+    /* Order Timeline */
+    .order-timeline {
+        padding-left: 0.5rem;
+    }
+
+    .timeline-item {
+        padding-left: 1rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .timeline-dot {
+        width: 20px;
+        height: 20px;
+        font-size: 0.6rem;
+    }
+
+    .timeline-title {
+        font-size: 0.8rem;
+    }
+
+    .timeline-time {
+        font-size: 0.65rem;
+    }
+
+    /* Settings Menu */
+    .settings-menu {
+        gap: 0.35rem;
+    }
+
+    .settings-item {
         padding: 0.6rem;
-        font-size: 0.9rem;
+        border-radius: 8px;
+    }
+
+    .settings-item-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 0.85rem;
+    }
+
+    .settings-item-label {
+        font-size: 0.8rem;
+    }
+
+    /* Chart Elements */
+    .feature-mini-chart {
+        padding: 0.875rem !important;
+        border-radius: 10px;
+    }
+
+    .chart-title {
+        font-size: 0.75rem;
+    }
+
+    .chart-value {
+        font-size: 0.7rem;
+    }
+
+    .chart-legend {
+        font-size: 0.6rem;
+    }
+
+    .legend-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .chart-container {
+        height: 60px !important;
     }
 
     /* CTA */
     .cta-section {
-        padding: 50px 1rem;
+        padding: 40px 0.75rem;
     }
 
     .cta-content h2 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
     }
 
     .cta-content p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+        gap: 0.75rem;
+    }
+
+    .btn-dark, .btn-outline {
+        padding: 0.75rem 1.25rem;
+        font-size: 0.85rem;
+        border-radius: 10px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 1.25rem 0.75rem;
+    }
+
+    footer p {
+        font-size: 0.75rem;
+    }
+
+    /* Gradient Orbs - Smaller on mobile */
+    .orb-1 {
+        width: 200px;
+        height: 200px;
+    }
+
+    .orb-2 {
+        width: 150px;
+        height: 150px;
     }
 }
 
@@ -3225,16 +3874,6 @@ img[loading="lazy"] {
     height: 16px;
 }
 
-@media (max-width: 968px) {
-    .mini-widgets {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .feature-mini-chart .chart-container {
-        height: 60px;
-    }
-}
-
 .feature-map-glow {
     position: absolute;
     width: 500px;
@@ -3255,76 +3894,6 @@ img[loading="lazy"] {
     bottom: -20%;
     right: -10%;
     background: var(--gradient-2);
-}
-
-@media (max-width: 968px) {
-    .feature-timeline {
-        flex-wrap: wrap;
-        gap: 2rem;
-        justify-content: center;
-        padding: 2rem 1rem;
-    }
-
-    .timeline-line-container {
-        display: none;
-    }
-
-    .feature-point {
-        flex: 0 0 28%;
-    }
-
-    .feature-point-dot {
-        width: 65px;
-        height: 65px;
-    }
-
-    .feature-point-dot img,
-    .feature-point-dot svg {
-        width: 26px;
-        height: 26px;
-    }
-
-    .feature-point-label {
-        font-size: 0.8rem;
-        margin-top: 1rem;
-    }
-
-    .feature-detail-card {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: center;
-    }
-
-    .feature-detail-list {
-        justify-content: center;
-    }
-
-    .feature-detail-mockup {
-        order: -1;
-    }
-
-    .feature-detail-mockup .device-macbook-pro {
-        transform: scale(0.5);
-        margin-top: 20px;
-        margin-bottom: -180px;
-    }
-}
-
-@media (max-width: 600px) {
-    .feature-point {
-        flex: 0 0 45%;
-    }
-
-    .feature-point-dot {
-        width: 55px;
-        height: 55px;
-    }
-
-    .feature-point-dot img,
-    .feature-point-dot svg {
-        width: 22px;
-        height: 22px;
-    }
 }
 
 /* CTA Section */
@@ -3429,34 +3998,6 @@ footer p {
 footer a {
     color: var(--primary);
     text-decoration: none;
-}
-
-/* Responsive */
-@media (max-width: 968px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .showcase-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-    }
-
-    .showcase-features {
-        grid-template-columns: 1fr;
-    }
-
-    .nav-menu {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .floating-element {
-        display: none;
-    }
 }
 
 /* Animations - Only hide when JS is loaded */
