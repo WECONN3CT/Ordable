@@ -1689,11 +1689,9 @@ img[loading="lazy"] {
     }
 
     .cta-content h2 {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         line-height: 1.3;
         margin-bottom: 1rem;
-        text-align: center;
-        word-wrap: break-word;
     }
 
     .cta-content p {
@@ -2154,9 +2152,8 @@ img[loading="lazy"] {
     }
 
     .cta-content h2 {
-        font-size: 1.35rem;
+        font-size: 1.15rem;
         margin-bottom: 0.875rem;
-        text-align: center;
     }
 
     .cta-content p {
@@ -2893,11 +2890,9 @@ img[loading="lazy"] {
     }
 
     .cta-content h2 {
-        font-size: 1.1rem;
+        font-size: 0.95rem;
         margin-bottom: 0.75rem;
         line-height: 1.3;
-        text-align: center;
-        word-wrap: break-word;
     }
 
     .cta-content p {
