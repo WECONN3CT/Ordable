@@ -55,8 +55,9 @@ window.addEventListener('resize', () => {
 gsap.registerPlugin(ScrollTrigger);
 
 // ===== LENIS SMOOTH SCROLL =====
+let lenis = null;
 if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
+    lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         orientation: 'vertical',
@@ -74,6 +75,14 @@ if (typeof Lenis !== 'undefined') {
     });
 
     gsap.ticker.lagSmoothing(0);
+
+    // Stop Lenis when interacting with sliders (fix for mobile)
+    document.querySelectorAll('input[type="range"]').forEach(slider => {
+        slider.addEventListener('touchstart', () => lenis.stop(), { passive: true });
+        slider.addEventListener('touchend', () => lenis.start(), { passive: true });
+        slider.addEventListener('mousedown', () => lenis.stop());
+        slider.addEventListener('mouseup', () => lenis.start());
+    });
 }
 
 // Reveal animations

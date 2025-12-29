@@ -501,6 +501,10 @@ nav {
     appearance: none;
     cursor: pointer;
     outline: none;
+    touch-action: manipulation;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .slider-container input[type="range"]::-webkit-slider-thumb {
@@ -1799,19 +1803,31 @@ footer a {
     }
 
     .slider-container input[type="range"] {
-        height: 6px;
+        height: 8px;
+        touch-action: manipulation;
+        padding: 10px 0;
+        margin: -10px 0;
+        background-clip: content-box;
     }
 
     .slider-container input[type="range"]::-webkit-slider-thumb {
-        width: 20px;
-        height: 20px;
-        border-width: 2px;
+        width: 28px;
+        height: 28px;
+        border-width: 3px;
     }
 
     .slider-container input[type="range"]::-moz-range-thumb {
-        width: 20px;
-        height: 20px;
-        border-width: 2px;
+        width: 28px;
+        height: 28px;
+        border-width: 3px;
+    }
+
+    .slider-container {
+        padding: 10px 0;
+    }
+
+    .calc-input-card {
+        touch-action: manipulation;
     }
 
     .slider-hint {
