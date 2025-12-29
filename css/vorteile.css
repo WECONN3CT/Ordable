@@ -404,7 +404,7 @@ nav {
         0 40px 80px rgba(0,0,0,0.06);
     margin-top: 3rem;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .mega-calculator::before {
@@ -415,6 +415,7 @@ nav {
     right: 0;
     height: 4px;
     background: linear-gradient(90deg, var(--primary) 0%, var(--gradient-2) 100%);
+    pointer-events: none;
 }
 
 .calc-inputs {
@@ -1802,32 +1803,49 @@ footer a {
         min-width: 35px;
     }
 
+    .slider-container {
+        padding: 15px 0;
+        position: relative;
+        z-index: 10;
+    }
+
     .slider-container input[type="range"] {
-        height: 8px;
-        touch-action: manipulation;
-        padding: 10px 0;
-        margin: -10px 0;
-        background-clip: content-box;
+        height: 12px;
+        touch-action: pan-x;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+        position: relative;
+        z-index: 20;
+        cursor: pointer;
     }
 
     .slider-container input[type="range"]::-webkit-slider-thumb {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
         border-width: 3px;
+        cursor: grab;
+    }
+
+    .slider-container input[type="range"]::-webkit-slider-thumb:active {
+        cursor: grabbing;
+        transform: scale(1.1);
     }
 
     .slider-container input[type="range"]::-moz-range-thumb {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
         border-width: 3px;
     }
 
-    .slider-container {
-        padding: 10px 0;
+    .calc-input-card {
+        position: relative;
+        z-index: 5;
     }
 
-    .calc-input-card {
-        touch-action: manipulation;
+    .calc-inputs {
+        position: relative;
+        z-index: 10;
     }
 
     .slider-hint {

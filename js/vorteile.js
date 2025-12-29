@@ -56,7 +56,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 // ===== LENIS SMOOTH SCROLL =====
 let lenis = null;
-if (typeof Lenis !== 'undefined') {
+
+// Check if mobile device
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768;
+
+if (typeof Lenis !== 'undefined' && !isMobile) {
+    // Only enable Lenis on desktop
     lenis = new Lenis({
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -75,14 +80,6 @@ if (typeof Lenis !== 'undefined') {
     });
 
     gsap.ticker.lagSmoothing(0);
-
-    // Stop Lenis when interacting with sliders (fix for mobile)
-    document.querySelectorAll('input[type="range"]').forEach(slider => {
-        slider.addEventListener('touchstart', () => lenis.stop(), { passive: true });
-        slider.addEventListener('touchend', () => lenis.start(), { passive: true });
-        slider.addEventListener('mousedown', () => lenis.stop());
-        slider.addEventListener('mouseup', () => lenis.start());
-    });
 }
 
 // Reveal animations
