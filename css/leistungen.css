@@ -1427,9 +1427,9 @@ img[loading="lazy"] {
     }
 
     .feature-point-dot {
-        width: 38px;
-        height: 38px;
-        margin-bottom: 0.3rem;
+        width: 28px;
+        height: 28px;
+        margin-bottom: 0;
         transition: all 0.3s ease;
         flex-shrink: 0;
         background: linear-gradient(135deg, var(--primary) 0%, var(--gradient-2) 100%);
@@ -1440,8 +1440,8 @@ img[loading="lazy"] {
     }
 
     .feature-point-dot svg {
-        width: 16px;
-        height: 16px;
+        width: 12px;
+        height: 12px;
         stroke: white;
     }
 
@@ -1450,14 +1450,9 @@ img[loading="lazy"] {
         box-shadow: 0 4px 12px rgba(253, 185, 19, 0.4);
     }
 
+    /* Labels ausblenden auf Mobile */
     .feature-point-label {
-        font-size: 0.5rem;
-        font-weight: 600;
-        text-align: center;
-        white-space: nowrap;
-        line-height: 1.2;
-        max-width: 100%;
-        color: var(--text);
+        display: none !important;
     }
 
     /* Feature Detail Container */
@@ -1931,17 +1926,17 @@ img[loading="lazy"] {
     }
 
     .feature-point-dot {
-        width: 34px;
-        height: 34px;
+        width: 26px;
+        height: 26px;
     }
 
     .feature-point-dot svg {
-        width: 14px;
-        height: 14px;
+        width: 11px;
+        height: 11px;
     }
 
     .feature-point-label {
-        font-size: 0.45rem;
+        display: none !important;
     }
 
     .feature-detail-card {
@@ -2371,28 +2366,27 @@ img[loading="lazy"] {
     /* 5 columns auf kleinen Phones - kompakte Icons */
     .feature-timeline {
         grid-template-columns: repeat(5, 1fr) !important;
-        gap: 0.15rem;
+        gap: 0.5rem;
         padding: 0.5rem 0;
     }
 
     .feature-point {
-        padding: 0.1rem;
+        padding: 0;
     }
 
     .feature-point-dot {
-        width: 32px;
-        height: 32px;
-        margin-bottom: 0.2rem;
+        width: 24px;
+        height: 24px;
+        margin-bottom: 0;
     }
 
     .feature-point-dot svg {
-        width: 13px;
-        height: 13px;
+        width: 10px;
+        height: 10px;
     }
 
     .feature-point-label {
-        font-size: 0.4rem;
-        margin-top: 0.15rem;
+        display: none !important;
     }
 
     .feature-detail-card {
