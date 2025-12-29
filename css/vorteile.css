@@ -1743,73 +1743,88 @@ footer a {
     }
 
     .savings-section .section-header p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         padding: 0 0.5rem;
+        line-height: 1.5;
     }
 
     .mega-calculator {
-        padding: 1.5rem;
-        border-radius: 20px;
-        margin-top: 2rem;
+        padding: 1.25rem;
+        border-radius: 16px;
+        margin-top: 1.5rem;
+    }
+
+    .calc-inputs {
+        gap: 1rem;
+        margin-bottom: 1.5rem;
     }
 
     /* Slider Input Cards */
     .calc-input-card {
-        padding: 1.25rem;
-        border-radius: 16px;
+        padding: 1rem;
+        border-radius: 12px;
     }
 
     .calc-input-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 12px;
-        margin-bottom: 1rem;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        margin-bottom: 0.75rem;
     }
 
     .calc-input-icon svg {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
     }
 
     .calc-input-card label {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
+        margin-bottom: 0.25rem;
     }
 
     .slider-value {
-        font-size: 1.75rem;
-        margin: 0.25rem 0 1rem;
+        font-size: 1.5rem;
+        margin: 0.25rem 0 0.75rem;
     }
 
     .slider-container {
-        gap: 0.5rem;
+        gap: 0.4rem;
         padding: 0;
     }
 
     .slider-min,
     .slider-max {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
+        min-width: 35px;
     }
 
     .slider-container input[type="range"] {
-        height: 8px;
+        height: 6px;
     }
 
     .slider-container input[type="range"]::-webkit-slider-thumb {
-        width: 24px;
-        height: 24px;
-        border-width: 3px;
+        width: 20px;
+        height: 20px;
+        border-width: 2px;
+    }
+
+    .slider-container input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-width: 2px;
     }
 
     .slider-hint {
-        font-size: 0.7rem;
-        margin-top: 0.75rem;
+        font-size: 0.65rem;
+        margin-top: 0.5rem;
+        line-height: 1.4;
     }
 
     /* Comparison Cards (Platform vs ORDABLE) */
     .simple-comparison {
         grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
-        margin-bottom: 1.5rem;
+        gap: 0.5rem;
+        margin-bottom: 1.25rem;
     }
 
     .comparison-vs {
@@ -1817,101 +1832,128 @@ footer a {
     }
 
     .comparison-card {
-        padding: 1rem;
-        border-radius: 16px;
+        padding: 0.875rem;
+        border-radius: 12px;
+    }
+
+    .comparison-card:hover {
+        transform: none;
+    }
+
+    .comparison-card.ordable::before {
+        font-size: 0.5rem;
+        padding: 0.25rem 0.6rem;
+        top: -8px;
+        letter-spacing: 0.05em;
     }
 
     .comparison-card h4 {
-        font-size: 0.85rem;
-        margin-bottom: 0.25rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.15rem;
+        line-height: 1.2;
     }
 
     .comparison-subtitle {
-        font-size: 0.65rem !important;
-        margin-bottom: 0.75rem !important;
+        font-size: 0.55rem !important;
+        margin-bottom: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        line-height: 1.3;
     }
 
     .comparison-icon {
-        width: 36px;
-        height: 36px;
-        margin-bottom: 0.5rem;
+        width: 32px;
+        height: 32px;
+        margin-bottom: 0.4rem;
+        border-radius: 8px;
     }
 
     .comparison-icon svg {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
     }
 
     .comparison-cost {
-        margin: 0.75rem 0;
+        margin: 0.5rem 0;
     }
 
-    .cost-label {
-        font-size: 0.6rem !important;
+    .comparison-cost .cost-label {
+        font-size: 0.5rem !important;
+        margin-bottom: 0.3rem;
+        letter-spacing: 0.03em;
     }
 
-    .cost-value {
-        font-size: 1.25rem !important;
+    .comparison-cost .cost-value {
+        font-size: 1.1rem !important;
+        line-height: 1.1;
     }
 
     .comparison-detail {
-        font-size: 0.6rem !important;
-        padding: 0.4rem 0.6rem !important;
+        font-size: 0.5rem !important;
+        padding: 0.35rem 0.5rem !important;
+        border-radius: 6px;
+        line-height: 1.3;
     }
 
     /* Final Savings Box */
     .final-savings {
-        padding: 2rem 1.25rem;
-        border-radius: 20px;
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
     }
 
     .savings-badge {
-        font-size: 0.65rem;
-        padding: 0.5rem 1.25rem;
-        margin-bottom: 1.25rem;
+        font-size: 0.6rem;
+        padding: 0.4rem 1rem;
+        margin-bottom: 1rem;
+        letter-spacing: 0.1em;
     }
 
     .savings-amounts {
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
+        gap: 1rem;
     }
 
     .savings-money .value,
     .savings-time .value {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .savings-money .sub,
     .savings-time .sub {
-        font-size: 0.85rem;
-        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        margin-top: 0.35rem;
+        line-height: 1.3;
     }
 
     .final-savings .savings-note {
-        font-size: 0.8rem;
-        margin-bottom: 1.25rem;
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+        line-height: 1.4;
     }
 
     .mega-cta {
-        padding: 1rem 1.5rem;
-        font-size: 0.95rem;
-        border-radius: 12px;
+        padding: 0.875rem 1.25rem;
+        font-size: 0.85rem;
+        border-radius: 10px;
         width: 100%;
         justify-content: center;
+        gap: 0.5rem;
     }
 
     .mega-cta svg {
-        width: 18px;
-        height: 18px;
+        width: 16px;
+        height: 16px;
     }
 
     /* Sources Note */
     .sources-note {
-        padding: 1rem;
-        margin-top: 1.5rem;
+        padding: 0.875rem;
+        margin-top: 1.25rem;
+        border-radius: 10px;
     }
 
     .sources-note p {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
+        line-height: 1.5;
     }
 }
 
