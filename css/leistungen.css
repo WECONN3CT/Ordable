@@ -1675,26 +1675,42 @@ img[loading="lazy"] {
 
     /* CTA Section */
     .cta-section {
-        padding: 60px 1.5rem;
+        padding: 50px 1.25rem;
+        margin-top: 0;
+    }
+
+    .cta-content {
+        max-width: 100%;
+        padding: 0 0.5rem;
     }
 
     .cta-content h2 {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
     }
 
     .cta-content p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1.75rem;
     }
 
     .cta-buttons {
         flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+        gap: 0.75rem;
     }
 
-    .cta-buttons a {
+    .cta-buttons a,
+    .btn-dark,
+    .btn-outline {
         width: 100%;
-        max-width: 280px;
+        max-width: 260px;
         text-align: center;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+        border-radius: 10px;
     }
 
     /* Footer */
@@ -2127,22 +2143,29 @@ img[loading="lazy"] {
 
     /* CTA */
     .cta-section {
-        padding: 50px 1rem;
+        padding: 45px 1rem;
     }
 
     .cta-content h2 {
-        font-size: 1.4rem;
+        font-size: 1.35rem;
+        margin-bottom: 0.875rem;
     }
 
     .cta-content p {
-        font-size: 0.9rem;
+        font-size: 0.875rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cta-buttons {
+        gap: 0.65rem;
     }
 
     .btn-dark, .btn-outline {
-        padding: 0.875rem 1.5rem;
-        font-size: 0.9rem;
+        padding: 0.8rem 1.25rem;
+        font-size: 0.85rem;
         width: 100%;
-        max-width: 260px;
+        max-width: 240px;
+        border-radius: 8px;
     }
 
     /* Footer */
@@ -2848,27 +2871,35 @@ img[loading="lazy"] {
 
     /* CTA */
     .cta-section {
-        padding: 40px 0.75rem;
+        padding: 35px 0.75rem;
+    }
+
+    .cta-content {
+        padding: 0 0.25rem;
     }
 
     .cta-content h2 {
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
     }
 
     .cta-content p {
-        font-size: 0.85rem;
-        margin-bottom: 1.5rem;
+        font-size: 0.8rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.5;
     }
 
     .cta-buttons {
-        gap: 0.75rem;
+        gap: 0.5rem;
+        width: 100%;
     }
 
     .btn-dark, .btn-outline {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.85rem;
-        border-radius: 10px;
+        padding: 0.7rem 1rem;
+        font-size: 0.8rem;
+        border-radius: 8px;
+        max-width: 220px;
     }
 
     /* Footer */
