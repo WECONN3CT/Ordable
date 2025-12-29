@@ -1356,70 +1356,11 @@ img[loading="lazy"] {
         flex-shrink: 0;
     }
 
-    /* Floating Elements - Mobile: Kompakte Badges nebeneinander */
-    .showcase-card {
-        gap: 0.5rem;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        overflow: hidden;
-    }
-
-    .showcase-card-mockup {
-        width: 100%;
-        flex: 0 0 100%;
-        order: 1;
-    }
-
-    .floating-element {
-        display: inline-flex;
-        position: static;
-        padding: 0.4rem 0.6rem;
-        border-radius: 8px;
-        gap: 0.4rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        background: var(--white);
-        border: 1px solid var(--border);
-        order: 2;
-        flex: 1 1 calc(50% - 0.25rem);
-        min-width: 0;
-        max-width: calc(50% - 0.25rem);
-    }
-
-    .floating-element-1 {
-        order: 2;
-    }
-
+    /* Floating Elements - Mobile: Ausgeblendet */
+    .floating-element,
+    .floating-element-1,
     .floating-element-2 {
-        order: 3;
-    }
-
-    .floating-icon {
-        width: 22px;
-        height: 22px;
-        border-radius: 6px;
-        flex-shrink: 0;
-    }
-
-    .floating-icon svg,
-    .floating-icon i {
-        width: 11px;
-        height: 11px;
-    }
-
-    .floating-text {
-        font-size: 0.6rem;
-        font-weight: 600;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .floating-subtext {
-        font-size: 0.45rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        display: none !important;
     }
 
     /* Feature Map Section - "Inklusive" - Complete Mobile Overhaul */
@@ -1971,38 +1912,6 @@ img[loading="lazy"] {
         font-size: 0.8rem;
     }
 
-    /* Floating Elements für 768px - als Badges */
-    .floating-element {
-        padding: 0.35rem 0.5rem;
-        border-radius: 8px;
-        gap: 0.35rem;
-        flex: 1 1 calc(50% - 0.25rem);
-        max-width: calc(50% - 0.25rem);
-    }
-
-    .floating-icon {
-        width: 20px;
-        height: 20px;
-    }
-
-    .floating-icon svg,
-    .floating-icon i {
-        width: 10px;
-        height: 10px;
-    }
-
-    .floating-text {
-        font-size: 0.55rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .floating-subtext {
-        font-size: 0.4rem;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
     /* Feature Map - "Inklusive" */
     .feature-map-section {
         padding: 40px 0.75rem 50px;
@@ -2444,72 +2353,6 @@ img[loading="lazy"] {
         font-size: 0.7rem;
         flex-shrink: 0;
         margin-left: 0.25rem;
-    }
-
-    /* Floating Elements für 480px - sehr kompakte Badges inline nebeneinander */
-    .showcase-card {
-        flex-wrap: wrap;
-        flex-direction: row !important;
-    }
-
-    .showcase-card-mockup {
-        width: 100%;
-        flex: 0 0 100%;
-    }
-
-    .floating-element {
-        position: static !important;
-        display: inline-flex !important;
-        padding: 0.3rem 0.4rem;
-        border-radius: 6px;
-        gap: 0.25rem;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-        border: 1px solid var(--border);
-        background: var(--white);
-        flex: 1 1 calc(50% - 0.25rem);
-        min-width: 0;
-        max-width: calc(50% - 0.25rem);
-        order: 2;
-        top: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        left: auto !important;
-        margin-top: 0.25rem;
-    }
-
-    .floating-element-1 {
-        order: 2;
-    }
-
-    .floating-element-2 {
-        order: 3;
-    }
-
-    .floating-icon {
-        width: 16px;
-        height: 16px;
-        border-radius: 4px;
-        flex-shrink: 0;
-    }
-
-    .floating-icon svg,
-    .floating-icon i {
-        width: 8px;
-        height: 8px;
-    }
-
-    .floating-text {
-        font-size: 0.5rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .floating-subtext {
-        font-size: 0.35rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
     }
 
     /* Feature Map - "Inklusive" auf kleinen Phones */
