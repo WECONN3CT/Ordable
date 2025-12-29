@@ -1673,35 +1673,9 @@ img[loading="lazy"] {
         height: 80px !important;
     }
 
-    /* CTA Section */
+    /* CTA Section - Mobile ausgeblendet */
     .cta-section {
-        padding: 50px 1.25rem;
-        margin-top: 0;
-        text-align: center;
-        overflow: hidden;
-    }
-
-    .cta-content {
-        max-width: 100%;
-        padding: 0 0.5rem;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .cta-section h2 {
-        font-size: 1.2rem;
-        line-height: 1.3;
-        margin-bottom: 1rem;
-        text-align: center !important;
-        width: 100%;
-        padding: 0 0.5rem;
-        box-sizing: border-box;
-    }
-
-    .cta-content p {
-        font-size: 0.95rem;
-        line-height: 1.5;
-        margin-bottom: 1.75rem;
+        display: none !important;
     }
 
     .cta-buttons {
@@ -2149,37 +2123,9 @@ img[loading="lazy"] {
         font-size: 0.85rem;
     }
 
-    /* CTA */
+    /* CTA - Mobile ausgeblendet */
     .cta-section {
-        padding: 45px 1rem;
-        text-align: center;
-    }
-
-    .cta-section h2 {
-        font-size: 1rem;
-        margin-bottom: 0.875rem;
-        text-align: center !important;
-        width: 100%;
-        padding: 0 0.5rem;
-    }
-
-    .cta-content p {
-        font-size: 0.875rem;
-        margin-bottom: 1.5rem;
-        text-align: center;
-    }
-
-    .cta-buttons {
-        gap: 0.65rem;
-        justify-content: center;
-    }
-
-    .btn-dark, .btn-outline {
-        padding: 0.8rem 1.25rem;
-        font-size: 0.85rem;
-        width: 100%;
-        max-width: 240px;
-        border-radius: 8px;
+        display: none !important;
     }
 
     /* Footer */
@@ -2883,46 +2829,9 @@ img[loading="lazy"] {
         height: 60px !important;
     }
 
-    /* CTA */
+    /* CTA - Mobile ausgeblendet */
     .cta-section {
-        padding: 35px 0.75rem;
-        text-align: center;
-        overflow: hidden;
-    }
-
-    .cta-content {
-        padding: 0 0.25rem;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    .cta-section h2 {
-        font-size: 0.85rem;
-        margin-bottom: 0.75rem;
-        line-height: 1.3;
-        text-align: center !important;
-        width: 100%;
-        padding: 0 0.25rem;
-    }
-
-    .cta-content p {
-        font-size: 0.8rem;
-        margin-bottom: 1.25rem;
-        line-height: 1.5;
-        text-align: center;
-    }
-
-    .cta-buttons {
-        gap: 0.5rem;
-        width: 100%;
-        justify-content: center;
-    }
-
-    .btn-dark, .btn-outline {
-        padding: 0.7rem 1rem;
-        font-size: 0.8rem;
-        border-radius: 8px;
-        max-width: 220px;
+        display: none !important;
     }
 
     /* Footer */
