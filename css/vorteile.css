@@ -1734,6 +1734,185 @@ footer a {
     .stats-grid {
         grid-template-columns: 1fr;
     }
+
+    /* ========================================
+       SPARRECHNER - Mobile Optimized
+       ======================================== */
+    .savings-section {
+        padding: 60px 1rem;
+    }
+
+    .savings-section .section-header p {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+
+    .mega-calculator {
+        padding: 1.5rem;
+        border-radius: 20px;
+        margin-top: 2rem;
+    }
+
+    /* Slider Input Cards */
+    .calc-input-card {
+        padding: 1.25rem;
+        border-radius: 16px;
+    }
+
+    .calc-input-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+    }
+
+    .calc-input-icon svg {
+        width: 22px;
+        height: 22px;
+    }
+
+    .calc-input-card label {
+        font-size: 0.9rem;
+    }
+
+    .slider-value {
+        font-size: 1.75rem;
+        margin: 0.25rem 0 1rem;
+    }
+
+    .slider-container {
+        gap: 0.5rem;
+        padding: 0;
+    }
+
+    .slider-min,
+    .slider-max {
+        font-size: 0.7rem;
+    }
+
+    .slider-container input[type="range"] {
+        height: 8px;
+    }
+
+    .slider-container input[type="range"]::-webkit-slider-thumb {
+        width: 24px;
+        height: 24px;
+        border-width: 3px;
+    }
+
+    .slider-hint {
+        font-size: 0.7rem;
+        margin-top: 0.75rem;
+    }
+
+    /* Comparison Cards (Platform vs ORDABLE) */
+    .simple-comparison {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .comparison-vs {
+        display: none;
+    }
+
+    .comparison-card {
+        padding: 1rem;
+        border-radius: 16px;
+    }
+
+    .comparison-card h4 {
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .comparison-subtitle {
+        font-size: 0.65rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    .comparison-icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 0.5rem;
+    }
+
+    .comparison-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .comparison-cost {
+        margin: 0.75rem 0;
+    }
+
+    .cost-label {
+        font-size: 0.6rem !important;
+    }
+
+    .cost-value {
+        font-size: 1.25rem !important;
+    }
+
+    .comparison-detail {
+        font-size: 0.6rem !important;
+        padding: 0.4rem 0.6rem !important;
+    }
+
+    /* Final Savings Box */
+    .final-savings {
+        padding: 2rem 1.25rem;
+        border-radius: 20px;
+    }
+
+    .savings-badge {
+        font-size: 0.65rem;
+        padding: 0.5rem 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .savings-amounts {
+        margin-bottom: 1rem;
+    }
+
+    .savings-money .value,
+    .savings-time .value {
+        font-size: 2.5rem;
+    }
+
+    .savings-money .sub,
+    .savings-time .sub {
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+    }
+
+    .final-savings .savings-note {
+        font-size: 0.8rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .mega-cta {
+        padding: 1rem 1.5rem;
+        font-size: 0.95rem;
+        border-radius: 12px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .mega-cta svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* Sources Note */
+    .sources-note {
+        padding: 1rem;
+        margin-top: 1.5rem;
+    }
+
+    .sources-note p {
+        font-size: 0.75rem;
+    }
 }
 
 @media (max-width: 480px) {
