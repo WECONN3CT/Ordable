@@ -746,10 +746,14 @@ img[loading="lazy"] {
     backdrop-filter: blur(4px);
     z-index: 998;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
-.mobile-menu-overlay.active { opacity: 1; }
+.mobile-menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
 
 .mobile-nav {
     display: none;
@@ -765,9 +769,13 @@ img[loading="lazy"] {
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
     box-shadow: -10px 0 40px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
 }
 
-.mobile-nav.active { right: 0; }
+.mobile-nav.active {
+    right: 0;
+    pointer-events: auto;
+}
 
 .mobile-nav-menu {
     list-style: none;

@@ -3311,11 +3311,13 @@ footer a:hover {
     backdrop-filter: blur(4px);
     z-index: 998;
     opacity: 0;
+    pointer-events: none;
     transition: opacity 0.3s ease;
 }
 
 .mobile-menu-overlay.active {
     opacity: 1;
+    pointer-events: auto;
 }
 
 /* Mobile Navigation */
@@ -3334,10 +3336,12 @@ footer a:hover {
     transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
     box-shadow: -10px 0 50px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
 }
 
 .mobile-nav.active {
     right: 0;
+    pointer-events: auto;
 }
 
 /* Mobile Nav Header */
