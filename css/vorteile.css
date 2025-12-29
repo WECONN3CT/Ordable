@@ -1635,6 +1635,9 @@ footer a {
     .comparison-table {
         border-radius: 16px;
         overflow: visible;
+        background: transparent;
+        border: none;
+        box-shadow: none;
     }
 
     /* Hide desktop header on mobile */
@@ -1643,8 +1646,9 @@ footer a {
     }
 
     .comparison-row {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
         padding: 1rem;
         margin-bottom: 0.75rem;
         background: var(--white);
@@ -1655,14 +1659,16 @@ footer a {
 
     .comparison-row:last-child {
         margin-bottom: 0;
+        border-bottom: none;
     }
 
     .comparison-row:hover {
         background: var(--white);
     }
 
-    /* Feature name - full width on top */
+    /* Feature name - full width on top, spans both columns */
     .comparison-cell:first-child {
+        grid-column: 1 / -1;
         font-size: 0.95rem;
         font-weight: 700;
         color: var(--dark);
@@ -1672,38 +1678,26 @@ footer a {
         padding-bottom: 0.75rem;
     }
 
-    /* Container for the two value cells */
-    .comparison-row {
-        position: relative;
-    }
-
     /* Value cells side by side */
     .comparison-cell:not(:first-child) {
-        flex: 1;
-        padding: 0.5rem;
+        padding: 0.75rem;
         border-radius: 8px;
         font-size: 1.25rem;
-        position: relative;
-    }
-
-    /* Create side-by-side layout for value cells */
-    .comparison-row::after {
-        content: '';
-        display: table;
-        clear: both;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     .comparison-cell:nth-child(2) {
         background: rgba(239, 68, 68, 0.08);
         border: 1px solid rgba(239, 68, 68, 0.2);
-        float: left;
-        width: calc(50% - 0.375rem);
     }
 
     .comparison-cell:nth-child(2)::before {
         content: 'Lieferplattformen';
         display: block;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         font-weight: 600;
         color: var(--red);
         text-transform: uppercase;
@@ -1714,14 +1708,12 @@ footer a {
     .comparison-cell:nth-child(3) {
         background: rgba(5, 150, 105, 0.08);
         border: 1px solid rgba(5, 150, 105, 0.2);
-        float: right;
-        width: calc(50% - 0.375rem);
     }
 
     .comparison-cell:nth-child(3)::before {
         content: 'ORDABLE';
         display: block;
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         font-weight: 700;
         color: var(--green);
         text-transform: uppercase;
@@ -1736,7 +1728,7 @@ footer a {
     }
 
     .comparison-cell .value {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .stats-grid {
