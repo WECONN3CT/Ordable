@@ -1359,13 +1359,16 @@ img[loading="lazy"] {
     /* Floating Elements - Mobile: Kompakte Badges nebeneinander */
     .showcase-card {
         gap: 0.5rem;
-    }
-
-    .showcase-card::after {
-        content: '';
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .showcase-card-mockup {
+        width: 100%;
+        flex: 0 0 100%;
+        order: 1;
     }
 
     .floating-element {
@@ -1378,8 +1381,9 @@ img[loading="lazy"] {
         background: var(--white);
         border: 1px solid var(--border);
         order: 2;
-        flex: 1;
+        flex: 1 1 calc(50% - 0.25rem);
         min-width: 0;
+        max-width: calc(50% - 0.25rem);
     }
 
     .floating-element-1 {
@@ -1391,26 +1395,31 @@ img[loading="lazy"] {
     }
 
     .floating-icon {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
         border-radius: 6px;
         flex-shrink: 0;
     }
 
-    .floating-icon svg {
-        width: 12px;
-        height: 12px;
+    .floating-icon svg,
+    .floating-icon i {
+        width: 11px;
+        height: 11px;
     }
 
     .floating-text {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         font-weight: 600;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .floating-subtext {
-        font-size: 0.5rem;
+        font-size: 0.45rem;
         white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     /* Feature Map Section - "Inklusive" - Complete Mobile Overhaul */
@@ -1964,32 +1973,34 @@ img[loading="lazy"] {
 
     /* Floating Elements für 768px - als Badges */
     .floating-element {
-        padding: 0.5rem 0.6rem;
-        border-radius: 8px;
-        gap: 0.4rem;
-    }
-
-    .floating-element {
         padding: 0.35rem 0.5rem;
+        border-radius: 8px;
         gap: 0.35rem;
+        flex: 1 1 calc(50% - 0.25rem);
+        max-width: calc(50% - 0.25rem);
     }
 
     .floating-icon {
-        width: 22px;
-        height: 22px;
+        width: 20px;
+        height: 20px;
     }
 
-    .floating-icon svg {
-        width: 11px;
-        height: 11px;
+    .floating-icon svg,
+    .floating-icon i {
+        width: 10px;
+        height: 10px;
     }
 
     .floating-text {
-        font-size: 0.6rem;
+        font-size: 0.55rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .floating-subtext {
-        font-size: 0.45rem;
+        font-size: 0.4rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     /* Feature Map - "Inklusive" */
@@ -2055,29 +2066,37 @@ img[loading="lazy"] {
     }
 
     .showcase-card {
-        padding: 1.25rem;
-        border-radius: 16px;
+        padding: 1rem;
+        border-radius: 14px;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        overflow: hidden;
+        gap: 0.5rem;
     }
 
     .showcase-card-mockup {
-        padding: 1rem;
-        border-radius: 12px;
+        padding: 0.875rem;
+        border-radius: 10px;
+        width: 100%;
+        flex: 0 0 100%;
+        order: 1;
     }
 
     .mockup-item {
-        padding: 0.75rem;
+        padding: 0.65rem;
     }
 
     .mockup-item-title {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .mockup-item-sub {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 
     .mockup-item-price {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     /* Feature Map */
@@ -2290,6 +2309,23 @@ img[loading="lazy"] {
     /* Feature Showcase - "Bestellungen verwalten" auf kleinen Phones */
     .feature-showcase {
         padding: 35px 0.5rem;
+        overflow: hidden !important;
+    }
+
+    .feature-showcase .container {
+        overflow: hidden !important;
+        max-width: 100%;
+    }
+
+    .showcase-grid {
+        overflow: hidden !important;
+        max-width: 100%;
+    }
+
+    .showcase-visual {
+        overflow: hidden !important;
+        padding: 0.5rem 0;
+        max-width: 100%;
     }
 
     .showcase-content h2 {
@@ -2316,75 +2352,164 @@ img[loading="lazy"] {
     }
 
     .showcase-feature-icon {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
         margin-bottom: 0;
         flex-shrink: 0;
     }
 
+    .showcase-feature-icon i,
+    .showcase-feature-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+
     .showcase-feature h4 {
-        font-size: 0.8rem;
-        margin-bottom: 0.15rem;
+        font-size: 0.75rem;
+        margin-bottom: 0.1rem;
     }
 
     .showcase-feature p {
-        font-size: 0.7rem;
+        font-size: 0.65rem;
     }
 
+    /* Showcase Card - kompakter für Mobile */
     .showcase-card {
         padding: 0.75rem;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden !important;
+        position: relative;
     }
 
-    .mockup-item {
-        padding: 0.6rem;
+    .showcase-card-mockup {
+        padding: 0.75rem;
+        border-radius: 10px;
+        order: 1;
+        max-width: 100%;
+        overflow: hidden;
     }
 
-    .mockup-avatar {
-        width: 26px;
-        height: 26px;
-        font-size: 0.85rem;
+    .mockup-header {
+        margin-bottom: 0.5rem;
     }
 
-    .mockup-item-title {
-        font-size: 0.7rem;
+    .mockup-dot {
+        width: 6px;
+        height: 6px;
     }
 
-    .mockup-item-sub {
-        font-size: 0.6rem;
-    }
-
-    .mockup-item-price {
-        font-size: 0.75rem;
-    }
-
-    /* Floating Elements für 480px - sehr kompakte Badges */
-    .showcase-card {
+    .mockup-content {
         gap: 0.4rem;
     }
 
-    .floating-element {
-        padding: 0.3rem 0.4rem;
+    .mockup-item {
+        padding: 0.5rem;
+        border-radius: 6px;
+    }
+
+    .mockup-item-left {
+        gap: 0.5rem;
+        min-width: 0;
+        flex: 1;
+    }
+
+    .mockup-avatar {
+        width: 24px;
+        height: 24px;
+        font-size: 0.75rem;
+        flex-shrink: 0;
         border-radius: 5px;
+    }
+
+    .mockup-item-title {
+        font-size: 0.65rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .mockup-item-sub {
+        font-size: 0.55rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .mockup-item-price {
+        font-size: 0.7rem;
+        flex-shrink: 0;
+        margin-left: 0.25rem;
+    }
+
+    /* Floating Elements für 480px - sehr kompakte Badges inline nebeneinander */
+    .showcase-card {
+        flex-wrap: wrap;
+        flex-direction: row !important;
+    }
+
+    .showcase-card-mockup {
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .floating-element {
+        position: static !important;
+        display: inline-flex !important;
+        padding: 0.3rem 0.4rem;
+        border-radius: 6px;
         gap: 0.25rem;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        border: 1px solid var(--border);
+        background: var(--white);
+        flex: 1 1 calc(50% - 0.25rem);
+        min-width: 0;
+        max-width: calc(50% - 0.25rem);
+        order: 2;
+        top: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        left: auto !important;
+        margin-top: 0.25rem;
+    }
+
+    .floating-element-1 {
+        order: 2;
+    }
+
+    .floating-element-2 {
+        order: 3;
     }
 
     .floating-icon {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         border-radius: 4px;
+        flex-shrink: 0;
     }
 
-    .floating-icon svg {
-        width: 10px;
-        height: 10px;
+    .floating-icon svg,
+    .floating-icon i {
+        width: 8px;
+        height: 8px;
     }
 
     .floating-text {
-        font-size: 0.55rem;
+        font-size: 0.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .floating-subtext {
-        font-size: 0.4rem;
+        font-size: 0.35rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     /* Feature Map - "Inklusive" auf kleinen Phones */
