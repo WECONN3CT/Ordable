@@ -611,35 +611,6 @@ thumbs.forEach(thumb => {
     });
 });
 
-// Scroll-triggered slide change with smooth animation
-const totalSlides = 6;
-const carouselWrapper = document.querySelector('.carousel-section-wrapper');
-let currentSlide = 0;
-let isAnimating = false;
-
-ScrollTrigger.create({
-    trigger: carouselWrapper,
-    start: 'top top',
-    end: 'bottom bottom',
-    scrub: true,
-    onUpdate: (self) => {
-        const progress = self.progress;
-        // Berechne welcher Slide aktiv sein soll
-        const exactSlide = progress * (totalSlides - 1);
-        const targetSlide = Math.round(exactSlide);
-
-        // Nur wechseln wenn sich der Slide ändert und nicht gerade animiert
-        if (targetSlide !== currentSlide && !isAnimating) {
-            isAnimating = true;
-            currentSlide = targetSlide;
-
-            featureSwiper.slideTo(targetSlide, 800, true);
-
-            // Animation-Lock nach kurzer Zeit aufheben
-            setTimeout(() => {
-                isAnimating = false;
-            }, 400);
-        }
-    }
-});
+// Scroll-triggered slide change entfernt - verursachte Sprung zum letzten Slide
+// Navigation erfolgt jetzt nur über Thumbnails, Pfeile und Touch/Swipe
 }); // Ende DOMContentLoaded
