@@ -572,7 +572,10 @@ const featureSwiper = new Swiper('#featureCarousel', {
     loop: false,
     speed: 800,
     effect: 'slide',
-    allowTouchMove: true,
+    allowTouchMove: false,      // Deaktiviert Touch/Swipe
+    simulateTouch: false,       // Deaktiviert Maus-Drag
+    mousewheel: false,          // Deaktiviert Mausrad-Scrolling
+    keyboard: false,            // Deaktiviert Tastatur-Navigation
     pagination: {
         el: '.carousel-pagination',
         clickable: true,
