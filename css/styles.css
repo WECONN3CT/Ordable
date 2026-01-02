@@ -3884,26 +3884,30 @@ footer a:hover {
 
     /* Mobile Nav anpassen */
     .mobile-nav {
-        max-width: 280px;
-    }
-
-    .mobile-nav::before {
-        height: 70px;
+        max-width: 320px;
+        padding: 100px 1.5rem 2rem;
     }
 
     .mobile-nav-menu {
-        padding: 0 1.25rem;
+        padding: 0;
+    }
+
+    .mobile-nav-menu li {
+        margin-bottom: 0;
     }
 
     .mobile-nav-menu li a {
-        padding: 0.875rem 0;
-        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        padding: 1rem 0;
+        font-size: 1.1rem;
+        font-weight: 600;
     }
 
     .mobile-nav-cta {
-        margin: 1.5rem 1.25rem;
-        padding: 0.875rem 1.25rem;
-        font-size: 0.95rem;
+        margin: 2rem 0;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
     }
 
     /* Hero */
@@ -4331,25 +4335,22 @@ footer a:hover {
     .mobile-nav {
         width: 100%;
         max-width: 100%;
-    }
-
-    .mobile-nav::before {
-        height: 60px;
+        padding: 100px 1.5rem 2rem;
     }
 
     .mobile-nav-menu {
-        padding: 0 1rem;
+        padding: 0;
     }
 
     .mobile-nav-menu li a {
-        font-size: 1.05rem;
-        padding: 0.8rem 0;
+        font-size: 1.1rem;
+        padding: 1rem 0;
     }
 
     .mobile-nav-cta {
-        margin: 1.25rem 1rem;
-        padding: 0.8rem 1rem;
-        font-size: 0.9rem;
+        margin: 2rem 0;
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
     }
 
     /* Hero */
