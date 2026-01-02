@@ -447,30 +447,50 @@ document.querySelectorAll('.btn-gradient, .btn-gradient-outline, .btn-primary, .
     });
 });
 
-// ===== FORM SUBMISSION =====
+// ===== FORM SUBMISSION WITH FORMSPREE =====
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
         const formData = new FormData(this);
-        const data = Object.fromEntries(formData);
-        console.log('Form submitted:', data);
-
-        // Animate button
         const btn = this.querySelector('.form-submit');
+        const originalText = btn.textContent;
+
+        // Animate button & show loading
         gsap.to(btn, {
             scale: 0.95,
             duration: 0.1,
             yoyo: true,
             repeat: 1
         });
+        btn.textContent = 'Wird gesendet...';
+        btn.disabled = true;
 
-        // Show modal
-        setTimeout(() => {
-            document.getElementById('successModal').classList.add('show');
-            this.reset();
-        }, 200);
+        // Send to Formspree
+        fetch('https://formspree.io/f/xgovkvjo', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('successModal').classList.add('show');
+                this.reset();
+            } else {
+                throw new Error('Fehler beim Senden');
+            }
+        })
+        .catch(error => {
+            alert('Es gab einen Fehler. Bitte versuche es erneut oder kontaktiere uns direkt.');
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+        });
     });
 }
 

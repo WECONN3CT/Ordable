@@ -47,23 +47,43 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Form submission
+// Form submission with Formspree
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Collect form data
         const formData = new FormData(this);
-        const data = Object.fromEntries(formData.entries());
+        const btn = this.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
 
-        // Here you would typically send the data to your server
-        console.log('Form submitted:', data);
+        // Show loading state
+        btn.textContent = 'Wird gesendet...';
+        btn.disabled = true;
 
-        // Show success message
-        alert('Vielen Dank für deine Anmeldung! Wir melden uns innerhalb von 24 Stunden bei dir.');
-
-        // Reset form
-        this.reset();
+        // Send to Formspree
+        fetch('https://formspree.io/f/xgovkvjo', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Vielen Dank für deine Anfrage! Wir melden uns innerhalb von 24 Stunden bei dir.');
+                this.reset();
+            } else {
+                throw new Error('Fehler beim Senden');
+            }
+        })
+        .catch(error => {
+            alert('Es gab einen Fehler. Bitte versuche es erneut oder kontaktiere uns direkt.');
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            btn.textContent = originalText;
+            btn.disabled = false;
+        });
     });
 }
