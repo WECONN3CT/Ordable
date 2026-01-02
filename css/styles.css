@@ -1860,10 +1860,11 @@ footer a:hover {
 .footer-legal {
     margin-top: 0.75rem;
     font-size: 0.85rem;
+    color: var(--text-light);
 }
 
 .footer-legal a {
-    color: var(--text-muted);
+    color: var(--text-light);
     text-decoration: none;
     transition: color 0.3s ease;
 }
