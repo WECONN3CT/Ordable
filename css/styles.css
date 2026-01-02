@@ -3831,11 +3831,6 @@ footer a:hover {
 
 /* Mobile Phones (max-width: 768px) */
 @media (max-width: 768px) {
-    /* Typography scaling */
-    html {
-        font-size: 15px;
-    }
-
     /* Hero */
     .hero {
         padding: 80px 1rem 50px;
@@ -4233,10 +4228,6 @@ footer a:hover {
 
 /* Small Mobile Phones (max-width: 480px) */
 @media (max-width: 480px) {
-    html {
-        font-size: 14px;
-    }
-
     /* Hero */
     .hero {
         padding: 75px 1rem 40px;
@@ -4412,10 +4403,6 @@ footer a:hover {
 
 /* Extra Small Devices (max-width: 360px) */
 @media (max-width: 360px) {
-    html {
-        font-size: 13px;
-    }
-
     .hero h1 {
         font-size: 1.5rem;
     }
