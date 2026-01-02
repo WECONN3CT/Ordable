@@ -109,44 +109,45 @@
             </div>
 
             <form class="signup-form" id="contactForm" action="https://formspree.io/f/xgovkvjo" method="POST">
+                <input type="hidden" name="_subject" value="Neue Anfrage von ORDABLE Anmeldung">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="vorname">Vorname <span class="required">*</span></label>
-                        <input type="text" id="vorname" name="vorname" required placeholder="Max">
+                        <input type="text" id="vorname" name="Vorname" required placeholder="Max">
                     </div>
                     <div class="form-group">
                         <label for="nachname">Nachname <span class="required">*</span></label>
-                        <input type="text" id="nachname" name="nachname" required placeholder="Mustermann">
+                        <input type="text" id="nachname" name="Nachname" required placeholder="Mustermann">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="restaurant">Restaurant Name <span class="required">*</span></label>
-                    <input type="text" id="restaurant" name="restaurant" required placeholder="Mein Restaurant">
+                    <input type="text" id="restaurant" name="Restaurant" required placeholder="Mein Restaurant">
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="strasse">Straße & Hausnummer <span class="required">*</span></label>
-                        <input type="text" id="strasse" name="strasse" required placeholder="Musterstraße 123">
+                        <input type="text" id="strasse" name="Strasse" required placeholder="Musterstraße 123">
                     </div>
                     <div class="form-group">
                         <label for="plz">PLZ <span class="required">*</span></label>
-                        <input type="text" id="plz" name="plz" required placeholder="12345">
+                        <input type="text" id="plz" name="PLZ" required placeholder="12345">
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="stadt">Stadt <span class="required">*</span></label>
-                        <input type="text" id="stadt" name="stadt" required placeholder="Berlin">
+                        <input type="text" id="stadt" name="Stadt" required placeholder="Berlin">
                     </div>
                     <div class="form-group">
                         <label for="land">Land</label>
-                        <select id="land" name="land">
-                            <option value="deutschland" selected>Deutschland</option>
-                            <option value="oesterreich">Österreich</option>
-                            <option value="schweiz">Schweiz</option>
+                        <select id="land" name="Land">
+                            <option value="Deutschland" selected>Deutschland</option>
+                            <option value="Österreich">Österreich</option>
+                            <option value="Schweiz">Schweiz</option>
                         </select>
                     </div>
                 </div>
@@ -154,27 +155,27 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="email">E-Mail <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required placeholder="max@restaurant.de">
+                        <input type="email" id="email" name="E-Mail" required placeholder="max@restaurant.de">
                     </div>
                     <div class="form-group">
                         <label for="telefon">Telefon <span class="required">*</span></label>
-                        <input type="tel" id="telefon" name="telefon" required placeholder="+49 123 456789">
+                        <input type="tel" id="telefon" name="Telefon" required placeholder="+49 123 456789">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="paket">Interessiert an <span class="required">*</span></label>
-                    <select id="paket" name="paket" required>
+                    <select id="paket" name="Interessiert an" required>
                         <option value="">Bitte auswählen...</option>
-                        <option value="ordable">ORDABLE (Website & App) - 149€/Monat</option>
-                        <option value="ordable-plus">ORDABLE PLUS (mit Bestellterminal) - 199€/Monat</option>
-                        <option value="beratung">Beratung gewünscht</option>
+                        <option value="ORDABLE - Website & App (299€/Monat)">ORDABLE (Website & App) - 299€/Monat</option>
+                        <option value="ORDABLE PLUS - mit Bestellterminal (399€/Monat)">ORDABLE PLUS (mit Bestellterminal) - 399€/Monat</option>
+                        <option value="Beratung gewünscht">Beratung gewünscht</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <label for="nachricht">Nachricht (optional)</label>
-                    <textarea id="nachricht" name="nachricht" placeholder="Gibt es etwas, das wir wissen sollten? Z.B. aktuelle Lieferplattformen, besondere Anforderungen..."></textarea>
+                    <textarea id="nachricht" name="Nachricht" placeholder="Gibt es etwas, das wir wissen sollten? Z.B. aktuelle Lieferplattformen, besondere Anforderungen..."></textarea>
                 </div>
 
                 <button type="submit" class="form-submit">Anfrage senden</button>
