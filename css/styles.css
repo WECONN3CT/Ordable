@@ -3443,61 +3443,6 @@ footer a:hover {
 
     .mobile-nav, .mobile-menu-overlay { display: block; }
 
-    .mobile-nav-menu li a {
-        display: flex;
-        align-items: center;
-        padding: 1rem 0;
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: var(--dark);
-        text-decoration: none;
-        border-bottom: 1px solid var(--border);
-        transition: all 0.3s ease;
-    }
-
-    .mobile-nav-menu li a::before {
-        content: '';
-        width: 4px;
-        height: 4px;
-        background: transparent;
-        border-radius: 50%;
-        margin-right: 12px;
-        transition: all 0.3s ease;
-    }
-
-    .mobile-nav-menu li a:hover,
-    .mobile-nav-menu li a.active {
-        color: var(--primary);
-    }
-
-    .mobile-nav-menu li a:hover::before,
-    .mobile-nav-menu li a.active::before {
-        background: var(--primary);
-        width: 6px;
-        height: 6px;
-    }
-
-    .mobile-nav-cta {
-        display: block;
-        margin: 2rem 1.5rem;
-        padding: 1rem 1.5rem;
-        background: linear-gradient(135deg, var(--primary) 0%, var(--gradient-2) 100%);
-        color: var(--dark);
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1rem;
-        border-radius: 12px;
-        text-align: center;
-        opacity: 0;
-        transform: translateY(10px);
-        transition: all 0.3s ease 0.35s;
-    }
-
-    .mobile-nav.active .mobile-nav-cta {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
     /* Hero Section */
     .hero {
         padding: 100px 1.5rem 60px;
@@ -4537,12 +4482,6 @@ footer a:hover {
     /* Larger touch targets */
     .faq-question {
         min-height: 60px;
-    }
-
-    .mobile-nav-menu li a {
-        min-height: 56px;
-        display: flex;
-        align-items: center;
     }
 }
 
