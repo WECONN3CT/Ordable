@@ -1,3 +1,6 @@
+// Warte bis DOM vollständig geladen ist
+document.addEventListener('DOMContentLoaded', function() {
+
 // ===== ADD JS-LOADED CLASS =====
 document.documentElement.classList.add('js-loaded');
 
@@ -10,22 +13,24 @@ const mobileNav = document.getElementById('mobileNav');
 const mobileMenuOverlay = document.getElementById('mobileMenuOverlay');
 
 function openMobileMenu() {
-    mobileMenuToggle.classList.add('active');
-    mobileNav.classList.add('active');
-    mobileMenuOverlay.classList.add('active');
+    if (mobileMenuToggle) mobileMenuToggle.classList.add('active');
+    if (mobileNav) mobileNav.classList.add('active');
+    if (mobileMenuOverlay) mobileMenuOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
 
 function closeMobileMenu() {
-    mobileMenuToggle.classList.remove('active');
-    mobileNav.classList.remove('active');
-    mobileMenuOverlay.classList.remove('active');
+    if (mobileMenuToggle) mobileMenuToggle.classList.remove('active');
+    if (mobileNav) mobileNav.classList.remove('active');
+    if (mobileMenuOverlay) mobileMenuOverlay.classList.remove('active');
     document.body.style.overflow = '';
 }
 
 if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', () => {
-        if (mobileNav.classList.contains('active')) {
+    mobileMenuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (mobileNav && mobileNav.classList.contains('active')) {
             closeMobileMenu();
         } else {
             openMobileMenu();
@@ -57,7 +62,9 @@ window.addEventListener('resize', () => {
 });
 
 // Register GSAP plugins first
-gsap.registerPlugin(ScrollTrigger);
+if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+}
 
 // ===== LENIS SMOOTH SCROLL =====
 let lenis;
@@ -537,3 +544,5 @@ window.addEventListener('load', function() {
         });
     }
 });
+
+}); // Ende DOMContentLoaded

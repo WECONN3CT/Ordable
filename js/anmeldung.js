@@ -1,3 +1,6 @@
+// Warte bis DOM vollständig geladen ist
+document.addEventListener('DOMContentLoaded', function() {
+
 // ===== MOBILE MENU =====
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
 const mobileNav = document.getElementById('mobileNav');
@@ -18,7 +21,9 @@ function closeMobileMenu() {
 }
 
 if (mobileMenuToggle) {
-    mobileMenuToggle.addEventListener('click', () => {
+    mobileMenuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
         if (mobileNav && mobileNav.classList.contains('active')) {
             closeMobileMenu();
         } else {
@@ -87,3 +92,5 @@ if (contactForm) {
         });
     });
 }
+
+}); // Ende DOMContentLoaded

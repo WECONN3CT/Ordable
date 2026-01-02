@@ -65,27 +65,43 @@
     </div>
     <div class="noise-overlay"></div>
 
-    <!-- Navigation -->
-    <nav class="nav" id="nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <div class="nav-logo-icon">O</div>
-                <span class="nav-logo-text">ordable</span>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="/" class="logo">
+                <img src="../images/header.png" alt="Ordable">
             </a>
             <ul class="nav-menu">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#produkte">Produkte</a></li>
-                <li><a href="#preise">Preise</a></li>
-                <li><a href="#faq">FAQ</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="/leistungen/">Leistungen</a></li>
+                <li><a href="/vorteile/">Vorteile</a></li>
+                <li><a href="/pricing/">Pricing</a></li>
+                <li><a href="/story/">Unsere Story</a></li>
             </ul>
-            <div class="nav-cta">
-                <a href="#kontakt" class="btn btn-ghost">Login</a>
-                <a href="#demo" class="btn btn-primary">Demo buchen</a>
-            </div>
-            <button class="mobile-menu-btn">
-                <i data-lucide="menu" style="width: 24px; height: 24px;"></i>
+            <a href="/anmeldung/" class="nav-cta">Jetzt starten</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menü öffnen">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-        </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/leistungen/">Leistungen</a></li>
+            <li><a href="/vorteile/">Vorteile</a></li>
+            <li><a href="/pricing/">Pricing</a></li>
+            <li><a href="/story/">Unsere Story</a></li>
+        </ul>
+        <a href="/anmeldung/" class="mobile-nav-cta">Jetzt starten</a>
     </nav>
 
     <!-- Hero Section -->
