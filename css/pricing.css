@@ -757,6 +757,21 @@ footer a {
     text-decoration: none;
 }
 
+.footer-legal {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+.footer-legal a {
+    color: var(--text-light);
+    margin: 0 0.25rem;
+}
+
+.footer-legal a:hover {
+    color: var(--primary);
+}
+
 /* ========================================
    MOBILE HAMBURGER MENU
    ======================================== */

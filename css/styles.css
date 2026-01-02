@@ -1857,6 +1857,21 @@ footer a:hover {
     font-size: 0.85rem;
 }
 
+.footer-legal {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: var(--primary);
+}
+
 /* WhatsApp Button */
 .whatsapp-btn {
     position: fixed;
