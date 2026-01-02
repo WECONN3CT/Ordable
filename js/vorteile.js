@@ -160,8 +160,8 @@ const revenueSlider = document.getElementById('revenueSlider');
 const commissionSlider = document.getElementById('commissionSlider');
 
 // Cost constants
-const ORDABLE_MONTHLY = 199;
-const ORDABLE_SETUP = 499;
+const ORDABLE_MONTHLY = 399;
+const ORDABLE_SETUP = 999;
 
 function formatNumber(num) {
     return num.toLocaleString('de-DE');
