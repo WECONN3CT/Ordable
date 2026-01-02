@@ -97,6 +97,38 @@
             color: #E5A811;
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 18px 0;
+            font-size: 1rem;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 16px;
+            border: 1px solid #e5e5e5;
+            color: #444;
+        }
+
+        th {
+            background: #f9f9f9;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+
+        .info-box {
+            background: #f9f9f9;
+            border-left: 4px solid #E5A811;
+            padding: 16px 20px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .info-box p {
+            margin-bottom: 0;
+        }
+
         @media (max-width: 480px) {
             body {
                 padding: 50px 24px;
@@ -114,6 +146,14 @@
             h3 {
                 font-size: 1.1rem;
             }
+
+            table {
+                font-size: 0.9rem;
+            }
+
+            th, td {
+                padding: 8px 10px;
+            }
         }
     </style>
 </head>
@@ -124,7 +164,7 @@
 
     <h2>1. Verantwortlicher</h2>
     <p>
-        Verantwortlicher für die Datenverarbeitung auf dieser Website ist:<br><br>
+        Verantwortlicher für die Datenverarbeitung ist:<br><br>
         WECONN3CT GmbH<br>
         Frankenweg 109<br>
         53604 Bad Honnef<br>
@@ -133,120 +173,289 @@
         Telefon: <a href="tel:+491624521879">+49 (0) 162 4521879</a>
     </p>
 
-    <h2>2. Allgemeines zur Datenverarbeitung</h2>
+    <h2>2. Übersicht über unsere App</h2>
     <p>
-        Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, BDSG, TMG). In dieser Datenschutzerklärung informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.
-    </p>
-
-    <h2>3. Hosting</h2>
-    <p>
-        Unsere Website wird bei einem externen Dienstleister gehostet. Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Websitezugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
-    </p>
-    <p>
-        Die Verarbeitung erfolgt zur Erfüllung unserer vertraglichen Pflichten gegenüber unseren Kunden und zur Bereitstellung unserer Website (Art. 6 Abs. 1 lit. b und f DSGVO).
-    </p>
-
-    <h2>4. Server-Log-Dateien</h2>
-    <p>
-        Der Provider der Seiten erhebt und speichert automatisch Informationen in sogenannten Server-Log-Dateien, die Ihr Browser automatisch an uns übermittelt. Dies sind:
+        Diese Datenschutzerklärung gilt für die Nutzung von:
     </p>
     <ul>
-        <li>Browsertyp und Browserversion</li>
-        <li>Verwendetes Betriebssystem</li>
-        <li>Referrer URL</li>
-        <li>Hostname des zugreifenden Rechners</li>
-        <li>Uhrzeit der Serveranfrage</li>
-        <li>IP-Adresse</li>
+        <li><strong>App-Name:</strong> ORDABLE (Ordable POS)</li>
+        <li><strong>App-Typ:</strong> Restaurant-Management & Online-Bestellsystem</li>
+        <li><strong>Plattformen:</strong> Web-App (PWA) und Android-App</li>
+        <li><strong>App-ID:</strong> app.ordable.pos</li>
     </ul>
+
+    <h2>3. Welche Daten wir erheben</h2>
+
+    <h3>3.1 Kundendaten</h3>
+    <p>Bei der Nutzung unserer Bestellfunktionen werden folgende Daten erhoben:</p>
+    <ul>
+        <li>Vorname und Nachname</li>
+        <li>Telefonnummer (Pflichtfeld)</li>
+        <li>E-Mail-Adresse (optional)</li>
+        <li>Lieferadresse (bei Lieferbestellungen)</li>
+        <li>Bestellhistorie und Gesamtausgaben</li>
+        <li>Loyalitätspunkte</li>
+        <li>Bewertungen und Kommentare</li>
+    </ul>
+
+    <h3>3.2 Mitarbeiter- und Admin-Daten</h3>
+    <p>Für die Nutzung des Restaurant-Management-Systems:</p>
+    <ul>
+        <li>Name, E-Mail-Adresse, Telefonnummer</li>
+        <li>Passwort (verschlüsselt gespeichert)</li>
+        <li>Profilbild-URL</li>
+        <li>Benutzerrolle und Zugriffsrechte</li>
+    </ul>
+
+    <h3>3.3 Automatisch erfasste Daten</h3>
+    <p>Bei der Nutzung unserer Dienste werden automatisch erhoben:</p>
+    <ul>
+        <li>IP-Adresse (via Server-Verbindung)</li>
+        <li>User-Agent / Browser-Informationen</li>
+        <li>Zeitstempel der Zugriffe</li>
+    </ul>
+
+    <h2>4. Rechtsgrundlagen der Verarbeitung</h2>
     <p>
-        Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Die Erfassung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO. Der Websitebetreiber hat ein berechtigtes Interesse an der technisch fehlerfreien Darstellung und der Optimierung seiner Website.
+        Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf folgenden Rechtsgrundlagen:
+    </p>
+    <ul>
+        <li><strong>Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO):</strong> Verarbeitung zur Durchführung von Bestellungen und zur Bereitstellung unserer Dienste</li>
+        <li><strong>Berechtigte Interessen (Art. 6 Abs. 1 lit. f DSGVO):</strong> Zur Verbesserung unserer Dienste und zur Gewährleistung der IT-Sicherheit</li>
+        <li><strong>Einwilligung (Art. 6 Abs. 1 lit. a DSGVO):</strong> Sofern Sie in bestimmte Verarbeitungen eingewilligt haben (z.B. Push-Benachrichtigungen)</li>
+    </ul>
+
+    <h2>5. Standortdaten</h2>
+    <p>
+        Unsere App greift <strong>nicht</strong> direkt auf GPS-Daten oder Standortfunktionen Ihres Geräts zu. Bei Lieferbestellungen wird die Lieferadresse manuell von Ihnen eingegeben. Die eingegebene Postleitzahl wird zur Berechnung der Lieferzone und der Liefergebühren verwendet.
     </p>
 
-    <h2>5. Kontaktformular</h2>
+    <h2>6. App-Berechtigungen (Android)</h2>
     <p>
-        Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.
+        Die Android-App benötigt folgende Berechtigungen:
     </p>
-    <p>
-        Für die Verarbeitung der Kontaktformulardaten nutzen wir den Dienst Formspree. Die Daten werden dabei auf Servern von Formspree in den USA verarbeitet. Formspree ist unter dem EU-US Data Privacy Framework zertifiziert.
-    </p>
-    <p>
-        Die Verarbeitung erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) sowie zur Durchführung vorvertraglicher Maßnahmen (Art. 6 Abs. 1 lit. b DSGVO). Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.
-    </p>
+    <table>
+        <tr>
+            <th>Berechtigung</th>
+            <th>Zweck</th>
+        </tr>
+        <tr>
+            <td>INTERNET</td>
+            <td>Netzwerkkommunikation mit unseren Servern</td>
+        </tr>
+        <tr>
+            <td>RECEIVE_BOOT_COMPLETED</td>
+            <td>Automatischer Start nach Geräte-Neustart (Kiosk-Modus)</td>
+        </tr>
+        <tr>
+            <td>WAKE_LOCK</td>
+            <td>Bildschirm aktiv halten während der Nutzung</td>
+        </tr>
+        <tr>
+            <td>SYSTEM_ALERT_WINDOW</td>
+            <td>Overlay-Benachrichtigungen bei neuen Bestellungen</td>
+        </tr>
+    </table>
 
-    <h2>6. E-Mail-Kontakt</h2>
+    <h2>7. Authentifizierung und Anmeldung</h2>
     <p>
-        Wenn Sie uns per E-Mail kontaktieren, werden Ihre Angaben inklusive der von Ihnen angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
-    </p>
-
-    <h2>7. Cookies</h2>
-    <p>
-        Unsere Website verwendet Cookies. Dabei handelt es sich um kleine Textdateien, die auf Ihrem Endgerät gespeichert werden. Einige Cookies sind technisch notwendig, andere werden für statistische Zwecke oder zur Verbesserung der Benutzerfreundlichkeit verwendet.
+        Die Anmeldung erfolgt über E-Mail-Adresse und Passwort. Wir verwenden den Authentifizierungsdienst von Supabase. Eine E-Mail-Verifizierung ist erforderlich. Session-Daten werden im LocalStorage Ihres Browsers gespeichert.
     </p>
     <p>
-        Technisch notwendige Cookies werden auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO gespeichert. Wir haben ein berechtigtes Interesse an der Speicherung von Cookies zur technisch fehlerfreien und optimierten Bereitstellung unserer Dienste.
-    </p>
-    <p>
-        Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und Cookies nur im Einzelfall erlauben, die Annahme von Cookies für bestimmte Fälle oder generell ausschließen sowie das automatische Löschen der Cookies beim Schließen des Browsers aktivieren.
-    </p>
-
-    <h2>8. SSL/TLS-Verschlüsselung</h2>
-    <p>
-        Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von "http://" auf "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
-    </p>
-    <p>
-        Wenn die SSL- bzw. TLS-Verschlüsselung aktiviert ist, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.
+        Wir bieten <strong>keine</strong> Social-Logins (Google, Facebook, etc.) an.
     </p>
 
     <hr class="divider">
 
-    <h2>9. Ihre Rechte</h2>
+    <h2>8. Externe Dienste und Datenübertragung</h2>
     <p>
-        Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten grundsätzlich die nachfolgenden Rechte zu:
+        Zur Bereitstellung unserer Dienste nutzen wir folgende externe Dienstleister:
+    </p>
+    <table>
+        <tr>
+            <th>Dienst</th>
+            <th>Zweck</th>
+            <th>Übertragene Daten</th>
+        </tr>
+        <tr>
+            <td>Supabase</td>
+            <td>Backend, Datenbank, Authentifizierung</td>
+            <td>Alle Nutzer- und Bestelldaten</td>
+        </tr>
+        <tr>
+            <td>Resend</td>
+            <td>E-Mail-Versand (Bestellbestätigungen)</td>
+            <td>E-Mail, Name, Bestelldetails, Adresse</td>
+        </tr>
+        <tr>
+            <td>Google Fonts</td>
+            <td>Bereitstellung von Schriftarten</td>
+            <td>IP-Adresse</td>
+        </tr>
+    </table>
+
+    <h3>8.1 Supabase (Backend & Datenbank)</h3>
+    <p>
+        Wir nutzen Supabase als Backend-Infrastruktur und Datenbank. Supabase fungiert als Auftragsverarbeiter gemäß Art. 28 DSGVO. Die Datenverarbeitung erfolgt auf Grundlage eines Auftragsverarbeitungsvertrags.
     </p>
 
-    <h3>Auskunftsrecht</h3>
+    <h3>8.2 Resend (E-Mail-Dienst)</h3>
     <p>
-        Sie haben das Recht, jederzeit von uns unentgeltliche Auskunft über die zu Ihrer Person gespeicherten personenbezogenen Daten sowie eine Kopie dieser Daten zu erhalten (Art. 15 DSGVO).
+        Für den Versand von Bestellbestätigungen und Benachrichtigungen nutzen wir den E-Mail-Dienst Resend. Resend fungiert als Auftragsverarbeiter gemäß Art. 28 DSGVO.
     </p>
 
-    <h3>Recht auf Berichtigung</h3>
+    <h3>8.3 Google Fonts</h3>
     <p>
-        Sie haben das Recht, die Berichtigung Sie betreffender unrichtiger personenbezogener Daten zu verlangen (Art. 16 DSGVO).
+        Unsere Website verwendet Schriftarten von Google Fonts. Beim Aufruf unserer Seiten wird eine Verbindung zu Google-Servern hergestellt, wobei Ihre IP-Adresse übertragen wird. Google ist unter dem EU-US Data Privacy Framework zertifiziert.
+    </p>
+    <p>
+        Weitere Informationen finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a>
     </p>
 
-    <h3>Recht auf Löschung</h3>
+    <h2>9. Tracking und Analytics</h2>
+    <div class="info-box">
+        <p>
+            <strong>Wir verwenden keine Tracking-Tools.</strong> Unsere App nutzt weder Google Analytics, Firebase Analytics, Werbe-Tracker noch sonstige Third-Party-Tracking-Tools.
+        </p>
+    </div>
+
+    <h2>10. Lokale Speicherung (LocalStorage)</h2>
     <p>
-        Sie haben das Recht, die Löschung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen, soweit nicht die Verarbeitung zur Ausübung des Rechts auf freie Meinungsäußerung und Information, zur Erfüllung einer rechtlichen Verpflichtung, aus Gründen des öffentlichen Interesses oder zur Geltendmachung, Ausübung oder Verteidigung von Rechtsansprüchen erforderlich ist (Art. 17 DSGVO).
+        Unsere App verwendet LocalStorage (keine klassischen Cookies) zur Speicherung von:
+    </p>
+    <ul>
+        <li>Authentifizierungs-Session (Login-Zustand)</li>
+        <li>Favorisierte Menü-Artikel</li>
+        <li>PWA-Installationsstatus</li>
+        <li>Drucker- und Sound-Einstellungen (nur für Restaurant-Betreiber)</li>
+    </ul>
+    <p>
+        Diese Daten werden ausschließlich lokal auf Ihrem Gerät gespeichert und nicht an Dritte übermittelt.
     </p>
 
-    <h3>Recht auf Einschränkung der Verarbeitung</h3>
+    <h2>11. Benachrichtigungen</h2>
     <p>
-        Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen (Art. 18 DSGVO).
+        Mit Ihrer Erlaubnis können wir Ihnen Push-Benachrichtigungen senden. Wir nutzen dafür die Browser Web Notification API. Die Aktivierung erfolgt nur mit Ihrer ausdrücklichen Zustimmung. Benachrichtigungen informieren über neue Bestellungen und Statusänderungen.
+    </p>
+    <p>
+        Wir verwenden <strong>kein</strong> Firebase Cloud Messaging oder vergleichbare externe Push-Dienste.
     </p>
 
-    <h3>Recht auf Datenübertragbarkeit</h3>
+    <h2>12. Zahlungsverarbeitung</h2>
     <p>
-        Sie haben das Recht, die Sie betreffenden personenbezogenen Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten (Art. 20 DSGVO).
+        Aktuell ist keine Online-Zahlungsverarbeitung in unserer App implementiert. Zahlungen erfolgen direkt beim Restaurant (bar oder per Kartenzahlung vor Ort). Sollten wir zukünftig Online-Zahlungen einführen, werden wir diese Datenschutzerklärung entsprechend aktualisieren und PCI-DSS-konforme Zahlungsdienstleister einsetzen.
     </p>
 
-    <h3>Widerspruchsrecht</h3>
+    <hr class="divider">
+
+    <h2>13. Datensicherheit</h2>
     <p>
-        Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Sie betreffender personenbezogener Daten Widerspruch einzulegen (Art. 21 DSGVO).
+        Wir setzen umfangreiche technische und organisatorische Maßnahmen ein, um Ihre Daten zu schützen:
+    </p>
+    <ul>
+        <li><strong>HTTPS-Verschlüsselung:</strong> Alle Datenübertragungen erfolgen verschlüsselt</li>
+        <li><strong>Passwort-Hashing:</strong> Passwörter werden nicht im Klartext gespeichert</li>
+        <li><strong>Row Level Security (RLS):</strong> Datenbankzugriff auf Zeilenebene kontrolliert</li>
+        <li><strong>Rollenbasierte Zugriffskontrollen:</strong> Zugriff nur nach Benutzerrolle</li>
+    </ul>
+
+    <h2>14. Datenweitergabe an Dritte</h2>
+    <p>
+        Ihre Daten werden ausschließlich an folgende Empfänger weitergegeben:
+    </p>
+    <ul>
+        <li><strong>Supabase:</strong> Datenverarbeitung als Auftragsverarbeiter</li>
+        <li><strong>Resend:</strong> E-Mail-Versand als Auftragsverarbeiter</li>
+        <li><strong>Google:</strong> Schriftarten-Bereitstellung (nur IP-Adresse)</li>
+        <li><strong>Restaurant-Betreiber:</strong> Zugriff auf Kundenbestellungen zur Auftragsabwicklung</li>
+    </ul>
+    <p>
+        <strong>Keine Weitergabe an:</strong> Werbenetzwerke, soziale Medien oder Datenbroker.
+    </p>
+
+    <h2>15. Speicherdauer</h2>
+    <p>
+        Wir speichern Ihre personenbezogenen Daten nur so lange, wie dies für die Zwecke, für die sie erhoben wurden, erforderlich ist:
+    </p>
+    <ul>
+        <li><strong>Bestelldaten:</strong> 10 Jahre (gesetzliche Aufbewahrungspflicht)</li>
+        <li><strong>Kundenkonto-Daten:</strong> Bis zur Löschung des Kontos</li>
+        <li><strong>Server-Log-Dateien:</strong> Maximal 30 Tage</li>
+    </ul>
+    <p>
+        Nach Ablauf der Speicherdauer werden Ihre Daten gelöscht oder anonymisiert.
+    </p>
+
+    <hr class="divider">
+
+    <h2>16. Ihre Rechte</h2>
+    <p>
+        Ihnen stehen bezüglich Ihrer bei uns gespeicherten Daten folgende Rechte zu:
+    </p>
+
+    <h3>Auskunftsrecht (Art. 15 DSGVO)</h3>
+    <p>
+        Sie haben das Recht, jederzeit unentgeltliche Auskunft über die zu Ihrer Person gespeicherten Daten sowie eine Kopie dieser Daten zu erhalten.
+    </p>
+
+    <h3>Recht auf Berichtigung (Art. 16 DSGVO)</h3>
+    <p>
+        Sie haben das Recht, die Berichtigung unrichtiger personenbezogener Daten zu verlangen.
+    </p>
+
+    <h3>Recht auf Löschung (Art. 17 DSGVO)</h3>
+    <p>
+        Sie haben das Recht, die Löschung Ihrer bei uns gespeicherten Daten zu verlangen, soweit nicht gesetzliche Aufbewahrungspflichten entgegenstehen.
+    </p>
+
+    <h3>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</h3>
+    <p>
+        Sie haben das Recht, die Einschränkung der Verarbeitung Ihrer Daten zu verlangen.
+    </p>
+
+    <h3>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</h3>
+    <p>
+        Sie haben das Recht, Ihre Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten oder die Übermittlung an einen anderen Verantwortlichen zu verlangen.
+    </p>
+
+    <h3>Widerspruchsrecht (Art. 21 DSGVO)</h3>
+    <p>
+        Sie haben das Recht, aus Gründen, die sich aus Ihrer besonderen Situation ergeben, jederzeit gegen die Verarbeitung Ihrer Daten Widerspruch einzulegen.
+    </p>
+
+    <h3>Recht auf Widerruf der Einwilligung</h3>
+    <p>
+        Sofern die Verarbeitung auf Ihrer Einwilligung beruht, können Sie diese jederzeit mit Wirkung für die Zukunft widerrufen.
     </p>
 
     <h3>Beschwerderecht</h3>
     <p>
-        Sie haben das Recht, sich bei einer Aufsichtsbehörde zu beschweren. Zuständige Aufsichtsbehörde in datenschutzrechtlichen Fragen ist der Landesdatenschutzbeauftragte des Bundeslandes, in dem unser Unternehmen seinen Sitz hat.
+        Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Die für uns zuständige Aufsichtsbehörde ist:
+    </p>
+    <p>
+        Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen<br>
+        Kavalleriestr. 2-4<br>
+        40213 Düsseldorf<br>
+        <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>
     </p>
 
     <hr class="divider">
 
-    <h2>10. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+    <h2>17. Kontakt für Datenschutzanfragen</h2>
+    <p>
+        Bei Fragen zum Datenschutz oder zur Ausübung Ihrer Rechte erreichen Sie uns unter:
+    </p>
+    <p>
+        E-Mail: <a href="mailto:info@ordable.io">info@ordable.io</a><br>
+        Telefon: <a href="tel:+491624521879">+49 (0) 162 4521879</a>
+    </p>
+
+    <h2>18. Aktualität dieser Datenschutzerklärung</h2>
     <p>
         Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Januar 2025.
     </p>
     <p>
-        Durch die Weiterentwicklung unserer Website und Angebote oder aufgrund geänderter gesetzlicher beziehungsweise behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Datenschutzerklärung kann jederzeit auf dieser Seite abgerufen werden.
+        Durch die Weiterentwicklung unserer App und Dienste oder aufgrund geänderter gesetzlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern. Die jeweils aktuelle Fassung finden Sie stets auf dieser Seite.
     </p>
 
     <a href="../" class="back-link">&larr; Zurück zur Startseite</a>
