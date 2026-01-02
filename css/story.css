@@ -894,12 +894,8 @@ footer a {
         display: flex;
         width: 48px;
         height: 48px;
-        background: rgba(253, 185, 19, 0.15);
+        background: rgba(253, 185, 19, 0.1);
         border-radius: 12px;
-    }
-
-    .mobile-menu-toggle span {
-        background: var(--white);
     }
 
     .mobile-nav, .mobile-menu-overlay { display: block; }
