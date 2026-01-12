@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ORDABLE - The Story Behind the Vision</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="The ORDABLE story: How we started and why we help restaurateurs become independent from expensive delivery platforms. Made in Germany.">
+    <meta name="keywords" content="ORDABLE story, gastronomy startup, restaurant digitalization Germany, about ORDABLE">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ordable.io/en/story/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="About Us | ORDABLE">
+    <meta property="og:description" content="Discover the story behind ORDABLE and our mission for the hospitality industry.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ordable.io/en/story/">
+    <meta property="og:image" content="https://ordable.io/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#FDB913">
+
+    <!-- Preconnect for faster connections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Scripts with defer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FDB913;--primary-dark:#E5A811;--dark:#1a1a1a;--text:#333;--white:#fff;--border:#e5e5e5;--bg-main:#fff}
+        body{font-family:'Inter',-apple-system,sans-serif;line-height:1.6;color:var(--text);background:var(--bg-main);overflow-x:hidden}
+        header{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;transition:all .4s ease}
+        header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:100px;width:auto;margin-left:-2.5rem;margin-top:-20px;margin-bottom:-20px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem}
+        .nav-menu li a{text-decoration:none;color:var(--text);font-weight:600}
+        .nav-cta{background:var(--primary);color:var(--dark);padding:.75rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:700}
+        @media(max-width:968px){.nav-menu{display:none}}
+    </style>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/story.css">
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated Particles Background -->
+    <div class="story-particles" id="storyParticles"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="/en/" class="logo">
+                <img src="../../images/ordablewhite.png" alt="Ordable">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/en/">Home</a></li>
+                <li><a href="/en/leistungen/">Features</a></li>
+                <li><a href="/en/vorteile/">Benefits</a></li>
+                <li><a href="/en/pricing/">Pricing</a></li>
+                <li><a href="/en/story/" class="active">Our Story</a></li>
+            </ul>
+            <a href="/en/anmeldung/" class="nav-cta">Get Started</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-menu">
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/leistungen/">Features</a></li>
+            <li><a href="/en/vorteile/">Benefits</a></li>
+            <li><a href="/en/pricing/">Pricing</a></li>
+            <li><a href="/en/story/" class="active">Our Story</a></li>
+        </ul>
+        <a href="/en/anmeldung/" class="mobile-nav-cta">Get Started</a>
+    </nav>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <!-- Intro - Cinematic Opening -->
+        <div class="story-intro">
+            <div class="story-intro-content">
+                <div class="story-year">2020</div>
+                <h2 class="story-headline">
+                    When the world stood still,<br>
+                    <span class="highlight-text">we had to act.</span>
+                </h2>
+                <p class="story-subheadline">
+                    The Corona crisis hit the hospitality industry with full force.
+                    Restaurants closed, livelihoods shattered.
+                    Including one from our team. That was the moment
+                    ORDABLE was born.
+                </p>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-mouse"></div>
+                <span>Scroll to discover our story</span>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="story-timeline">
+            <div class="timeline-line"></div>
+
+            <!-- Chapter 1: The Crisis -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapter 1</div>
+                    <h3 class="chapter-title">
+                        The crisis that <span class="accent">changed everything</span>
+                    </h3>
+                    <p class="chapter-text">
+                        During the Corona crisis, over 48,000 hospitality businesses
+                        in Germany closed their doors forever. One of them belonged
+                        to our co-founder's family. A restaurant that had existed for
+                        over 20 years. Destroyed in just a few months.
+                    </p>
+                    <p class="chapter-quote">
+                        "We saw how hard-working people lost everything
+                        – not because their food was bad, but because they
+                        couldn't manage the digital transformation in time."
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card crisis">
+                        <div class="visual-icon"><i data-lucide="heart-crack"></i></div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value danger">48,000+</span>
+                            <span class="visual-stat-label">Hospitality businesses closed (2020-2023)</span>
+                        </div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value danger">-47%</span>
+                            <span class="visual-stat-label">Revenue drop in hospitality sector</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 2: Understanding the Problem -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapter 2</div>
+                    <h3 class="chapter-title">
+                        We understand <span class="accent">your daily reality</span>
+                    </h3>
+                    <p class="chapter-text">
+                        We know the stress behind the counter. The 14-hour days.
+                        The aching feet. The bills piling up.
+                        When are you supposed to find time for "digitalization"?
+                    </p>
+                    <p class="chapter-text">
+                        And then the big platforms come and take up to
+                        30% from every order. At the end of the month, barely
+                        anything is left – and the customers? They don't even belong to you.
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card problem">
+                        <div class="visual-icon"><i data-lucide="alert-triangle"></i></div>
+                        <ul class="visual-list">
+                            <li><span class="icon"><i data-lucide="clock"></i></span> No time for technology</li>
+                            <li><span class="icon"><i data-lucide="trending-down"></i></span> Up to 30% commission to platforms</li>
+                            <li><span class="icon"><i data-lucide="tag"></i></span> Third-party branding instead of your own</li>
+                            <li><span class="icon"><i data-lucide="bar-chart-2"></i></span> Customer data belongs to others</li>
+                            <li><span class="icon"><i data-lucide="lock"></i></span> Dependent on algorithms</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 3: The Dilemma -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapter 3</div>
+                    <h3 class="chapter-title">
+                        Good solutions, <span class="accent">but at what price?</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Yes, they exist – the big platforms. Lieferando, Wolt,
+                        Uber Eats. They've driven digitalization forward and
+                        offer functioning systems. We acknowledge that.
+                    </p>
+                    <p class="chapter-text">
+                        But the price? <strong>13% to 30% from every single order.</strong>
+                        With 10,000€ monthly revenue, that's up to 3,000€ – every month.
+                        Money that should actually belong to you.
+                    </p>
+                    <p class="chapter-quote">
+                        "Many restaurateurs tell us: We know the commissions
+                        are too high. But what should we do? We don't see an alternative."
+                        – That's exactly what we want to change.
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card dilemma">
+                        <div class="visual-icon"><i data-lucide="scale"></i></div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value warning">13-30%</span>
+                            <span class="visual-stat-label">Commission per order</span>
+                        </div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value warning">3,000€</span>
+                            <span class="visual-stat-label">Loss at 10,000€ revenue/month</span>
+                        </div>
+                        <ul class="visual-list" style="margin-top: 1rem;">
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Good technology available</li>
+                            <li><span class="icon x"><i data-lucide="x"></i></span> Commissions way too high</li>
+                            <li><span class="icon x"><i data-lucide="x"></i></span> No real alternative – until now</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 4: The Vision -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapter 4</div>
+                    <h3 class="chapter-title">
+                        A vision <span class="accent">was born</span>
+                    </h3>
+                    <p class="chapter-text">
+                        We asked ourselves: What if every restaurant could
+                        have its own app? Its own website?
+                        Its own ordering terminal? Everything under one brand –
+                        your own.
+                    </p>
+                    <p class="chapter-text">
+                        Not as a luxury for large chains, but as an affordable
+                        solution for every kebab shop, every pizzeria, every
+                        family restaurant. That's how ORDABLE came to be.
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card vision">
+                        <div class="visual-icon"><i data-lucide="lightbulb"></i></div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value primary">100%</span>
+                            <span class="visual-stat-label">Your brand, your identity</span>
+                        </div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value primary">0%</span>
+                            <span class="visual-stat-label">Commission – forever</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 5: The Promise -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapter 5</div>
+                    <h3 class="chapter-title">
+                        Our promise <span class="accent">to you</span>
+                    </h3>
+                    <p class="chapter-text">
+                        We want it to be irrelevant whether we have 10 or 10,000
+                        partners – the price remains fair and fixed.
+                        No hidden fees. No commissions that
+                        grow with your success.
+                    </p>
+                    <p class="chapter-quote">
+                        "Your success shouldn't mean paying more to
+                        platforms. Your success should remain your success."
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card future">
+                        <div class="visual-icon"><i data-lucide="handshake"></i></div>
+                        <ul class="visual-list">
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Fixed price, no matter your revenue</li>
+                            <li><span class="icon check"><i data-lucide="check"></i></span> 10 or 10,000 partners – same price</li>
+                            <li><span class="icon check"><i data-lucide="check"></i></span> No hidden fees</li>
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Your customers belong to you</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission Statement -->
+        <div class="story-mission">
+            <div class="mission-container">
+                <div class="mission-label">Our Mission</div>
+                <h2 class="mission-title">
+                    We want to democratize<br>
+                    <span class="gradient">the hospitality industry.</span>
+                </h2>
+                <p class="mission-text">
+                    Every restaurant deserves the chance to succeed digitally –
+                    regardless of size, budget, or technical know-how.
+                    With your own brand, your own customers, and a fair price.
+                </p>
+
+                <!-- Promise Cards -->
+                <div class="promise-grid">
+                    <div class="promise-card">
+                        <div class="promise-icon"><i data-lucide="target"></i></div>
+                        <h4 class="promise-title">Your Brand</h4>
+                        <p class="promise-text">
+                            App and website under your name.
+                            No Lieferando, no Wolt – just you.
+                        </p>
+                    </div>
+                    <div class="promise-card">
+                        <div class="promise-icon"><i data-lucide="piggy-bank"></i></div>
+                        <h4 class="promise-title">Fair Pricing</h4>
+                        <p class="promise-text">
+                            A fixed monthly price. No commission.
+                            The more you earn, the more you keep.
+                        </p>
+                    </div>
+                    <div class="promise-card">
+                        <div class="promise-icon"><i data-lucide="rocket"></i></div>
+                        <h4 class="promise-title">Easy Start</h4>
+                        <p class="promise-text">
+                            We handle the technology.
+                            You focus on what you love.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="story-cta">
+                    <a href="/en/#kontakt" class="story-btn-primary">
+                        Join the Movement
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <a href="/en/pricing/" class="story-btn-secondary">
+                        View Pricing
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ORDABLE – Your Digital Restaurant System · <a href="/en/">Back to Home</a></p>
+        <p class="footer-legal">
+            <a href="/en/impressum/">Legal Notice</a> · <a href="/en/privacy/">Privacy Policy</a>
+        </p>
+    </footer>
+
+    <script src="../../js/story.js" defer></script>
+</body>
+</html>

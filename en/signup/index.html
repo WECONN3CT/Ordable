@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started | ORDABLE - Free Request</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Get started with ORDABLE now! Free request for your own restaurant ordering system. Non-binding, fast and easy. Online in 2 weeks!">
+    <meta name="keywords" content="ORDABLE request, order restaurant system, request ordering system, restaurant digitalization start">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ordable.io/en/signup/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Get Started | ORDABLE">
+    <meta property="og:description" content="Free request for your own ordering system. Non-binding and fast.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ordable.io/en/signup/">
+    <meta property="og:image" content="https://ordable.io/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#FDB913">
+
+    <!-- Preconnect for faster connections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FDB913;--primary-dark:#E5A811;--dark:#1a1a1a;--text:#333;--white:#fff;--border:#e5e5e5;--bg-main:#fff}
+        body{font-family:'Inter',-apple-system,sans-serif;line-height:1.6;color:var(--text);background:var(--bg-main);overflow-x:hidden}
+        header{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;transition:all .4s ease}
+        header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:100px;width:auto;margin-left:-2.5rem;margin-top:-20px;margin-bottom:-20px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem}
+        .nav-menu li a{text-decoration:none;color:var(--text);font-weight:600}
+        .nav-cta{background:var(--primary);color:var(--dark);padding:.75rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:700}
+        @media(max-width:968px){.nav-menu{display:none}}
+    </style>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/anmeldung.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="/en/" class="logo">
+                <img src="../../images/header.png" alt="Ordable">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/en/">Home</a></li>
+                <li><a href="/en/features/">Features</a></li>
+                <li><a href="/en/benefits/">Benefits</a></li>
+                <li><a href="/en/pricing/">Pricing</a></li>
+                <li><a href="/en/story/">Our Story</a></li>
+            </ul>
+            <a href="/en/signup/" class="nav-cta active">Get Started</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-menu">
+            <li><a href="/en/">Home</a></li>
+            <li><a href="/en/features/">Features</a></li>
+            <li><a href="/en/benefits/">Benefits</a></li>
+            <li><a href="/en/pricing/">Pricing</a></li>
+            <li><a href="/en/story/">Our Story</a></li>
+        </ul>
+        <a href="/en/signup/" class="mobile-nav-cta active">Get Started</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <div class="form-badge">Get Started</div>
+                <h1>Free <span class="highlight">Request</span></h1>
+                <p>Start now with your own ordering system – without commissions.</p>
+            </div>
+
+            <div class="info-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                <p>Fill out the form and we will contact you <strong>within 24 hours</strong> for a free consultation.</p>
+            </div>
+
+            <form class="signup-form" id="contactForm" action="https://formspree.io/f/xgovkvjo" method="POST">
+                <input type="hidden" name="_subject" value="New request from ORDABLE Sign Up (EN)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="vorname">First Name <span class="required">*</span></label>
+                        <input type="text" id="vorname" name="First Name" required placeholder="John">
+                    </div>
+                    <div class="form-group">
+                        <label for="nachname">Last Name <span class="required">*</span></label>
+                        <input type="text" id="nachname" name="Last Name" required placeholder="Doe">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="restaurant">Restaurant Name <span class="required">*</span></label>
+                    <input type="text" id="restaurant" name="Restaurant" required placeholder="My Restaurant">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="strasse">Street & Number <span class="required">*</span></label>
+                        <input type="text" id="strasse" name="Street" required placeholder="Main Street 123">
+                    </div>
+                    <div class="form-group">
+                        <label for="plz">ZIP Code <span class="required">*</span></label>
+                        <input type="text" id="plz" name="ZIP" required placeholder="12345">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="stadt">City <span class="required">*</span></label>
+                        <input type="text" id="stadt" name="City" required placeholder="Berlin">
+                    </div>
+                    <div class="form-group">
+                        <label for="land">Country</label>
+                        <select id="land" name="Country">
+                            <option value="Germany" selected>Germany</option>
+                            <option value="Austria">Austria</option>
+                            <option value="Switzerland">Switzerland</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="Email" required placeholder="john@restaurant.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefon">Phone <span class="required">*</span></label>
+                        <input type="tel" id="telefon" name="Phone" required placeholder="+49 123 456789">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="paket">Interested in <span class="required">*</span></label>
+                    <select id="paket" name="Interested in" required>
+                        <option value="">Please select...</option>
+                        <option value="ORDABLE - Website & App (€149/month)">ORDABLE (Website & App) - €149/month</option>
+                        <option value="ORDABLE PLUS - with Order Terminal (€199/month)">ORDABLE PLUS (with Order Terminal) - €199/month</option>
+                        <option value="Consultation requested">Consultation requested</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="nachricht">Message (optional)</label>
+                    <textarea id="nachricht" name="Message" placeholder="Is there anything we should know? E.g. current delivery platforms, special requirements..."></textarea>
+                </div>
+
+                <button type="submit" class="form-submit">Submit Request</button>
+                <p class="form-privacy">By submitting, you agree to our <a href="../../en/privacy/">Privacy Policy</a>.</p>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ORDABLE – <a href="https://ordable.io">ordable.io</a></p>
+        <p class="footer-legal">
+            <a href="../../en/impressum/">Legal Notice</a> · <a href="../../en/privacy/">Privacy</a>
+        </p>
+    </footer>
+
+    <script src="../../js/anmeldung.js" defer></script>
+</body>
+</html>
