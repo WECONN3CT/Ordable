@@ -1833,14 +1833,14 @@ footer a {
     }
 
     .slider-container {
-        padding: 12px 0;
+        padding: 8px 0;
         position: relative;
         z-index: 100;
     }
 
     .slider-container input[type="range"] {
         width: 100%;
-        height: 28px;
+        height: 24px;
         -webkit-appearance: none;
         appearance: none;
         background: transparent;
@@ -1854,58 +1854,45 @@ footer a {
 
     .slider-container input[type="range"]::-webkit-slider-runnable-track {
         width: 100%;
-        height: 6px;
-        background: linear-gradient(to right, var(--primary) 0%, #e5e7eb 0%);
-        border-radius: 3px;
-        box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+        height: 4px;
+        background: #e0e0e0;
+        border-radius: 2px;
     }
 
     .slider-container input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: 28px;
-        height: 28px;
+        width: 20px;
+        height: 20px;
         border-radius: 50%;
-        background: linear-gradient(145deg, #ffffff, #f5f5f5);
-        border: 3px solid var(--primary);
+        background: #fff;
+        border: 2px solid var(--primary);
         cursor: pointer;
-        margin-top: -11px;
-        box-shadow: 0 2px 8px rgba(253, 185, 19, 0.3), 0 1px 3px rgba(0,0,0,0.1);
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .slider-container input[type="range"]::-webkit-slider-thumb:active {
-        transform: scale(1.1);
-        box-shadow: 0 3px 12px rgba(253, 185, 19, 0.4), 0 2px 4px rgba(0,0,0,0.15);
+        margin-top: -8px;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.15);
     }
 
     .slider-container input[type="range"]::-moz-range-track {
         width: 100%;
-        height: 6px;
-        background: #e5e7eb;
-        border-radius: 3px;
-        box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+        height: 4px;
+        background: #e0e0e0;
+        border-radius: 2px;
     }
 
     .slider-container input[type="range"]::-moz-range-progress {
         background: var(--primary);
-        height: 6px;
-        border-radius: 3px;
+        height: 4px;
+        border-radius: 2px;
     }
 
     .slider-container input[type="range"]::-moz-range-thumb {
-        width: 22px;
-        height: 22px;
+        width: 16px;
+        height: 16px;
         border-radius: 50%;
-        background: linear-gradient(145deg, #ffffff, #f5f5f5);
-        border: 3px solid var(--primary);
+        background: #fff;
+        border: 2px solid var(--primary);
         cursor: pointer;
-        box-shadow: 0 2px 8px rgba(253, 185, 19, 0.3), 0 1px 3px rgba(0,0,0,0.1);
-        transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .slider-container input[type="range"]::-moz-range-thumb:active {
-        transform: scale(1.1);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.15);
     }
 
     .calc-input-card {
