@@ -1863,14 +1863,14 @@ footer a {
     .slider-container input[type="range"]::-webkit-slider-thumb {
         -webkit-appearance: none;
         appearance: none;
-        width: 20px;
-        height: 20px;
+        width: 14px;
+        height: 14px;
         border-radius: 50%;
         background: #fff;
         border: none;
         cursor: pointer;
-        margin-top: -7px;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+        margin-top: -4px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.25);
     }
 
     .slider-container input[type="range"]::-moz-range-track {
@@ -1887,13 +1887,13 @@ footer a {
     }
 
     .slider-container input[type="range"]::-moz-range-thumb {
-        width: 20px;
-        height: 20px;
+        width: 14px;
+        height: 14px;
         border-radius: 50%;
         background: #fff;
         border: none;
         cursor: pointer;
-        box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.25);
     }
 
     .calc-input-card {
