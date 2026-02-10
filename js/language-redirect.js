@@ -1,12 +1,15 @@
 // Language Detection & Redirect Script for ORDABLE
-// Automatically redirects UK visitors to the English version
+// Automatically redirects international visitors to their language version
 // Uses country.is for IP-based geolocation (free & unlimited)
 
 (function() {
     'use strict';
 
-    // Don't redirect if already on English version
-    if (window.location.pathname.startsWith('/en/') || window.location.pathname.startsWith('/en')) {
+    // Don't redirect if already on a translated version
+    if (window.location.pathname.startsWith('/en/') ||
+        window.location.pathname.startsWith('/en') ||
+        window.location.pathname.startsWith('/fr/') ||
+        window.location.pathname.startsWith('/fr')) {
         return;
     }
 
@@ -16,11 +19,13 @@
         return;
     }
 
-    // Check if we already detected country (cache for 24h)
+    // Check if we already detected country (cache for session)
     var cachedCountry = sessionStorage.getItem('ordable_country');
     if (cachedCountry) {
         if (cachedCountry === 'GB') {
-            redirectToEnglish();
+            redirectToLanguage('en');
+        } else if (cachedCountry === 'FR') {
+            redirectToLanguage('fr');
         }
         return;
     }
@@ -34,46 +39,50 @@
             // Cache the result
             sessionStorage.setItem('ordable_country', data.country || 'unknown');
 
-            // Redirect if UK
+            // Redirect based on country
             if (data.country === 'GB') {
-                redirectToEnglish();
+                redirectToLanguage('en');
+            } else if (data.country === 'FR') {
+                redirectToLanguage('fr');
             }
         })
         .catch(function(error) {
             // Fallback: check browser language if API fails
             var browserLang = (navigator.language || '').toLowerCase();
-            if (browserLang === 'en-gb') {
-                redirectToEnglish();
+            if (browserLang === 'en-gb' || browserLang === 'en') {
+                redirectToLanguage('en');
+            } else if (browserLang === 'fr-fr' || browserLang === 'fr') {
+                redirectToLanguage('fr');
             }
         });
 
-    function redirectToEnglish() {
+    function redirectToLanguage(lang) {
         var currentPath = window.location.pathname;
 
-        // Map German paths to English paths
+        // Map German paths to translated paths
         var pathMappings = {
-            '/': '/en/',
-            '/index.html': '/en/',
-            '/leistungen/': '/en/features/',
-            '/leistungen': '/en/features/',
-            '/vorteile/': '/en/benefits/',
-            '/vorteile': '/en/benefits/',
-            '/pricing/': '/en/pricing/',
-            '/pricing': '/en/pricing/',
-            '/story/': '/en/story/',
-            '/story': '/en/story/',
-            '/enterprise/': '/en/enterprise/',
-            '/enterprise': '/en/enterprise/',
-            '/anmeldung/': '/en/signup/',
-            '/anmeldung': '/en/signup/',
-            '/impressum/': '/en/imprint/',
-            '/impressum': '/en/imprint/',
-            '/datenschutz/': '/en/privacy/',
-            '/datenschutz': '/en/privacy/'
+            '/': '/' + lang + '/',
+            '/index.html': '/' + lang + '/',
+            '/leistungen/': '/' + lang + '/features/',
+            '/leistungen': '/' + lang + '/features/',
+            '/vorteile/': '/' + lang + '/benefits/',
+            '/vorteile': '/' + lang + '/benefits/',
+            '/pricing/': '/' + lang + '/pricing/',
+            '/pricing': '/' + lang + '/pricing/',
+            '/story/': '/' + lang + '/story/',
+            '/story': '/' + lang + '/story/',
+            '/enterprise/': '/' + lang + '/enterprise/',
+            '/enterprise': '/' + lang + '/enterprise/',
+            '/anmeldung/': '/' + lang + '/signup/',
+            '/anmeldung': '/' + lang + '/signup/',
+            '/impressum/': '/' + lang + '/imprint/',
+            '/impressum': '/' + lang + '/imprint/',
+            '/datenschutz/': '/' + lang + '/privacy/',
+            '/datenschutz': '/' + lang + '/privacy/'
         };
 
-        // Find the matching English path
-        var newPath = pathMappings[currentPath] || '/en/';
+        // Find the matching translated path
+        var newPath = pathMappings[currentPath] || '/' + lang + '/';
 
         // Add hash and query string if present
         var newUrl = newPath + window.location.search + window.location.hash;

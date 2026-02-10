@@ -7,6 +7,9 @@
     <meta name="description" content="Legal notice of WECONN3CT GmbH - provider of ORDABLE.">
     <meta name="robots" content="noindex, follow">
     <link rel="canonical" href="https://ordable.io/en/imprint/">
+    <link rel="alternate" hreflang="de" href="https://ordable.io/impressum/">
+    <link rel="alternate" hreflang="en-GB" href="https://ordable.io/en/imprint/">
+    <link rel="alternate" hreflang="fr-FR" href="https://ordable.io/fr/imprint/">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,6 +29,30 @@
             padding: 80px 32px;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .lang-switcher {
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            display: flex;
+            gap: 16px;
+            font-size: 0.95rem;
+        }
+
+        .lang-switcher a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .lang-switcher a:hover {
+            color: #E5A811;
+        }
+
+        .lang-switcher a.active {
+            color: #E5A811;
+            font-weight: 600;
         }
 
         a {
@@ -105,10 +132,22 @@
             h3 {
                 font-size: 1.1rem;
             }
+
+            .lang-switcher {
+                position: static;
+                margin-bottom: 32px;
+                justify-content: flex-start;
+            }
         }
     </style>
 </head>
 <body>
+
+    <div class="lang-switcher">
+        <a href="/impressum/">DE</a>
+        <a href="/en/imprint/" class="active">EN</a>
+        <a href="/fr/imprint/">FR</a>
+    </div>
 
     <h1>Legal Notice</h1>
     <p class="subtitle">Information pursuant to § 5 Digital Services Act (DDG)</p>

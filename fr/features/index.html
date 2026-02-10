@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonctionnalités & Services | ORDABLE - Site Web, Application & Système de Caisse</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Découvrez toutes les fonctionnalités d'ORDABLE : Votre propre site internet, application de commande pour iOS & Android, terminal de caisse, tableau de bord, images IA & bien plus. 0% de commission !">
+    <meta name="keywords" content="Fonctionnalités Restaurant, Système de Commande, Fonctionnalités App Restaurant, Logiciel Restauration, Système de Commande en Ligne, Tableau de Bord Restaurant">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ordable.io/fr/features/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Fonctionnalités & Services | ORDABLE">
+    <meta property="og:description" content="Toutes les fonctionnalités pour votre restaurant : Site web, application, système de caisse & plus. 0% de commission.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ordable.io/fr/features/">
+    <meta property="og:image" content="https://ordable.io/images/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#FDB913">
+
+    <!-- Preconnect for faster external connections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Preload hero image for faster loading -->
+    <link rel="preload" href="../../bilder/header.png" as="image">
+
+    <!-- Fonts with reduced weight count -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons - defer -->
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+
+    <!-- ApexCharts for animated mini charts - defer -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+
+    <!-- Swiper.js - CSS inline, JS defer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- Scripts with defer - don't block rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FDB913;--primary-dark:#E5A811;--dark:#1a1a1a;--text:#333;--white:#fff;--border:#e5e5e5;--bg-main:#fff}
+        body{font-family:'Inter',-apple-system,sans-serif;line-height:1.6;color:var(--text);background:var(--bg-main);overflow-x:hidden}
+        header{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;transition:all .4s ease}
+        header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:100px;width:auto;margin-left:-2.5rem;margin-top:-20px;margin-bottom:-20px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem}
+        .nav-menu li a{text-decoration:none;color:var(--text);font-weight:600}
+        .nav-cta{background:var(--primary);color:var(--dark);padding:.75rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:700}
+        @media(max-width:968px){.nav-menu{display:none}}
+    </style>
+
+    <!-- Devices.css for MacBook mockups -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/picturepan2/devices.css@master/dist/devices.min.css">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/leistungen.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="gradient-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="/fr/" class="logo">
+                <img src="../../images/header.png" alt="Ordable">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/fr/">Accueil</a></li>
+                <li><a href="/fr/features/" class="active">Fonctionnalités</a></li>
+                <li><a href="/fr/benefits/">Avantages</a></li>
+                <li><a href="/fr/pricing/">Tarifs</a></li>
+                <li><a href="/fr/story/">Notre Histoire</a></li>
+            </ul>
+            <a href="/fr/signup/" class="nav-cta">Commencer</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-menu">
+            <li><a href="/fr/">Accueil</a></li>
+            <li><a href="/fr/features/" class="active">Fonctionnalités</a></li>
+            <li><a href="/fr/benefits/">Avantages</a></li>
+            <li><a href="/fr/pricing/">Tarifs</a></li>
+            <li><a href="/fr/story/">Notre Histoire</a></li>
+        </ul>
+        <a href="/fr/signup/" class="mobile-nav-cta">Commencer</a>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>Tout d'une seule source</span>
+            </div>
+            <h1>
+                Tout ce dont votre restaurant<br>
+                <span class="gradient-text">a besoin numériquement</span>
+            </h1>
+            <p>
+                De votre propre site internet à l'application en passant par le terminal de commande –
+                nous fournissons l'infrastructure numérique complète pour votre restaurant.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Overview -->
+    <section class="features-overview">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label reveal">Nos Services</div>
+                <h2 class="reveal">Tout dans <span class="highlight">un système</span></h2>
+                <p class="reveal">Pas de fournisseurs différents, pas de problèmes de compatibilité – tout parfaitement coordonné.</p>
+            </div>
+
+            <!-- Feature Carousel -->
+            <div class="carousel-section-wrapper">
+            <div class="carousel-sticky">
+            <div class="carousel-container reveal">
+                <!-- Navigation Buttons -->
+                <button class="carousel-nav prev" id="carouselPrev"><i data-lucide="chevron-left"></i></button>
+                <button class="carousel-nav next" id="carouselNext"><i data-lucide="chevron-right"></i></button>
+
+                <!-- Thumbnail Navigation -->
+                <div class="carousel-thumbs">
+                    <div class="carousel-thumb active" data-slide="0">
+                        <div class="carousel-thumb-icon"><i data-lucide="globe"></i></div>
+                        <span class="carousel-thumb-text">Site Web</span>
+                    </div>
+                    <div class="carousel-thumb" data-slide="1">
+                        <div class="carousel-thumb-icon"><i data-lucide="smartphone"></i></div>
+                        <span class="carousel-thumb-text">Application</span>
+                    </div>
+                    <div class="carousel-thumb" data-slide="2">
+                        <div class="carousel-thumb-icon"><i data-lucide="credit-card"></i></div>
+                        <span class="carousel-thumb-text">Caisse</span>
+                    </div>
+                    <div class="carousel-thumb" data-slide="3">
+                        <div class="carousel-thumb-icon"><i data-lucide="layout-dashboard"></i></div>
+                        <span class="carousel-thumb-text">Tableau de Bord</span>
+                    </div>
+                    <div class="carousel-thumb" data-slide="4">
+                        <div class="carousel-thumb-icon"><i data-lucide="sparkles"></i></div>
+                        <span class="carousel-thumb-text">Images IA</span>
+                    </div>
+                    <div class="carousel-thumb" data-slide="5">
+                        <div class="carousel-thumb-icon"><i data-lucide="bar-chart-2"></i></div>
+                        <span class="carousel-thumb-text">Rapports</span>
+                    </div>
+                </div>
+
+                <!-- Swiper Carousel -->
+                <div class="swiper feature-carousel" id="featureCarousel">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1: Website -->
+                        <div class="swiper-slide carousel-slide">
+                            <div class="carousel-slide-header">
+                                <div class="carousel-slide-icon"><i data-lucide="globe"></i></div>
+                                <div>
+                                    <div class="carousel-slide-title">Votre Propre Site Internet</div>
+                                    <div class="carousel-slide-subtitle">Conçu professionnellement à votre image</div>
+                                </div>
+                            </div>
+                            <p class="carousel-slide-description">Site internet professionnel avec système de commande intégré – conçu individuellement à votre image.</p>
+                            <div class="carousel-slide-grid">
+                                <ul class="carousel-features">
+                                    <li><i data-lucide="check"></i> Design Responsive</li>
+                                    <li><i data-lucide="check"></i> Optimisé pour le SEO</li>
+                                    <li><i data-lucide="check"></i> Système de commande en ligne</li>
+                                    <li><i data-lucide="check"></i> Menu numérique</li>
+                                </ul>
+                                <div class="carousel-visual">
+                                    <div class="carousel-mockup-header">
+                                        <span class="carousel-mockup-dot red"></span>
+                                        <span class="carousel-mockup-dot yellow"></span>
+                                        <span class="carousel-mockup-dot green"></span>
+                                    </div>
+                                    <div class="carousel-mockup-items">
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">🍕</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">votrerestaurant.com</div>
+                                                    <div class="carousel-mockup-sub">Votre propre domaine</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">En ligne</div>
+                                        </div>
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">📱</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">Optimisé Mobile</div>
+                                                    <div class="carousel-mockup-sub">Tous les appareils</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">Responsive</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: App -->
+                        <div class="swiper-slide carousel-slide">
+                            <div class="carousel-slide-header">
+                                <div class="carousel-slide-icon"><i data-lucide="smartphone"></i></div>
+                                <div>
+                                    <div class="carousel-slide-title">Votre Propre Application</div>
+                                    <div class="carousel-slide-subtitle">iOS & Android à votre marque</div>
+                                </div>
+                            </div>
+                            <p class="carousel-slide-description">Votre application restaurant dans l'App Store et Google Play – avec votre nom, votre logo, vos couleurs.</p>
+                            <div class="carousel-slide-grid">
+                                <ul class="carousel-features">
+                                    <li><i data-lucide="check"></i> iOS & Android</li>
+                                    <li><i data-lucide="check"></i> Notifications push</li>
+                                    <li><i data-lucide="check"></i> Programme de fidélité</li>
+                                    <li><i data-lucide="check"></i> Mises à jour en temps réel</li>
+                                </ul>
+                                <div class="carousel-visual">
+                                    <div class="carousel-mockup-header">
+                                        <span class="carousel-mockup-dot red"></span>
+                                        <span class="carousel-mockup-dot yellow"></span>
+                                        <span class="carousel-mockup-dot green"></span>
+                                    </div>
+                                    <div class="carousel-mockup-items">
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">🍎</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">App Store</div>
+                                                    <div class="carousel-mockup-sub">Publiée sur iOS</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">En ligne</div>
+                                        </div>
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">🤖</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">Play Store</div>
+                                                    <div class="carousel-mockup-sub">Publiée sur Android</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">En ligne</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Order Terminal -->
+                        <div class="swiper-slide carousel-slide">
+                            <div class="carousel-slide-header">
+                                <div class="carousel-slide-icon"><i data-lucide="printer"></i></div>
+                                <div>
+                                    <div class="carousel-slide-title">Terminal de Commande</div>
+                                    <div class="carousel-slide-subtitle">Compact et prêt à l'emploi</div>
+                                </div>
+                            </div>
+                            <p class="carousel-slide-description">Terminal de commande pratique avec écran et imprimante de reçus – recevez toutes les commandes en temps réel et imprimez-les directement.</p>
+                            <div class="carousel-slide-grid">
+                                <ul class="carousel-features">
+                                    <li><i data-lucide="check"></i> Format compact</li>
+                                    <li><i data-lucide="check"></i> Imprimante de reçus incluse</li>
+                                    <li><i data-lucide="check"></i> Tous les canaux de commande</li>
+                                    <li><i data-lucide="check"></i> Synchronisation en temps réel</li>
+                                </ul>
+                                <div class="carousel-visual">
+                                    <div class="carousel-mockup-header">
+                                        <span class="carousel-mockup-dot red"></span>
+                                        <span class="carousel-mockup-dot yellow"></span>
+                                        <span class="carousel-mockup-dot green"></span>
+                                    </div>
+                                    <div class="carousel-mockup-items">
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">✅</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">Module TSE</div>
+                                                    <div class="carousel-mockup-sub">Conforme fiscalité</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">Actif</div>
+                                        </div>
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">🖨️</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">Imprimante Reçus</div>
+                                                    <div class="carousel-mockup-sub">Impression auto</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">Connectée</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Dashboard -->
+                        <div class="swiper-slide carousel-slide">
+                            <div class="carousel-slide-header">
+                                <div class="carousel-slide-icon"><i data-lucide="layout-dashboard"></i></div>
+                                <div>
+                                    <div class="carousel-slide-title">Tableau de Bord</div>
+                                    <div class="carousel-slide-subtitle">Gestion centralisée de tout</div>
+                                </div>
+                            </div>
+                            <p class="carousel-slide-description">Gérez le menu, les prix et les images en quelques secondes. Tout de façon centralisée au même endroit – même depuis votre téléphone.</p>
+                            <div class="carousel-slide-grid">
+                                <ul class="carousel-features">
+                                    <li><i data-lucide="check"></i> Fonctionnement intuitif</li>
+                                    <li><i data-lucide="check"></i> Changements en temps réel</li>
+                                    <li><i data-lucide="check"></i> Plusieurs établissements</li>
+                                    <li><i data-lucide="check"></i> Accès de n'importe où</li>
+                                </ul>
+                                <div class="carousel-visual">
+                                    <div class="carousel-mockup-header">
+                                        <span class="carousel-mockup-dot red"></span>
+                                        <span class="carousel-mockup-dot yellow"></span>
+                                        <span class="carousel-mockup-dot green"></span>
+                                    </div>
+                                    <div class="carousel-mockup-items">
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">📝</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">Modifier le menu</div>
+                                                    <div class="carousel-mockup-sub">Glisser-déposer</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">Facile</div>
+                                        </div>
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">📍</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">3 établissements</div>
+                                                    <div class="carousel-mockup-sub">Gestion centralisée</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">Pro</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: AI Images -->
+                        <div class="swiper-slide carousel-slide">
+                            <div class="carousel-slide-header">
+                                <div class="carousel-slide-icon"><i data-lucide="sparkles"></i></div>
+                                <div>
+                                    <div class="carousel-slide-title">Images de Produits IA</div>
+                                    <div class="carousel-slide-subtitle">Photos générées automatiquement</div>
+                                </div>
+                            </div>
+                            <p class="carousel-slide-description">Photos de produits professionnelles générées automatiquement. Économisez les dépenses d'un photographe professionnel.</p>
+                            <div class="carousel-slide-grid">
+                                <ul class="carousel-features">
+                                    <li><i data-lucide="check"></i> Génération automatique</li>
+                                    <li><i data-lucide="check"></i> Qualité professionnelle</li>
+                                    <li><i data-lucide="check"></i> Style cohérent</li>
+                                    <li><i data-lucide="check"></i> Images illimitées</li>
+                                </ul>
+                                <div class="carousel-visual">
+                                    <div class="carousel-mockup-header">
+                                        <span class="carousel-mockup-dot red"></span>
+                                        <span class="carousel-mockup-dot yellow"></span>
+                                        <span class="carousel-mockup-dot green"></span>
+                                    </div>
+                                    <div class="carousel-mockup-items">
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">🍔</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">Burger Déluxe</div>
+                                                    <div class="carousel-mockup-sub">Généré par IA</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">Nouveau</div>
+                                        </div>
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">🍕</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">Pizza Margherita</div>
+                                                    <div class="carousel-mockup-sub">Généré par IA</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">Prêt</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 6: Reporting -->
+                        <div class="swiper-slide carousel-slide">
+                            <div class="carousel-slide-header">
+                                <div class="carousel-slide-icon"><i data-lucide="bar-chart-2"></i></div>
+                                <div>
+                                    <div class="carousel-slide-title">Rapports</div>
+                                    <div class="carousel-slide-subtitle">Données et analyses en temps réel</div>
+                                </div>
+                            </div>
+                            <p class="carousel-slide-description">Chiffre d'affaires, commandes et tendances en un coup d'œil. Prenez des décisions basées sur les données.</p>
+                            <div class="carousel-slide-grid">
+                                <ul class="carousel-features">
+                                    <li><i data-lucide="check"></i> Statistiques de chiffre d'affaires</li>
+                                    <li><i data-lucide="check"></i> Analyse des meilleures ventes</li>
+                                    <li><i data-lucide="check"></i> Comportement des clients</li>
+                                    <li><i data-lucide="check"></i> Fonction d'export</li>
+                                </ul>
+                                <div class="carousel-visual">
+                                    <div class="carousel-mockup-header">
+                                        <span class="carousel-mockup-dot red"></span>
+                                        <span class="carousel-mockup-dot yellow"></span>
+                                        <span class="carousel-mockup-dot green"></span>
+                                    </div>
+                                    <div class="carousel-mockup-items">
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">📈</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">Chiffre d'affaires aujourd'hui</div>
+                                                    <div class="carousel-mockup-sub">+23% vs. la semaine dernière</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">2 847 €</div>
+                                        </div>
+                                        <div class="carousel-mockup-item">
+                                            <div class="carousel-mockup-left">
+                                                <div class="carousel-mockup-icon">👥</div>
+                                                <div>
+                                                    <div class="carousel-mockup-title">Nouveaux clients</div>
+                                                    <div class="carousel-mockup-sub">Cette semaine</div>
+                                                </div>
+                                            </div>
+                                            <div class="carousel-mockup-badge">+47</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="carousel-pagination"></div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feature Showcase 1 -->
+    <section class="feature-showcase">
+        <div class="container">
+            <div class="showcase-grid">
+                <div class="showcase-content reveal-left">
+                    <h2>Gérez les commandes comme un professionnel</h2>
+                    <p>
+                        Toutes les commandes du site internet, de l'application et sur place se retrouvent dans un seul système.
+                        Pas de commandes manquées, pas d'entrées en double – tout clairement au même endroit.
+                    </p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="bell"></i></div>
+                            <div>
+                                <h4>Notification instantanée</h4>
+                                <p>Pour chaque nouvelle commande</p>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="clock"></i></div>
+                            <div>
+                                <h4>Gestion des créneaux horaires</h4>
+                                <p>Planifier les précommandes</p>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="printer"></i></div>
+                            <div>
+                                <h4>Impression automatique</h4>
+                                <p>Imprimer le reçu directement</p>
+                            </div>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4>Zones de livraison</h4>
+                                <p>Définir les zones flexibles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-visual reveal-right">
+                    <div class="showcase-card">
+                        <div class="showcase-card-mockup">
+                            <div class="mockup-header">
+                                <span class="mockup-dot red"></span>
+                                <span class="mockup-dot yellow"></span>
+                                <span class="mockup-dot green"></span>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="mockup-item">
+                                    <div class="mockup-item-left">
+                                        <div class="mockup-avatar">🍕</div>
+                                        <div>
+                                            <div class="mockup-item-title">Commande n°1247</div>
+                                            <div class="mockup-item-sub">Pizza Margherita, Coca-Cola</div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-item-price">18,90 €</div>
+                                </div>
+                                <div class="mockup-item">
+                                    <div class="mockup-item-left">
+                                        <div class="mockup-avatar">🍔</div>
+                                        <div>
+                                            <div class="mockup-item-title">Commande n°1248</div>
+                                            <div class="mockup-item-sub">Menu Cheeseburger</div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-item-price">14,50 €</div>
+                                </div>
+                                <div class="mockup-item">
+                                    <div class="mockup-item-left">
+                                        <div class="mockup-avatar">🥗</div>
+                                        <div>
+                                            <div class="mockup-item-title">Commande n°1249</div>
+                                            <div class="mockup-item-sub">Salade César</div>
+                                        </div>
+                                    </div>
+                                    <div class="mockup-item-price">12,90 €</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="floating-element floating-element-1">
+                            <div class="floating-icon"><i data-lucide="check"></i></div>
+                            <div>
+                                <div class="floating-text">Nouvelle commande</div>
+                                <div class="floating-subtext">Vient d'arriver</div>
+                            </div>
+                        </div>
+                        <div class="floating-element floating-element-2">
+                            <div class="floating-icon"><i data-lucide="wallet"></i></div>
+                            <div>
+                                <div class="floating-text">0% Commission</div>
+                                <div class="floating-subtext">Toujours</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Feature Map Section -->
+    <section class="feature-map-section">
+        <div class="feature-map-glow feature-map-glow-1"></div>
+        <div class="feature-map-glow feature-map-glow-2"></div>
+
+        <div class="feature-map-container">
+            <div class="section-header" style="position: relative; z-index: 20;">
+                <div class="section-label reveal">Inclus</div>
+                <h2 class="reveal">Tout <span class="highlight">déjà intégré</span></h2>
+                <p class="reveal">Cliquez sur une fonctionnalité et découvrez ce qu'ORDABLE vous propose.</p>
+            </div>
+
+            <div class="feature-timeline">
+                <!-- Timeline Line -->
+                <div class="timeline-line-container">
+                    <div class="timeline-line-bg"></div>
+                    <div class="timeline-line-progress"></div>
+                </div>
+
+                <div class="feature-point active" data-feature="0">
+                    <div class="feature-point-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                    </div>
+                    <span class="feature-point-label">Votre Accès</span>
+                </div>
+
+                <div class="feature-point" data-feature="1">
+                    <div class="feature-point-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18M9 21V9"/>
+                        </svg>
+                    </div>
+                    <span class="feature-point-label">Tableau de Bord</span>
+                </div>
+
+                <div class="feature-point" data-feature="2">
+                    <div class="feature-point-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <line x1="18" y1="20" x2="18" y2="10"/>
+                            <line x1="12" y1="20" x2="12" y2="4"/>
+                            <line x1="6" y1="20" x2="6" y2="14"/>
+                        </svg>
+                    </div>
+                    <span class="feature-point-label">Statistiques</span>
+                </div>
+
+                <div class="feature-point" data-feature="3">
+                    <div class="feature-point-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/>
+                            <rect x="9" y="3" width="6" height="4" rx="1"/>
+                            <path d="M9 12h6M9 16h6"/>
+                        </svg>
+                    </div>
+                    <span class="feature-point-label">Commandes</span>
+                </div>
+
+                <div class="feature-point" data-feature="4">
+                    <div class="feature-point-dot">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <span class="feature-point-label">Paramètres</span>
+                </div>
+            </div>
+
+            <div class="feature-detail-container">
+                <div class="feature-detail-card active" data-card="0">
+                    <div class="feature-detail-content">
+                        <h3>Votre propre <span>accès</span></h3>
+                        <p>Connexion sécurisée à votre espace ORDABLE personnel. Gérez votre restaurant depuis n'importe où – que ce soit sur ordinateur, tablette ou téléphone. Vos données sont chiffrées de manière sécurisée.</p>
+                        <div class="feature-detail-list">
+                            <span class="feature-detail-tag">Connexion sécurisée</span>
+                            <span class="feature-detail-tag">Multi-appareil</span>
+                            <span class="feature-detail-tag">Chiffré</span>
+                        </div>
+                        <div class="feature-ui-element">
+                            <div class="login-preview">
+                                <div class="input-field filled">
+                                    <i data-lucide="mail"></i>
+                                    <span>restaurant@ordable.com</span>
+                                </div>
+                                <div class="input-field">
+                                    <i data-lucide="lock"></i>
+                                    <span>••••••••••••</span>
+                                </div>
+                                <button class="login-btn">Se connecter</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-detail-mockup">
+                        <div class="device device-macbook-pro device-spacegray">
+                            <div class="device-frame">
+                                <div class="device-screen">
+                                    <div class="mini-app mini-login">
+                                        <div class="mini-app-header">
+                                            <div class="app-logo">ORDABLE</div>
+                                            <div class="app-title">Connexion Partenaire</div>
+                                            <div class="app-user">🔐</div>
+                                        </div>
+                                        <div class="mini-app-body">
+                                            <div class="mini-login-logo">
+                                                <div class="mini-logo-circle">O</div>
+                                                <span>Bienvenue</span>
+                                            </div>
+                                            <div class="mini-input">
+                                                <div class="mini-input-icon">✉️</div>
+                                                <span>restaurant@ordable.com</span>
+                                            </div>
+                                            <div class="mini-input">
+                                                <div class="mini-input-icon">🔑</div>
+                                                <span>••••••••••••</span>
+                                            </div>
+                                            <div class="mini-checkbox">
+                                                <div class="mini-check">✓</div>
+                                                <span>Rester connecté</span>
+                                            </div>
+                                            <div class="mini-btn">Se connecter</div>
+                                            <div class="mini-login-footer">
+                                                <span class="mini-forgot">Mot de passe oublié ?</span>
+                                                <span class="mini-divider">•</span>
+                                                <span class="mini-help">Aide</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="device-stripe"></div>
+                            <div class="device-header"></div>
+                            <div class="device-sensors"></div>
+                            <div class="device-btns"></div>
+                            <div class="device-power"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detail-card" data-card="1">
+                    <div class="feature-detail-content">
+                        <h3>Tableau de bord <span>centralisé</span></h3>
+                        <p>Votre centre de commande pour tout. Page d'accueil claire avec les métriques les plus importantes, les commandes actuelles et accès rapide à toutes les fonctions – tout en coup d'œil.</p>
+                        <div class="feature-detail-list">
+                            <span class="feature-detail-tag">Vue d'ensemble</span>
+                            <span class="feature-detail-tag">Accès rapide</span>
+                            <span class="feature-detail-tag">Données en direct</span>
+                        </div>
+                        <div class="feature-ui-element">
+                            <div class="mini-widgets">
+                                <div class="mini-widget">
+                                    <div class="widget-icon" style="background: rgba(253, 185, 19, 0.15);">💰</div>
+                                    <div class="widget-value">2 847 €</div>
+                                    <div class="widget-label">Chiffre d'affaires aujourd'hui</div>
+                                    <div class="widget-change positive">+12%</div>
+                                </div>
+                                <div class="mini-widget">
+                                    <div class="widget-icon" style="background: rgba(5, 150, 105, 0.15);">📦</div>
+                                    <div class="widget-value">127</div>
+                                    <div class="widget-label">Commandes</div>
+                                    <div class="widget-change positive">+8%</div>
+                                </div>
+                                <div class="mini-widget">
+                                    <div class="widget-icon" style="background: rgba(59, 130, 246, 0.15);">👥</div>
+                                    <div class="widget-value">89</div>
+                                    <div class="widget-label">Clients</div>
+                                    <div class="widget-change positive">+15%</div>
+                                </div>
+                                <div class="mini-widget">
+                                    <div class="widget-icon" style="background: rgba(239, 68, 68, 0.15);">⭐</div>
+                                    <div class="widget-value">4,8</div>
+                                    <div class="widget-label">Évaluation</div>
+                                    <div class="widget-change positive">+0,2</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-detail-mockup">
+                        <div class="device device-macbook-pro device-spacegray">
+                            <div class="device-frame">
+                                <div class="device-screen">
+                                    <div class="mini-app mini-dashboard">
+                                        <div class="mini-app-header">
+                                            <div class="app-logo">ORDABLE</div>
+                                            <div class="app-title">Tableau de Bord</div>
+                                            <div class="app-user">👤</div>
+                                        </div>
+                                        <div class="mini-app-body mini-dashboard-layout">
+                                            <div class="mini-sidebar">
+                                                <div class="mini-nav-item active">📊</div>
+                                                <div class="mini-nav-item">📦</div>
+                                                <div class="mini-nav-item">📋</div>
+                                                <div class="mini-nav-item">⚙️</div>
+                                            </div>
+                                            <div class="mini-main">
+                                                <div class="mini-welcome">Bon jour, Restaurant Demo!</div>
+                                                <div class="mini-stats-row">
+                                                    <div class="mini-stat-card">
+                                                        <div class="mini-stat-icon">💰</div>
+                                                        <div class="mini-stat-value">2 847 €</div>
+                                                        <div class="mini-stat-label">Chiffre d'affaires aujourd'hui</div>
+                                                        <div class="mini-stat-trend up">↑ 12%</div>
+                                                    </div>
+                                                    <div class="mini-stat-card">
+                                                        <div class="mini-stat-icon">📦</div>
+                                                        <div class="mini-stat-value">127</div>
+                                                        <div class="mini-stat-label">Commandes</div>
+                                                        <div class="mini-stat-trend up">↑ 8%</div>
+                                                    </div>
+                                                    <div class="mini-stat-card">
+                                                        <div class="mini-stat-icon">👥</div>
+                                                        <div class="mini-stat-value">89</div>
+                                                        <div class="mini-stat-label">Nouveaux clients</div>
+                                                        <div class="mini-stat-trend up">↑ 15%</div>
+                                                    </div>
+                                                    <div class="mini-stat-card">
+                                                        <div class="mini-stat-icon">⭐</div>
+                                                        <div class="mini-stat-value">4,8</div>
+                                                        <div class="mini-stat-label">Évaluation</div>
+                                                        <div class="mini-stat-trend up">↑ 0,2</div>
+                                                    </div>
+                                                </div>
+                                                <div class="mini-chart-section">
+                                                    <div class="mini-chart-header">
+                                                        <span>Chiffre d'affaires cette semaine</span>
+                                                        <span class="mini-chart-total">18 420 €</span>
+                                                    </div>
+                                                    <div class="mini-chart-placeholder">
+                                                        <div class="mini-bar" style="height: 45%;"><span>Lun</span></div>
+                                                        <div class="mini-bar" style="height: 65%;"><span>Mar</span></div>
+                                                        <div class="mini-bar" style="height: 50%;"><span>Mer</span></div>
+                                                        <div class="mini-bar" style="height: 80%;"><span>Jeu</span></div>
+                                                        <div class="mini-bar" style="height: 70%;"><span>Ven</span></div>
+                                                        <div class="mini-bar active" style="height: 95%;"><span>Sam</span></div>
+                                                        <div class="mini-bar" style="height: 55%;"><span>Dim</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="device-stripe"></div>
+                            <div class="device-header"></div>
+                            <div class="device-sensors"></div>
+                            <div class="device-btns"></div>
+                            <div class="device-power"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detail-card" data-card="2">
+                    <div class="feature-detail-content">
+                        <h3>Statistiques <span>détaillées</span></h3>
+                        <p>Suivez le chiffre d'affaires, les meilleures ventes et le comportement des clients. Des rapports significatifs vous aident à prendre des décisions basées sur les données et à optimiser votre activité.</p>
+                        <div class="feature-detail-list">
+                            <span class="feature-detail-tag">Analyse du chiffre d'affaires</span>
+                            <span class="feature-detail-tag">Meilleures ventes</span>
+                            <span class="feature-detail-tag">Fonction d'export</span>
+                        </div>
+                        <div class="feature-mini-chart" style="padding: 1.25rem;">
+                            <div class="chart-header">
+                                <span class="chart-title">Performance des 12 derniers mois</span>
+                                <span class="chart-value positive">+47%</span>
+                            </div>
+                            <div class="chart-legend">
+                                <span class="legend-item"><span class="legend-dot" style="background: #FDB913;"></span>Chiffre d'affaires</span>
+                                <span class="legend-item"><span class="legend-dot" style="background: #ef4444;"></span>Frais</span>
+                                <span class="legend-item"><span class="legend-dot" style="background: #059669;"></span>Commandes</span>
+                                <span class="legend-item"><span class="legend-dot" style="background: #3b82f6;"></span>Clients</span>
+                            </div>
+                            <div class="chart-container" id="chart-revenue" style="height: 120px;"></div>
+                        </div>
+                    </div>
+                    <div class="feature-detail-mockup">
+                        <div class="device device-macbook-pro device-spacegray">
+                            <div class="device-frame">
+                                <div class="device-screen">
+                                    <div class="mini-app mini-stats">
+                                        <div class="mini-app-header">
+                                            <div class="app-logo">ORDABLE</div>
+                                            <div class="app-title">Statistiques</div>
+                                            <div class="app-user">📊</div>
+                                        </div>
+                                        <div class="mini-app-body mini-stats-layout">
+                                            <div class="mini-stats-sidebar">
+                                                <div class="mini-stat-box highlight">
+                                                    <div class="mini-stat-box-icon">💰</div>
+                                                    <div class="mini-stat-box-content">
+                                                        <span class="mini-stat-box-value">12 450 €</span>
+                                                        <span class="mini-stat-box-label">Chiffre d'affaires mensuel</span>
+                                                    </div>
+                                                    <span class="mini-stat-box-trend up">+23%</span>
+                                                </div>
+                                                <div class="mini-stat-box">
+                                                    <div class="mini-stat-box-icon">📦</div>
+                                                    <div class="mini-stat-box-content">
+                                                        <span class="mini-stat-box-value">847</span>
+                                                        <span class="mini-stat-box-label">Commandes</span>
+                                                    </div>
+                                                    <span class="mini-stat-box-trend up">+18%</span>
+                                                </div>
+                                                <div class="mini-stat-box">
+                                                    <div class="mini-stat-box-icon">👥</div>
+                                                    <div class="mini-stat-box-content">
+                                                        <span class="mini-stat-box-value">234</span>
+                                                        <span class="mini-stat-box-label">Nouveaux clients</span>
+                                                    </div>
+                                                    <span class="mini-stat-box-trend up">+12%</span>
+                                                </div>
+                                                <div class="mini-stat-box">
+                                                    <div class="mini-stat-box-icon">🍕</div>
+                                                    <div class="mini-stat-box-content">
+                                                        <span class="mini-stat-box-value">14,70 €</span>
+                                                        <span class="mini-stat-box-label">Panier moyen</span>
+                                                    </div>
+                                                    <span class="mini-stat-box-trend up">+5%</span>
+                                                </div>
+                                            </div>
+                                            <div class="mini-stats-main">
+                                                <div class="mini-chart-card">
+                                                    <div class="mini-chart-title">
+                                                        <span>Évolution du chiffre d'affaires</span>
+                                                        <div class="mini-chart-legend">
+                                                            <span class="legend-dot yellow"></span>Chiffre d'affaires
+                                                            <span class="legend-dot green"></span>Commandes
+                                                        </div>
+                                                    </div>
+                                                    <div class="mini-chart-lines">
+                                                        <svg width="100%" height="100%" viewBox="0 0 200 80" preserveAspectRatio="none">
+                                                            <defs>
+                                                                <linearGradient id="goldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                                                    <stop offset="0%" style="stop-color:#FDB913;stop-opacity:0.3"/>
+                                                                    <stop offset="100%" style="stop-color:#FDB913;stop-opacity:0"/>
+                                                                </linearGradient>
+                                                            </defs>
+                                                            <polygon points="0,60 30,45 60,55 90,30 120,40 150,20 180,25 200,10 200,80 0,80" fill="url(#goldGradient)"/>
+                                                            <polyline points="0,60 30,45 60,55 90,30 120,40 150,20 180,25 200,10" fill="none" stroke="#FDB913" stroke-width="2"/>
+                                                            <polyline points="0,70 30,65 60,68 90,55 120,60 150,50 180,52 200,45" fill="none" stroke="#059669" stroke-width="2"/>
+                                                            <circle cx="200" cy="10" r="3" fill="#FDB913"/>
+                                                            <circle cx="200" cy="45" r="3" fill="#059669"/>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="mini-bestseller">
+                                                    <span class="mini-bestseller-title">Meilleurs produits</span>
+                                                    <div class="mini-bestseller-list">
+                                                        <div class="mini-bestseller-item">
+                                                            <span>🍕 Pizza Margherita</span>
+                                                            <span>142x</span>
+                                                        </div>
+                                                        <div class="mini-bestseller-item">
+                                                            <span>🍔 Cheeseburger</span>
+                                                            <span>98x</span>
+                                                        </div>
+                                                        <div class="mini-bestseller-item">
+                                                            <span>🍝 Spaghetti</span>
+                                                            <span>87x</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="device-stripe"></div>
+                            <div class="device-header"></div>
+                            <div class="device-sensors"></div>
+                            <div class="device-btns"></div>
+                            <div class="device-power"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detail-card" data-card="3">
+                    <div class="feature-detail-content">
+                        <h3>Gérer les <span>commandes</span></h3>
+                        <p>Toutes les commandes entrantes clairement au même endroit. Confirmez, modifiez ou annulez les commandes en quelques clics. Les mises à jour en temps réel vous assurent de ne jamais manquer une commande.</p>
+                        <div class="feature-detail-list">
+                            <span class="feature-detail-tag">Mises à jour en temps réel</span>
+                            <span class="feature-detail-tag">Suivi du statut</span>
+                            <span class="feature-detail-tag">Historique des commandes</span>
+                        </div>
+                        <div class="feature-ui-element">
+                            <div class="order-timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot completed">✓</div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-title">Commande reçue</div>
+                                        <div class="timeline-time">14h32</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot completed">✓</div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-title">Commande confirmée</div>
+                                        <div class="timeline-time">14h33</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot active">◉</div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-title">En préparation</div>
+                                        <div class="timeline-time">Maintenant</div>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot pending">○</div>
+                                    <div class="timeline-content">
+                                        <div class="timeline-title">Prête pour retrait</div>
+                                        <div class="timeline-time">~14h50</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-detail-mockup">
+                        <div class="device device-macbook-pro device-spacegray">
+                            <div class="device-frame">
+                                <div class="device-screen">
+                                    <div class="mini-app mini-orders">
+                                        <div class="mini-app-header">
+                                            <div class="app-logo">ORDABLE</div>
+                                            <div class="app-title">Commandes</div>
+                                            <div class="app-user">🔔</div>
+                                        </div>
+                                        <div class="mini-app-body mini-orders-layout">
+                                            <div class="mini-orders-tabs">
+                                                <span class="mini-tab active">Toutes <span class="mini-tab-count">12</span></span>
+                                                <span class="mini-tab">Nouvelles <span class="mini-tab-count highlight">3</span></span>
+                                                <span class="mini-tab">En cours</span>
+                                                <span class="mini-tab">Complétées</span>
+                                            </div>
+                                            <div class="mini-orders-list">
+                                                <div class="mini-order-card new-order">
+                                                    <div class="mini-order-header">
+                                                        <span class="mini-order-id">#1247</span>
+                                                        <span class="mini-order-time">Il y a 2 min</span>
+                                                    </div>
+                                                    <div class="mini-order-customer">
+                                                        <span>👤 Max Müller</span>
+                                                        <span class="mini-order-type">🛵 Livraison</span>
+                                                    </div>
+                                                    <div class="mini-order-items">2x Pizza Margherita, 1x Coca-Cola, 1x Tiramisu</div>
+                                                    <div class="mini-order-footer">
+                                                        <span class="mini-order-total">32,50 €</span>
+                                                        <span class="mini-order-badge new">Nouvelle</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mini-order-card">
+                                                    <div class="mini-order-header">
+                                                        <span class="mini-order-id">#1246</span>
+                                                        <span class="mini-order-time">Il y a 8 min</span>
+                                                    </div>
+                                                    <div class="mini-order-customer">
+                                                        <span>👤 Anna Schmidt</span>
+                                                        <span class="mini-order-type">🏠 Retrait</span>
+                                                    </div>
+                                                    <div class="mini-order-items">1x Cheeseburger, 2x Frites</div>
+                                                    <div class="mini-order-footer">
+                                                        <span class="mini-order-total">18,90 €</span>
+                                                        <span class="mini-order-badge progress">En cours</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mini-order-card">
+                                                    <div class="mini-order-header">
+                                                        <span class="mini-order-id">#1245</span>
+                                                        <span class="mini-order-time">Il y a 15 min</span>
+                                                    </div>
+                                                    <div class="mini-order-customer">
+                                                        <span>👤 Tom Weber</span>
+                                                        <span class="mini-order-type">🛵 Livraison</span>
+                                                    </div>
+                                                    <div class="mini-order-items">3x Spaghetti Bolognese, 1x Salade</div>
+                                                    <div class="mini-order-footer">
+                                                        <span class="mini-order-total">41,20 €</span>
+                                                        <span class="mini-order-badge done">Complétée</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="device-stripe"></div>
+                            <div class="device-header"></div>
+                            <div class="device-sensors"></div>
+                            <div class="device-btns"></div>
+                            <div class="device-power"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="feature-detail-card" data-card="4">
+                    <div class="feature-detail-content">
+                        <h3>Paramètres <span>flexibles</span></h3>
+                        <p>Adaptez ORDABLE à vos besoins. Horaires d'ouverture, zones de livraison, modes de paiement, notifications – configurez tout de la manière qui fonctionne le mieux pour votre restaurant.</p>
+                        <div class="feature-detail-list">
+                            <span class="feature-detail-tag">Horaires d'ouverture</span>
+                            <span class="feature-detail-tag">Zones de livraison</span>
+                            <span class="feature-detail-tag">Modes de paiement</span>
+                        </div>
+                        <div class="feature-ui-element">
+                            <div class="settings-menu">
+                                <div class="settings-item">
+                                    <div class="settings-item-left">
+                                        <div class="settings-item-icon" style="background: rgba(253, 185, 19, 0.15);">🕐</div>
+                                        <span class="settings-item-label">Horaires d'ouverture</span>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="settings-item-arrow"></i>
+                                </div>
+                                <div class="settings-item">
+                                    <div class="settings-item-left">
+                                        <div class="settings-item-icon" style="background: rgba(59, 130, 246, 0.15);">📍</div>
+                                        <span class="settings-item-label">Zones de livraison</span>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="settings-item-arrow"></i>
+                                </div>
+                                <div class="settings-item">
+                                    <div class="settings-item-left">
+                                        <div class="settings-item-icon" style="background: rgba(5, 150, 105, 0.15);">💳</div>
+                                        <span class="settings-item-label">Modes de paiement</span>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="settings-item-arrow"></i>
+                                </div>
+                                <div class="settings-item">
+                                    <div class="settings-item-left">
+                                        <div class="settings-item-icon" style="background: rgba(239, 68, 68, 0.15);">🔔</div>
+                                        <span class="settings-item-label">Notifications</span>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="settings-item-arrow"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-detail-mockup">
+                        <div class="device device-macbook-pro device-spacegray">
+                            <div class="device-frame">
+                                <div class="device-screen">
+                                    <div class="mini-app mini-settings">
+                                        <div class="mini-app-header">
+                                            <div class="app-logo">ORDABLE</div>
+                                            <div class="app-title">Paramètres</div>
+                                            <div class="app-user">⚙️</div>
+                                        </div>
+                                        <div class="mini-app-body mini-settings-layout">
+                                            <div class="mini-settings-nav">
+                                                <div class="mini-settings-nav-item active">Général</div>
+                                                <div class="mini-settings-nav-item">Livraison</div>
+                                                <div class="mini-settings-nav-item">Paiement</div>
+                                                <div class="mini-settings-nav-item">Compte</div>
+                                            </div>
+                                            <div class="mini-settings-content">
+                                                <div class="mini-settings-section">
+                                                    <span class="mini-settings-section-title">Restaurant</span>
+                                                    <div class="mini-settings-item">
+                                                        <div class="mini-settings-left">
+                                                            <div class="mini-settings-icon" style="background: rgba(253, 185, 19, 0.15);">🏪</div>
+                                                            <div class="mini-settings-info">
+                                                                <span class="mini-settings-label">Nom du restaurant</span>
+                                                                <span class="mini-settings-value">Pizza Palace</span>
+                                                            </div>
+                                                        </div>
+                                                        <span class="mini-settings-arrow">›</span>
+                                                    </div>
+                                                    <div class="mini-settings-item">
+                                                        <div class="mini-settings-left">
+                                                            <div class="mini-settings-icon" style="background: rgba(59, 130, 246, 0.15);">🕐</div>
+                                                            <div class="mini-settings-info">
+                                                                <span class="mini-settings-label">Horaires d'ouverture</span>
+                                                                <span class="mini-settings-value">Lun-Dim 11h-22h</span>
+                                                            </div>
+                                                        </div>
+                                                        <span class="mini-settings-arrow">›</span>
+                                                    </div>
+                                                </div>
+                                                <div class="mini-settings-section">
+                                                    <span class="mini-settings-section-title">Notifications</span>
+                                                    <div class="mini-settings-item">
+                                                        <div class="mini-settings-left">
+                                                            <div class="mini-settings-icon" style="background: rgba(5, 150, 105, 0.15);">🔔</div>
+                                                            <div class="mini-settings-info">
+                                                                <span class="mini-settings-label">Notifications push</span>
+                                                                <span class="mini-settings-value">Nouvelles commandes</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mini-toggle on"></div>
+                                                    </div>
+                                                    <div class="mini-settings-item">
+                                                        <div class="mini-settings-left">
+                                                            <div class="mini-settings-icon" style="background: rgba(239, 68, 68, 0.15);">📧</div>
+                                                            <div class="mini-settings-info">
+                                                                <span class="mini-settings-label">Rapports par e-mail</span>
+                                                                <span class="mini-settings-value">Hebdomadaire</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mini-toggle on"></div>
+                                                    </div>
+                                                    <div class="mini-settings-item">
+                                                        <div class="mini-settings-left">
+                                                            <div class="mini-settings-icon" style="background: rgba(139, 92, 246, 0.15);">📱</div>
+                                                            <div class="mini-settings-info">
+                                                                <span class="mini-settings-label">Notifications SMS</span>
+                                                                <span class="mini-settings-value">Désactivé</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mini-toggle off"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="device-stripe"></div>
+                            <div class="device-header"></div>
+                            <div class="device-sensors"></div>
+                            <div class="device-btns"></div>
+                            <div class="device-power"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="cta-content reveal">
+            <h2>Prêt à commencer ?</h2>
+            <p>Commencez dès maintenant avec ORDABLE et conservez 100% de votre chiffre d'affaires.</p>
+            <div class="cta-buttons">
+                <a href="/fr/#contact" class="btn-dark">Demander maintenant</a>
+                <a href="/fr/pricing/" class="btn-outline">Voir les tarifs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ORDABLE – Votre système de restaurant numérique · <a href="/fr/">Retour à la page d'accueil</a></p>
+        <p class="footer-legal">
+            <a href="../../impressum/">Mentions légales</a> · <a href="../../fr/privacy/">Politique de confidentialité</a>
+        </p>
+    </footer>
+
+    <script src="../../js/leistungen.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qui sommes-nous | ORDABLE - L'histoire derrière la vision</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="L'histoire ORDABLE : Comment nous avons commencé et pourquoi nous aidons les restaurateurs à devenir indépendants des plateformes de livraison coûteuses. Créé en Allemagne.">
+    <meta name="keywords" content="histoire ORDABLE, startup gastronomique, numérisation restaurant Allemagne, à propos ORDABLE">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ordable.io/fr/story/">
+    <link rel="alternate" hreflang="de-DE" href="https://ordable.io/de/story/">
+    <link rel="alternate" hreflang="en-US" href="https://ordable.io/en/story/">
+    <link rel="alternate" hreflang="fr-FR" href="https://ordable.io/fr/story/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Qui sommes-nous | ORDABLE">
+    <meta property="og:description" content="Découvrez l'histoire derrière ORDABLE et notre mission pour l'industrie de l'hôtellerie-restauration.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ordable.io/fr/story/">
+    <meta property="og:image" content="https://ordable.io/images/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta property="og:locale:alternate" content="en_US">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#FDB913">
+
+    <!-- Preconnect for faster connections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Scripts with defer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FDB913;--primary-dark:#E5A811;--dark:#1a1a1a;--text:#333;--white:#fff;--border:#e5e5e5;--bg-main:#fff}
+        body{font-family:'Inter',-apple-system,sans-serif;line-height:1.6;color:var(--text);background:var(--bg-main);overflow-x:hidden}
+        header{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;transition:all .4s ease}
+        header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:100px;width:auto;margin-left:-2.5rem;margin-top:-20px;margin-bottom:-20px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem}
+        .nav-menu li a{text-decoration:none;color:var(--text);font-weight:600}
+        .nav-cta{background:var(--primary);color:var(--dark);padding:.75rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:700}
+        @media(max-width:968px){.nav-menu{display:none}}
+    </style>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/story.css">
+</head>
+<body>
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Animated Particles Background -->
+    <div class="story-particles" id="storyParticles"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="/fr/" class="logo">
+                <img src="../../images/ordablewhite.png" alt="Ordable">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/fr/">Accueil</a></li>
+                <li><a href="/fr/features/">Fonctionnalités</a></li>
+                <li><a href="/fr/benefits/">Avantages</a></li>
+                <li><a href="/fr/pricing/">Tarifs</a></li>
+                <li><a href="/fr/story/" class="active">Notre Histoire</a></li>
+            </ul>
+            <a href="/fr/signup/" class="nav-cta">Commencer</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Ouvrir le menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-menu">
+            <li><a href="/fr/">Accueil</a></li>
+            <li><a href="/fr/features/">Fonctionnalités</a></li>
+            <li><a href="/fr/benefits/">Avantages</a></li>
+            <li><a href="/fr/pricing/">Tarifs</a></li>
+            <li><a href="/fr/story/" class="active">Notre Histoire</a></li>
+        </ul>
+        <a href="/fr/signup/" class="mobile-nav-cta">Commencer</a>
+    </nav>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <!-- Intro - Cinematic Opening -->
+        <div class="story-intro">
+            <div class="story-intro-content">
+                <div class="story-year">2020</div>
+                <h2 class="story-headline">
+                    Quand le monde s'est arrêté,<br>
+                    <span class="highlight-text">nous avons dû agir.</span>
+                </h2>
+                <p class="story-subheadline">
+                    La crise du coronavirus a frappé l'industrie de l'hôtellerie-restauration de plein fouet.
+                    Les restaurants ont fermé, les moyens d'existence anéantis.
+                    Y compris celui de l'un des membres de notre équipe. C'est à ce moment
+                    qu'ORDABLE est né.
+                </p>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-mouse"></div>
+                <span>Faites défiler pour découvrir notre histoire</span>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div class="story-timeline">
+            <div class="timeline-line"></div>
+
+            <!-- Chapter 1: The Crisis -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapitre 1</div>
+                    <h3 class="chapter-title">
+                        La crise qui a <span class="accent">tout changé</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Durant la crise du coronavirus, plus de 48 000 établissements d'hôtellerie-restauration
+                        en Allemagne ont dû fermer définitivement. L'un d'eux appartenait à la famille
+                        de notre co-fondateur. Un restaurant qui existait depuis plus de 20 ans.
+                        Anéanti en quelques mois.
+                    </p>
+                    <p class="chapter-quote">
+                        « Nous avons vu comment des gens travailleurs ont tout perdu
+                        – non pas parce que leur cuisine était mauvaise, mais parce qu'ils
+                        n'avaient pas pu gérer la transformation numérique à temps. »
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card crisis">
+                        <div class="visual-icon"><i data-lucide="heart-crack"></i></div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value danger">48 000+</span>
+                            <span class="visual-stat-label">Établissements fermés (2020-2023)</span>
+                        </div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value danger">-47 %</span>
+                            <span class="visual-stat-label">Baisse des revenus du secteur</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 2: Understanding the Problem -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapitre 2</div>
+                    <h3 class="chapter-title">
+                        Nous comprenons <span class="accent">votre réalité quotidienne</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Nous connaissons le stress derrière le comptoir. Les journées de 14 heures.
+                        Les pieds douloureux. Les factures qui s'accumulent.
+                        Quand êtes-vous censé trouver du temps pour la « numérisation » ?
+                    </p>
+                    <p class="chapter-text">
+                        Et puis les grandes plateformes arrivent et prélèvent jusqu'à
+                        30 % de chaque commande. À la fin du mois, il ne reste presque rien
+                        – et les clients ? Ils ne vous appartiennent même pas.
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card problem">
+                        <div class="visual-icon"><i data-lucide="alert-triangle"></i></div>
+                        <ul class="visual-list">
+                            <li><span class="icon"><i data-lucide="clock"></i></span> Pas de temps pour la technologie</li>
+                            <li><span class="icon"><i data-lucide="trending-down"></i></span> Jusqu'à 30 % de commission aux plateformes</li>
+                            <li><span class="icon"><i data-lucide="tag"></i></span> Marque tiers au lieu de la vôtre</li>
+                            <li><span class="icon"><i data-lucide="bar-chart-2"></i></span> Les données clients appartiennent à autrui</li>
+                            <li><span class="icon"><i data-lucide="lock"></i></span> Dépendance aux algorithmes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 3: The Dilemma -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapitre 3</div>
+                    <h3 class="chapter-title">
+                        De bonnes solutions, <span class="accent">mais à quel prix ?</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Oui, elles existent – les grandes plateformes. Lieferando, Wolt,
+                        Uber Eats. Elles ont fait avancer la numérisation et
+                        offrent des systèmes fonctionnels. Nous le reconnaissons.
+                    </p>
+                    <p class="chapter-text">
+                        Mais le prix ? <strong>13 % à 30 % de chaque commande.</strong>
+                        Avec 10 000 € de revenus mensuels, cela représente jusqu'à 3 000 € – chaque mois.
+                        De l'argent qui devrait vous appartenir.
+                    </p>
+                    <p class="chapter-quote">
+                        « Beaucoup de restaurateurs nous disent : Nous savons que les commissions
+                        sont trop élevées. Mais que devons-nous faire ? Nous ne voyons pas d'alternative. »
+                        – C'est exactement ce que nous voulons changer.
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card dilemma">
+                        <div class="visual-icon"><i data-lucide="scale"></i></div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value warning">13-30 %</span>
+                            <span class="visual-stat-label">Commission par commande</span>
+                        </div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value warning">3 000 €</span>
+                            <span class="visual-stat-label">Perte à 10 000 € de revenus/mois</span>
+                        </div>
+                        <ul class="visual-list" style="margin-top: 1rem;">
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Technologie de qualité disponible</li>
+                            <li><span class="icon x"><i data-lucide="x"></i></span> Commissions bien trop élevées</li>
+                            <li><span class="icon x"><i data-lucide="x"></i></span> Pas d'alternative réelle – jusqu'à maintenant</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 4: The Vision -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapitre 4</div>
+                    <h3 class="chapter-title">
+                        Une vision <span class="accent">est née</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Nous nous sommes posé la question : Et si chaque restaurant pouvait
+                        avoir sa propre application ? Son propre site web ?
+                        Son propre terminal de commande ? Tout sous une seule marque –
+                        la vôtre.
+                    </p>
+                    <p class="chapter-text">
+                        Pas comme un luxe réservé aux grandes chaînes, mais comme une
+                        solution abordable pour chaque kebab, chaque pizzéria, chaque
+                        restaurant familial. C'est comme cela qu'ORDABLE a vu le jour.
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card vision">
+                        <div class="visual-icon"><i data-lucide="lightbulb"></i></div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value primary">100 %</span>
+                            <span class="visual-stat-label">Votre marque, votre identité</span>
+                        </div>
+                        <div class="visual-stat">
+                            <span class="visual-stat-value primary">0 %</span>
+                            <span class="visual-stat-label">Commission – à jamais</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chapter 5: The Promise -->
+            <div class="story-chapter">
+                <div class="chapter-content">
+                    <div class="chapter-badge">Chapitre 5</div>
+                    <h3 class="chapter-title">
+                        Notre promesse <span class="accent">pour vous</span>
+                    </h3>
+                    <p class="chapter-text">
+                        Nous voulons que le prix soit équitable, que nous ayons 10 ou 10 000
+                        partenaires – le prix reste juste et fixe.
+                        Pas de frais cachés. Pas de commissions qui
+                        augmentent avec votre succès.
+                    </p>
+                    <p class="chapter-quote">
+                        « Votre succès ne devrait pas signifier payer plus aux
+                        plateformes. Votre succès doit rester votre succès. »
+                    </p>
+                </div>
+                <div class="chapter-visual">
+                    <div class="visual-card future">
+                        <div class="visual-icon"><i data-lucide="handshake"></i></div>
+                        <ul class="visual-list">
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Prix fixe, peu importe vos revenus</li>
+                            <li><span class="icon check"><i data-lucide="check"></i></span> 10 ou 10 000 partenaires – même prix</li>
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Pas de frais cachés</li>
+                            <li><span class="icon check"><i data-lucide="check"></i></span> Vos clients vous appartiennent</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mission Statement -->
+        <div class="story-mission">
+            <div class="mission-container">
+                <div class="mission-label">Notre Mission</div>
+                <h2 class="mission-title">
+                    Nous voulons démocratiser<br>
+                    <span class="gradient">l'industrie de l'hôtellerie-restauration.</span>
+                </h2>
+                <p class="mission-text">
+                    Chaque restaurant mérite une chance de réussir numériquement –
+                    peu importe la taille, le budget ou les connaissances techniques.
+                    Avec votre propre marque, vos propres clients, et un prix équitable.
+                </p>
+
+                <!-- Promise Cards -->
+                <div class="promise-grid">
+                    <div class="promise-card">
+                        <div class="promise-icon"><i data-lucide="target"></i></div>
+                        <h4 class="promise-title">Votre Marque</h4>
+                        <p class="promise-text">
+                            Application et site web à votre nom.
+                            Pas de Lieferando, pas de Wolt – juste vous.
+                        </p>
+                    </div>
+                    <div class="promise-card">
+                        <div class="promise-icon"><i data-lucide="piggy-bank"></i></div>
+                        <h4 class="promise-title">Tarifs Équitables</h4>
+                        <p class="promise-text">
+                            Un prix mensuel fixe. Pas de commission.
+                            Plus vous gagnez, plus vous gardez.
+                        </p>
+                    </div>
+                    <div class="promise-card">
+                        <div class="promise-icon"><i data-lucide="rocket"></i></div>
+                        <h4 class="promise-title">Démarrage Facile</h4>
+                        <p class="promise-text">
+                            Nous gérons la technologie.
+                            Vous vous concentrez sur ce que vous aimez.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="story-cta">
+                    <a href="/fr/#kontakt" class="story-btn-primary">
+                        Rejoignez le Mouvement
+                        <svg viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <a href="/fr/pricing/" class="story-btn-secondary">
+                        Consulter les Tarifs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ORDABLE – Votre Système de Restaurant Numérique · <a href="/fr/">Retour à l'accueil</a></p>
+        <p class="footer-legal">
+            <a href="/fr/impressum/">Mentions Légales</a> · <a href="/fr/privacy/">Politique de Confidentialité</a>
+        </p>
+    </footer>
+
+    <script src="../../js/story.js" defer></script>
+</body>
+</html>

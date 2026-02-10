@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entreprise | ORDABLE - Solutions pour Chaînes de Restaurants & Franchises</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="ORDABLE Entreprise: Gestion Multi-Établissements, Accès API, Développement Personnalisé pour Chaînes de Restaurants et Franchises. Solutions Individuelles pour les Grands Groupes de Restauration.">
+    <meta name="keywords" content="Logiciel Chaîne Restaurant, Système Commande Franchise, Restaurant Multi-Établissements, Entreprise Restauration, Gestion Chaîne Restaurants">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ordable.io/fr/enterprise/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Entreprise | ORDABLE">
+    <meta property="og:description" content="Solutions Personnalisées pour Chaînes de Restaurants et Franchises. Gestion Multi-Établissements & Accès API.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ordable.io/fr/enterprise/">
+    <meta property="og:image" content="https://ordable.io/images/og-image.png">
+    <meta property="og:locale" content="fr_FR">
+
+    <!-- Language Alternate Links -->
+    <link rel="alternate" hreflang="de-DE" href="https://ordable.io/de/enterprise/">
+    <link rel="alternate" hreflang="en-US" href="https://ordable.io/en/enterprise/">
+    <link rel="alternate" hreflang="fr-FR" href="https://ordable.io/fr/enterprise/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#FDB913">
+
+    <!-- Preconnect for faster connections -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://unpkg.com">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Scripts with defer -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <!-- Critical CSS -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        :root{--primary:#FDB913;--primary-dark:#E5A811;--dark:#1a1a1a;--text:#333;--white:#fff;--border:#e5e5e5;--bg-main:#fff}
+        body{font-family:'Inter',-apple-system,sans-serif;line-height:1.6;color:var(--text);background:var(--bg-main);overflow-x:hidden}
+        header{position:fixed;top:0;width:100%;z-index:1000;padding:1.25rem 0;transition:all .4s ease}
+        header.scrolled{background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+        nav{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo img{height:100px;width:auto;margin-left:-2.5rem;margin-top:-20px;margin-bottom:-20px}
+        .nav-menu{display:flex;list-style:none;gap:2.5rem}
+        .nav-menu li a{text-decoration:none;color:var(--text);font-weight:600}
+        .nav-cta{background:var(--primary);color:var(--dark);padding:.75rem 1.75rem;border-radius:50px;text-decoration:none;font-weight:700}
+        @media(max-width:968px){.nav-menu{display:none}}
+    </style>
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="../../css/enterprise.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-gradient-animated">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+    <div class="noise-overlay"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <a href="/fr/" class="logo">
+                <img src="../../images/header.png" alt="Ordable">
+            </a>
+            <ul class="nav-menu">
+                <li><a href="/fr/">Accueil</a></li>
+                <li><a href="/fr/features/">Fonctionnalités</a></li>
+                <li><a href="/fr/benefits/">Avantages</a></li>
+                <li><a href="/fr/pricing/">Tarifs</a></li>
+                <li><a href="/fr/story/">Notre Histoire</a></li>
+            </ul>
+            <a href="/fr/signup/" class="nav-cta">Commencer</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul class="mobile-nav-menu">
+            <li><a href="/fr/">Accueil</a></li>
+            <li><a href="/fr/features/">Fonctionnalités</a></li>
+            <li><a href="/fr/benefits/">Avantages</a></li>
+            <li><a href="/fr/pricing/">Tarifs</a></li>
+            <li><a href="/fr/story/">Notre Histoire</a></li>
+        </ul>
+        <a href="/fr/signup/" class="mobile-nav-cta">Commencer</a>
+    </nav>
+
+    <!-- Language Switcher -->
+    <div class="language-switcher">
+        <a href="/de/enterprise/" class="lang-option">DE</a>
+        <a href="/en/enterprise/" class="lang-option">EN</a>
+        <a href="/fr/enterprise/" class="lang-option active">FR</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span>
+                    Maintenant disponible avec intégration IA
+                </div>
+                <h1 class="hero-title">
+                    La Solution <span class="highlight">Tout-en-Un</span> pour Votre Chaîne de Restaurants
+                </h1>
+                <p class="hero-subtitle">
+                    Site web, application de commande et système de caisse parfaitement intégrés. Augmentez vos revenus, gagnez du temps et satisfaites vos clients – tout avec ORDABLE.
+                </p>
+                <div class="hero-cta">
+                    <a href="#demo" class="btn btn-primary btn-lg">
+                        <i data-lucide="play" style="width: 20px; height: 20px;"></i>
+                        Démo Gratuite
+                    </a>
+                    <a href="#features" class="btn btn-ghost btn-lg">
+                        En Savoir Plus
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">500+</div>
+                        <div class="hero-stat-label">Clients Satisfaits</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">0%</div>
+                        <div class="hero-stat-label">Commission</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-value">24/7</div>
+                        <div class="hero-stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-mockup">
+                    <div class="hero-device">
+                        <div class="hero-device-header">
+                            <span class="hero-device-dot"></span>
+                            <span class="hero-device-dot"></span>
+                            <span class="hero-device-dot"></span>
+                        </div>
+                        <div class="hero-device-content">
+                            <div class="hero-dashboard">
+                                <div class="dashboard-card">
+                                    <div class="dashboard-card-header">
+                                        <span class="dashboard-card-title">Commandes</span>
+                                        <div class="dashboard-card-icon orange">
+                                            <i data-lucide="shopping-bag" style="width: 18px; height: 18px;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-card-value">2 847</div>
+                                    <div class="dashboard-card-change positive">
+                                        <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+                                        +23% cette semaine
+                                    </div>
+                                </div>
+                                <div class="dashboard-card">
+                                    <div class="dashboard-card-header">
+                                        <span class="dashboard-card-title">Chiffre d'Affaires</span>
+                                        <div class="dashboard-card-icon green">
+                                            <i data-lucide="euro" style="width: 18px; height: 18px;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-card-value">48,3K €</div>
+                                    <div class="dashboard-card-change positive">
+                                        <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+                                        +18% vs. le mois dernier
+                                    </div>
+                                </div>
+                                <div class="dashboard-card">
+                                    <div class="dashboard-card-header">
+                                        <span class="dashboard-card-title">Nouveaux Clients</span>
+                                        <div class="dashboard-card-icon yellow">
+                                            <i data-lucide="users" style="width: 18px; height: 18px;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-card-value">384</div>
+                                    <div class="dashboard-card-change positive">
+                                        <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+                                        +31% ce mois-ci
+                                    </div>
+                                </div>
+                                <div class="dashboard-card">
+                                    <div class="dashboard-card-header">
+                                        <span class="dashboard-card-title">Note</span>
+                                        <div class="dashboard-card-icon blue">
+                                            <i data-lucide="star" style="width: 18px; height: 18px;"></i>
+                                        </div>
+                                    </div>
+                                    <div class="dashboard-card-value">4,9</div>
+                                    <div class="dashboard-card-change positive">
+                                        <i data-lucide="trending-up" style="width: 14px; height: 14px;"></i>
+                                        De 1 200 Avis
+                                    </div>
+                                </div>
+                                <div class="dashboard-chart">
+                                    <span class="dashboard-card-title">Commandes d'aujourd'hui</span>
+                                    <div class="chart-bars">
+                                        <div class="chart-bar" style="height: 40%;"></div>
+                                        <div class="chart-bar" style="height: 65%;"></div>
+                                        <div class="chart-bar" style="height: 45%;"></div>
+                                        <div class="chart-bar" style="height: 80%;"></div>
+                                        <div class="chart-bar" style="height: 55%;"></div>
+                                        <div class="chart-bar" style="height: 90%;"></div>
+                                        <div class="chart-bar" style="height: 70%;"></div>
+                                        <div class="chart-bar" style="height: 95%;"></div>
+                                        <div class="chart-bar" style="height: 85%;"></div>
+                                        <div class="chart-bar" style="height: 60%;"></div>
+                                        <div class="chart-bar" style="height: 75%;"></div>
+                                        <div class="chart-bar" style="height: 50%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating-card floating-card-1">
+                        <div class="floating-card-icon success">
+                            <i data-lucide="check" style="width: 20px; height: 20px;"></i>
+                        </div>
+                        <div class="floating-card-text">
+                            <div class="floating-card-title">Paiement reçu</div>
+                            <div class="floating-card-subtitle">34,50 € via PayPal</div>
+                        </div>
+                    </div>
+                    <div class="floating-card floating-card-2">
+                        <div class="floating-card-icon order">
+                            <i data-lucide="bell" style="width: 20px; height: 20px;"></i>
+                        </div>
+                        <div class="floating-card-text">
+                            <div class="floating-card-title">Nouvelle Commande !</div>
+                            <div class="floating-card-subtitle">2x Pizza Margherita</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos Section -->
+    <section class="logos-section">
+        <div class="logos-container">
+            <p class="logos-title">Approuvé par plus de 500 restaurants à travers l'Europe</p>
+            <div class="logos-grid">
+                <div class="logo-item">
+                    <i data-lucide="utensils"></i>
+                    Bella Italia
+                </div>
+                <div class="logo-item">
+                    <i data-lucide="flame"></i>
+                    Grill Master
+                </div>
+                <div class="logo-item">
+                    <i data-lucide="coffee"></i>
+                    Café Central
+                </div>
+                <div class="logo-item">
+                    <i data-lucide="pizza"></i>
+                    Pizza Express
+                </div>
+                <div class="logo-item">
+                    <i data-lucide="beef"></i>
+                    Steakhouse
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="features-container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i data-lucide="zap" style="width: 16px; height: 16px;"></i>
+                    Fonctionnalités Puissantes
+                </span>
+                <h2 class="section-title">Tout ce dont Votre Chaîne a Besoin</h2>
+                <p class="section-subtitle">
+                    Une seule plateforme qui combine parfaitement site web, système de commande et caisse.
+                    Économisez du temps, augmentez vos revenus et conservez le contrôle total.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i data-lucide="globe"></i>
+                    </div>
+                    <h3 class="feature-title">Site Web Professionnel</h3>
+                    <p class="feature-description">
+                        Site optimisé pour le SEO et responsive avec votre identité visuelle. Soyez visible sur Google et présentez votre restaurant avec professionnalisme.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i data-lucide="smartphone"></i>
+                    </div>
+                    <h3 class="feature-title">Votre Application de Commande</h3>
+                    <p class="feature-description">
+                        Votre application personnalisée dans l'App Store et Play Store. Les notifications push gardent vos clients informés.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i data-lucide="monitor"></i>
+                    </div>
+                    <h3 class="feature-title">Terminal de Commande</h3>
+                    <p class="feature-description">
+                        Terminal intuitif pour un traitement rapide des commandes. Réduisez les erreurs et accélérez considérablement le processus de commande.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i data-lucide="credit-card"></i>
+                    </div>
+                    <h3 class="feature-title">Tous les Moyens de Paiement</h3>
+                    <p class="feature-description">
+                        PayPal, carte bancaire, Klarna, Apple Pay et bien plus. Offrez à vos clients leur méthode de paiement préférée.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i data-lucide="bar-chart-3"></i>
+                    </div>
+                    <h3 class="feature-title">Analyses & Rapports</h3>
+                    <p class="feature-description">
+                        Insights détaillés sur les revenus, commandes et comportement client. Prenez des décisions basées sur les données.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <i data-lucide="headphones"></i>
+                    </div>
+                    <h3 class="feature-title">Support 24/7</h3>
+                    <p class="feature-description">
+                        Personne de contact personnelle et support rapide. Nous sommes toujours là quand vous avez besoin de nous.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section class="showcase-section" id="produkte">
+        <div class="showcase-container">
+
+            <!-- Showcase 1: Own Website -->
+            <div class="showcase-grid">
+                <div class="showcase-content reveal-left">
+                    <span class="showcase-number">01</span>
+                    <h2 class="showcase-title">Votre Site Web – Professionnel & Optimisé pour le SEO</h2>
+                    <p class="showcase-text">
+                        Un site web moderne et ultra-rapide qui apparaît en haut de Google. Avec un système de commande intégré qui amène vos clients directement sur votre site – pas sur des portails coûteux.
+                    </p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Optimisé pour la recherche locale</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Design responsive sur tous les appareils</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Système de commande intégré</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Domaine personnel & certificat SSL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-visual reveal-right">
+                    <div class="showcase-image">
+                        <div class="showcase-image-inner" style="padding: 1.5rem; background: linear-gradient(135deg, #1a1a24 0%, #0a0a0f 100%);">
+                            <!-- Browser Mockup -->
+                            <div class="browser-mockup">
+                                <div class="browser-header">
+                                    <div class="browser-dots">
+                                        <span style="background: #FF5F57;"></span>
+                                        <span style="background: #FEBC2E;"></span>
+                                        <span style="background: #28C840;"></span>
+                                    </div>
+                                    <div class="browser-url">
+                                        <i data-lucide="lock" style="width: 12px; height: 12px; color: #28C840;"></i>
+                                        <span>votre-restaurant.fr</span>
+                                    </div>
+                                </div>
+                                <div class="browser-content">
+                                    <div class="website-hero">
+                                        <div class="website-nav">
+                                            <div class="website-logo-small">🍕 Pizzeria Bella</div>
+                                            <div class="website-nav-items">
+                                                <span>Menu</span>
+                                                <span>À Propos</span>
+                                                <span class="website-order-btn">Commander</span>
+                                            </div>
+                                        </div>
+                                        <div class="website-hero-content">
+                                            <div class="website-hero-text">Cuisine Italienne Authentique</div>
+                                            <div class="website-hero-sub">Frais • Délicieux • Directement chez vous</div>
+                                        </div>
+                                    </div>
+                                    <div class="website-menu-preview">
+                                        <div class="website-menu-item"></div>
+                                        <div class="website-menu-item"></div>
+                                        <div class="website-menu-item"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Showcase 2: Own App -->
+            <div class="showcase-grid reverse" style="margin-top: 8rem;">
+                <div class="showcase-content reveal-right">
+                    <span class="showcase-number">02</span>
+                    <h2 class="showcase-title">Votre Application – Toujours dans les Poches de Vos Clients</h2>
+                    <p class="showcase-text">
+                        Avec votre application personnalisée, vous êtes toujours présent. Les notifications push rappellent à vos clients vos offres et nouveaux plats. 0% de commission, 100% vos clients.
+                    </p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Disponible pour iOS et Android</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Notifications push pour le marketing</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Complètement à votre identité visuelle</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Programme de fidélité & codes réduction</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-visual reveal-left">
+                    <div class="showcase-image">
+                        <div class="showcase-image-inner" style="background: linear-gradient(145deg, #1a1a24 0%, #12121a 100%); display: flex; justify-content: center; gap: 1rem; padding: 2rem;">
+                            <!-- Phone Mockup 1 -->
+                            <div class="phone-mockup" style="transform: rotate(-5deg) translateY(10px); width: 180px; height: 360px;">
+                                <div class="phone-screen">
+                                    <div class="phone-header">
+                                        <div class="phone-logo">ordable</div>
+                                    </div>
+                                    <div class="phone-content">
+                                        <div class="phone-item">
+                                            <div class="phone-item-img"></div>
+                                            <div class="phone-item-text">
+                                                <div class="phone-item-title">Pizza Margherita</div>
+                                                <div class="phone-item-price">9,90 €</div>
+                                            </div>
+                                        </div>
+                                        <div class="phone-item">
+                                            <div class="phone-item-img"></div>
+                                            <div class="phone-item-text">
+                                                <div class="phone-item-title">Pâtes Carbonara</div>
+                                                <div class="phone-item-price">12,50 €</div>
+                                            </div>
+                                        </div>
+                                        <div class="phone-item">
+                                            <div class="phone-item-img"></div>
+                                            <div class="phone-item-text">
+                                                <div class="phone-item-title">Salade César</div>
+                                                <div class="phone-item-price">8,90 €</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Phone Mockup 2 -->
+                            <div class="phone-mockup" style="transform: rotate(5deg) translateY(-10px); width: 180px; height: 360px;">
+                                <div class="phone-screen" style="background: linear-gradient(180deg, #00D4AA 0%, #00B894 100%);">
+                                    <div class="phone-header">
+                                        <div class="phone-logo" style="color: #fff;">✓ Commandé !</div>
+                                    </div>
+                                    <div class="phone-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                                        <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 0.75rem;">
+                                            <i data-lucide="check" style="width: 28px; height: 28px; color: white;"></i>
+                                        </div>
+                                        <div style="font-size: 0.85rem; font-weight: 600; color: #0a0a0f;">Commande #4721</div>
+                                        <div style="font-size: 0.7rem; color: rgba(0,0,0,0.6); margin-top: 0.25rem;">Livraison dans ~25 min</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Showcase 3: Order Terminal -->
+            <div class="showcase-grid" style="margin-top: 8rem;">
+                <div class="showcase-content reveal-left">
+                    <span class="showcase-number">03</span>
+                    <h2 class="showcase-title">Terminal de Commande – Rapide, Simple, Sans Erreurs</h2>
+                    <p class="showcase-text">
+                        Notre terminal de commande intuitif rend la prise de commandes très facile. Impression automatique des tickets, synchronisation en temps réel et formation minimale requise.
+                    </p>
+                    <div class="showcase-features">
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Impression automatique des tickets</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Synchronisation en temps réel avec app et web</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Intuitif sans besoin de formation</span>
+                        </div>
+                        <div class="showcase-feature">
+                            <div class="showcase-feature-icon">
+                                <i data-lucide="check"></i>
+                            </div>
+                            <span class="showcase-feature-text">Notification sonore pour les nouvelles commandes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="showcase-visual reveal-right">
+                    <div class="showcase-image">
+                        <div class="showcase-image-inner" style="background: linear-gradient(135deg, #1a1a24 0%, #0a0a0f 100%); padding: 2rem;">
+                            <!-- Tablet/Terminal Mockup -->
+                            <div class="terminal-mockup">
+                                <div class="terminal-frame">
+                                    <div class="terminal-screen">
+                                        <div class="terminal-header">
+                                            <div class="terminal-title">
+                                                <span class="terminal-logo">ordable</span>
+                                                <span class="terminal-status">● En ligne</span>
+                                            </div>
+                                            <div class="terminal-time">14:32</div>
+                                        </div>
+                                        <div class="terminal-orders">
+                                            <div class="terminal-order new">
+                                                <div class="terminal-order-badge">NOUVEAU</div>
+                                                <div class="terminal-order-info">
+                                                    <div class="terminal-order-id">#4722</div>
+                                                    <div class="terminal-order-items">2x Pizza, 1x Cola</div>
+                                                </div>
+                                                <div class="terminal-order-price">24,80 €</div>
+                                            </div>
+                                            <div class="terminal-order preparing">
+                                                <div class="terminal-order-badge prep">EN COURS</div>
+                                                <div class="terminal-order-info">
+                                                    <div class="terminal-order-id">#4721</div>
+                                                    <div class="terminal-order-items">1x Pâtes, 1x Salade</div>
+                                                </div>
+                                                <div class="terminal-order-price">18,40 €</div>
+                                            </div>
+                                            <div class="terminal-order done">
+                                                <div class="terminal-order-badge finished">PRÊT</div>
+                                                <div class="terminal-order-info">
+                                                    <div class="terminal-order-id">#4720</div>
+                                                    <div class="terminal-order-items">3x Burger, 2x Frites</div>
+                                                </div>
+                                                <div class="terminal-order-price">35,70 €</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="terminal-stand"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="stats-container reveal-scale">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" data-target="500">500+</div>
+                    <div class="stat-label">Restaurants Actifs</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2M+€</div>
+                    <div class="stat-label">Commandes Traitées</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">Commission</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">4,9</div>
+                    <div class="stat-label">Note Clients</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i data-lucide="message-circle" style="width: 16px; height: 16px;"></i>
+                    Témoignages Clients
+                </span>
+                <h2 class="section-title">Ce que Disent Nos Partenaires</h2>
+                <p class="section-subtitle">
+                    Plus de 500 restaurateurs font confiance à ORDABLE.
+                    Voici quelques-unes de leurs expériences.
+                </p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Depuis que nous utilisons ORDABLE, nos revenus en ligne ont triplé. L'application personnalisée est un vrai game-changer – nos clients adorent les notifications push !"
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MK</div>
+                        <div class="testimonial-info">
+                            <h4>Marco Köhler</h4>
+                            <p>Pizzeria Bella Napoli, Berlin</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Enfin plus de 14% de commission pour les gros portails ! Avec ORDABLE, j'ai le contrôle total de mes données clients et j'économise des centaines d'euros chaque mois."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SY</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah Yilmaz</h4>
+                            <p>Döner Factory, Munich</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                        <i data-lucide="star" style="width: 18px; height: 18px; fill: currentColor;"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "Le support est incroyable ! Je reçois une aide rapide à chaque question. Le terminal de commande est tellement simple que même les nouveaux employés peuvent l'utiliser immédiatement."
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">TN</div>
+                        <div class="testimonial-info">
+                            <h4>Thomas Nguyen</h4>
+                            <p>Asia Kitchen, Hambourg</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing-section" id="preise">
+        <div class="pricing-container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i data-lucide="tag" style="width: 16px; height: 16px;"></i>
+                    Tarification Transparente
+                </span>
+                <h2 class="section-title">Choisissez Votre Plan</h2>
+                <p class="section-subtitle">
+                    Des tarifs justes sans frais cachés.
+                    0% de commission sur toutes les commandes, garanti.
+                </p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Starter</h3>
+                        <p class="pricing-description">Parfait pour débuter</p>
+                    </div>
+                    <div class="pricing-price">
+                        <div class="pricing-amount">79€<span>/mois</span></div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Site web professionnel</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Système de commande en ligne</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Analyses basiques</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Support par email</span>
+                        </div>
+                    </div>
+                    <a href="#demo" class="btn btn-ghost pricing-cta">Choisir</a>
+                </div>
+                <div class="pricing-card featured reveal">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Professional</h3>
+                        <p class="pricing-description">Pour les entreprises en croissance</p>
+                    </div>
+                    <div class="pricing-price">
+                        <div class="pricing-amount">149€<span>/mois</span></div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Tout de Starter</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Application iOS et Android</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Terminal de commande inclus</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Notifications push</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Support prioritaire 24/7</span>
+                        </div>
+                    </div>
+                    <a href="#demo" class="btn btn-primary pricing-cta">Choisir</a>
+                </div>
+                <div class="pricing-card reveal">
+                    <div class="pricing-header">
+                        <h3 class="pricing-name">Entreprise</h3>
+                        <p class="pricing-description">Pour les chaînes et franchises</p>
+                    </div>
+                    <div class="pricing-price">
+                        <div class="pricing-amount">Sur Devis</div>
+                    </div>
+                    <div class="pricing-features">
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Tout de Professional</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Gestion multi-établissements</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Accès API</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Gestionnaire de compte dédié</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <i data-lucide="check" class="pricing-feature-icon"></i>
+                            <span class="pricing-feature-text">Développement personnalisé</span>
+                        </div>
+                    </div>
+                    <a href="#demo" class="btn btn-ghost pricing-cta">Nous Contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="faq-container">
+            <div class="section-header reveal">
+                <span class="section-badge">
+                    <i data-lucide="help-circle" style="width: 16px; height: 16px;"></i>
+                    Questions Fréquemment Posées
+                </span>
+                <h2 class="section-title">Des Questions ?</h2>
+                <p class="section-subtitle">
+                    Trouvez les réponses aux questions les plus courantes sur ORDABLE.
+                </p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>Combien de temps pour être en ligne avec ORDABLE ?</h3>
+                        <i data-lucide="plus" class="faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Généralement, vous serez en ligne avec votre solution complète en 7 à 14 jours. Nous nous occupons de tout : création du site, développement de l'application et configuration du terminal. Vous n'avez rien à faire vous-même.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>Y a-t-il des frais cachés ou des commissions ?</h3>
+                        <i data-lucide="plus" class="faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Non ! Avec ORDABLE, vous ne payez que votre tarif mensuel fixe. Aucune commission sur les commandes, aucun frais de mise en place, aucun frais caché. Ce que vous voyez est ce que vous payez.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>Puis-je transférer mon menu existant ?</h3>
+                        <i data-lucide="plus" class="faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolument ! Nous transférerons votre menu complet, incluant tous les extras, variantes et allergènes. Envoyez-nous simplement votre menu actuel et nous nous chargeons du reste.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>Quels moyens de paiement sont supportés ?</h3>
+                        <i data-lucide="plus" class="faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Nous supportons tous les moyens de paiement courants : PayPal, carte bancaire, Klarna, Apple Pay, Google Pay, et bien sûr paiement à la livraison. Les frais de transaction sont minimaux et transparents.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <div class="faq-question">
+                        <h3>Comment fonctionne le support ?</h3>
+                        <i data-lucide="plus" class="faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Notre équipe de support est là pour vous. Avec le plan Professional, vous bénéficiez d'un support 24/7 par téléphone, email et WhatsApp. Temps de réponse moyen : moins de 15 minutes. Nous parlons votre langue et comprenons la restauration.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="demo">
+        <div class="cta-container reveal-scale">
+            <div class="cta-content">
+                <h2 class="cta-title">Prêt à Augmenter Vos Revenus ?</h2>
+                <p class="cta-subtitle">
+                    Programmez une démo gratuite maintenant et découvrez comment ORDABLE
+                    peut amener votre restaurant au niveau supérieur.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#" class="btn btn-primary btn-lg">
+                        <i data-lucide="calendar" style="width: 20px; height: 20px;"></i>
+                        Réserver une Démo
+                    </a>
+                    <a href="tel:+4917212345678" class="btn btn-ghost btn-lg">
+                        <i data-lucide="phone" style="width: 20px; height: 20px;"></i>
+                        0172 123 4567
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">O</div>
+                        <span class="footer-logo-text">ordable</span>
+                    </div>
+                    <p>
+                        La solution tout-en-un pour numériser votre restaurant.
+                        Site web, application et caisse parfaitement intégrés.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i data-lucide="instagram" style="width: 18px; height: 18px;"></i></a>
+                        <a href="#"><i data-lucide="facebook" style="width: 18px; height: 18px;"></i></a>
+                        <a href="#"><i data-lucide="linkedin" style="width: 18px; height: 18px;"></i></a>
+                        <a href="#"><i data-lucide="youtube" style="width: 18px; height: 18px;"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Produits</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Site Web</a></li>
+                        <li><a href="#">Application Commande</a></li>
+                        <li><a href="#">Terminal Commande</a></li>
+                        <li><a href="#">Système POS</a></li>
+                        <li><a href="#">Outils Marketing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Entreprise</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">À Propos</a></li>
+                        <li><a href="#">Carrières</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Presse</a></li>
+                        <li><a href="#">Devenir Partenaire</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Centre d'Aide</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Statut</a></li>
+                        <li><a href="#">Documentation API</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 ordable GmbH. Tous droits réservés.</p>
+                <div class="footer-legal">
+                    <a href="../../impressum/">Mentions Légales</a>
+                    <a href="../../fr/privacy/">Confidentialité</a>
+                    <a href="../../agb/">Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/enterprise.js" defer></script>
+</body>
+</html>
