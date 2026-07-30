@@ -1342,6 +1342,17 @@ nav {
     margin-top: 4rem;
 }
 
+.pricing-grid--single {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pricing-grid--single .pricing-card.featured::before {
+    content: none;
+}
+
 .pricing-card {
     background: var(--white);
     border: 1px solid var(--border);

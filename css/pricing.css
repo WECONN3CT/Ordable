@@ -357,6 +357,11 @@ nav {
     margin: 0 auto;
 }
 
+.pricing-grid--single {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+}
+
 .pricing-card {
     background: var(--white);
     border: 2px solid var(--border);
