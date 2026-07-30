@@ -359,7 +359,36 @@ nav {
 
 .pricing-grid--single {
     grid-template-columns: 1fr;
-    max-width: 520px;
+    max-width: 900px;
+}
+
+.pricing-card--wide {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3.5rem;
+    align-items: center;
+    padding: 3.5rem;
+}
+
+.pricing-card--wide .pricing-card-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.pricing-card--wide .pricing-price {
+    margin-bottom: 2.5rem;
+}
+
+.pricing-card--wide .pricing-features {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .pricing-card--wide {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.5rem 2rem;
+    }
 }
 
 .pricing-card {
