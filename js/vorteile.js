@@ -163,8 +163,14 @@ const commissionSlider = document.getElementById('commissionSlider');
 const ORDABLE_MONTHLY = 69;
 const ORDABLE_SETUP = 0;
 
+const IS_EN = document.documentElement.lang === 'en';
+
 function formatNumber(num) {
-    return num.toLocaleString('de-DE');
+    return num.toLocaleString(IS_EN ? 'en-GB' : 'de-DE');
+}
+
+function formatMoney(num) {
+    return IS_EN ? '£' + formatNumber(num) : formatNumber(num) + '€';
 }
 
 function calculateAll() {
@@ -192,10 +198,10 @@ function calculateAll() {
     // Update DOM
     document.getElementById('revenueDisplay').textContent = formatNumber(revenue);
     document.getElementById('commissionDisplay').textContent = commissionSlider.value;
-    document.getElementById('commissionMonthly').textContent = formatNumber(Math.round(monthlyCommission)) + '€';
-    document.getElementById('platformCostYear').textContent = formatNumber(Math.round(yearlyPlatformCost)) + '€';
-    document.getElementById('ordableCostYear').textContent = formatNumber(yearlyOrdableCost) + '€';
-    document.getElementById('totalMoneySaved').textContent = formatNumber(Math.round(yearlySavings)) + '€';
+    document.getElementById('commissionMonthly').textContent = formatMoney(Math.round(monthlyCommission));
+    document.getElementById('platformCostYear').textContent = formatMoney(Math.round(yearlyPlatformCost));
+    document.getElementById('ordableCostYear').textContent = formatMoney(yearlyOrdableCost);
+    document.getElementById('totalMoneySaved').textContent = formatMoney(Math.round(yearlySavings));
 
     // Update platform card subtitle
     document.querySelector('.comparison-card.platform .comparison-subtitle').textContent =
